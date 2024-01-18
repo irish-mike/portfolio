@@ -13,8 +13,10 @@ This repository contains the code for two interconnected websites: `michaelgrinn
 - Responsive design with light/dark mode
 
 ### Prerequisites
-- Node.js Version: 20.11.0
-- WordPress
+- Node: 20.11.0
+- NextJS: 14.0.4
+- Bootstrap: 5.3.2
+- WordPress:6.4.2
 
 ## Built With
 - [React.js](https://reactjs.org/) - The web framework used
