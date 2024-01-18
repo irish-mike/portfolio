@@ -13,7 +13,7 @@ This repository contains the code for two interconnected websites: `michaelgrinn
 - Responsive design with light/dark mode
 
 ### Prerequisites
-- Node.js
+- Node.js Version: 20.11.0
 - WordPress
 
 ## Built With
