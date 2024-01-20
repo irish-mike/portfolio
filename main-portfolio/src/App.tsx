@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
+import Like from "./components/Like";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -17,6 +18,8 @@ function App() {
       <Button colour="dark" onClick={() => setAlertVisible(true)}>
         Click Me!
       </Button>
+
+      <Like colour="green" onClick={() => console.log("Like Clicked")}></Like>
     </div>
   );
 }
