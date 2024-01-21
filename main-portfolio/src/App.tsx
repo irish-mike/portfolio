@@ -4,12 +4,19 @@ import Button from "./components/Button";
 import Like from "./components/Like";
 import ExpandableText from "./components/ExpandableText";
 import Form from "./components/Form";
+import Request from "./components/Request";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
 
   return (
     <div className="container">
+      <div className="row col-12 p-5">
+        <h1 className="text-center">Request</h1>
+        <hr />
+        <Request />
+      </div>
+
       <div className="row col-12 p-5">
         <h1 className="text-center">Form</h1>
         <hr />
