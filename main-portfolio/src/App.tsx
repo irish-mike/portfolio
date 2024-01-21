@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Alert from "./components/Alert";
-import Button from "./components/Button";
-import Like from "./components/Like";
-import ExpandableText from "./components/ExpandableText";
-import Form from "./components/Form";
+import Alert from "./components/common/Alert";
+import Button from "./components/common/Button";
+import Like from "./components/common/Like";
+import ExpandableText from "./components/common/ExpandableText";
+import Form from "./components/common/Form";
 import Request from "./components/Request";
 
 function App() {
