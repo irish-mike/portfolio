@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>My Website</title>
+      <style>
+
+                 /* Card container */
+        .timeline {
+         padding:0 30px 0 30px;
+         }
+
+         /* Card container */
+         .timeline-content {
+         position: relative;
+         padding: 30px;
+         }
+         /* Global ::before */
+         .timeline-content::before {
+         content: "";
+         position: absolute;
+         width: 50%;
+         border: solid blueviolet;
+         }
+         /* Odd and Even child specific styles */
+         .timeline-content:nth-child(odd)::before {
+         left: 0;
+         top: -4.5px;
+         bottom: -4.5px;
+         border-width: 5px 0 5px 5px;
+         border-radius: 50px 0 0 50px;
+         }
+         .timeline-content:nth-child(even)::before {
+         right: 0;
+         top: 0;
+         bottom: 0;
+         border-width: 5px 5px 5px 0;
+         border-radius: 0 50px 50px 0;
+         }
+         /* First and Last child adjustments */
+         .timeline-content:first-child::before {
+         border-top: 0;
+         border-top-left-radius: 0;
+         }
+         .timeline-content:last-child::before {
+         border-bottom-left-radius: 0;
+         border-bottom-right-radius: 0;
+         }
+         .timeline-content:last-child:nth-child(odd)::before {
+         border-bottom: 0;
+         }
+         .timeline-content:last-child:nth-child(even)::before {
+         border-bottom: 0;
+         }
+         .timeline-content:nth-child(even) > .timeline-card > .title {
+         text-align: right;
+         }
+      </style>
+   </head>
+   <body>
+      <main>
+         <div class="container">
+            <div class="timeline">
+               <div class="timeline-content">
+                  <div class="timeline-card">
+                     <h3 class="title">Title 1</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                  </div>
+               </div>
+               <div class="timeline-content">
+                  <div class="timeline-card">
+                     <h3 class="title">Title 2</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                  </div>
+               </div>
+               <div class="timeline-content">
+                  <div class="timeline-card">
+                     <h3 class="title">Title 3</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                  </div>
+               </div>
+               <div class="timeline-content">
+                  <div class="timeline-card">
+                     <h3 class="title">Title 4</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                  </div>
+               </div>
+               <div class="timeline-content">
+                  <div class="timeline-card">
+                     <h3 class="title">Title 5</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      <script src="index.js"></script>
+   </body>
+</html>
