@@ -6,3 +6,18 @@ body{
     border: 1px solid #dc3545; /* Red border for invalid fields */
   }
   
+h1{
+    color: aliceblue;
+}
+
+.dev-1{
+    border: solid 1px #dc3545;
+}
+
+.dev-2{
+    border: solid 1px rgb(26, 190, 26);
+}
+
+.dev-3{
+    border: solid 1px #3e2da0;
+}

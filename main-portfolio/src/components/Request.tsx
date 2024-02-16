@@ -1,37 +1,7 @@
-import axios, { CanceledError } from "axios";
-import { useEffect, useState } from "react";
-
-interface User {
-  id: number;
-  name: string;
-}
+import useUsers from "../hooks/useUsers";
 
 const Request = () => {
-  const [users, setUsers] = useState<User[]>([]);
-  const [error, setError] = useState("");
-  const [isLoading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    setLoading(true);
-
-    axios
-      .get("https://jsonplaceholder.typicode.com/users", {
-        signal: controller.signal,
-      })
-      .then((response) => {
-        setUsers(response.data);
-      })
-      .catch((error) => {
-        if (error instanceof CanceledError) return;
-        setError(error.message);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-
-    return () => controller.abort();
-  }, []);
+  const { users, error, isLoading } = useUsers();
 
   return (
     <>

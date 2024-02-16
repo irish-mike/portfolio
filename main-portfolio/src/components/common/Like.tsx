@@ -16,11 +16,11 @@ const Like = ({ colour, onClick }: Props) => {
 
   return status ? (
     <div onClick={() => toggle()}>
-      <RiAliensFill color={colour} size={48} />
+      <RiAliensFill color={colour} size={128} />
     </div>
   ) : (
     <div onClick={() => toggle()}>
-      <RiAliensLine color={colour} size={48} />
+      <RiAliensLine color={colour} size={128} />
     </div>
   );
 };
