@@ -2,6 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import NavbarMain from "./components/NavbarMain";
 import ParticleBackground from "./components/features/ParticleBackground";
 import TextContentSection from "./components/TextContentSection";
+import Tags from "./components/Tags";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           />
         </Col>
       </Row>
+      <Tags options={["C++", "Python", "Web Development"]}></Tags>
     </Container>
   );
 }
