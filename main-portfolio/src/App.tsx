@@ -1,9 +1,11 @@
 import { Col, Container, Row } from "react-bootstrap";
 import NavbarMain from "./components/NavbarMain";
+import ParticleBackground from "./components/features/ParticleBackground";
 
 function App() {
   return (
     <Container>
+      {/* <ParticleBackground /> */}
       <Row>
         <NavbarMain></NavbarMain>
       </Row>
