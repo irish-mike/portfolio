@@ -1,23 +1,79 @@
-body{
+:root {
+    --primary-color: #000;
+   /* Black */
+    --secondary-color: #fff;
+   /* White */
+    --background-color: #fff;
+   /* White */
+    --text-color: #000;
+   /* Black */
+}
+[data-bs-theme='dark'] {
+   /* Dark theme colors */
+    --primary-color: #fff;
+   /* White */
+    --secondary-color: #000;
+   /* Black */
+    --background-color: #333;
+   /* Dark grey */
+    --text-color: #fff;
+   /* White */
+}
+body {
     padding: 24px;
 }
-
 .is-invalid {
-    border: 1px solid #dc3545; /* Red border for invalid fields */
-  }
-  
-h1{
-    color: aliceblue;
+    border: 1px solid #dc3545;
+   /* Red border for invalid fields */
+}
+.arrow-down::after {
+    color: var(--primary-color);
+}
+.hr-line {
+    border-bottom: 1px solid var(--primary-color);
+   /* Black border for light theme */
+}
+/* Horizontal rule and icon styles */
+.hr-theme-slash-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+.hr-line {
+    flex-grow: 1;
+}
+.hr-icon {
+    padding: 0 15px;
+}
+.arrow-down::after {
+    content: '⌄';
+   /* Simple arrow symbol */
+    font-size: 2rem;
+}
+/* Scroll indicator animation */
+.scroll-indicator {
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+   }
+    40% {
+        transform: translateY(-15px);
+   }
+    60% {
+        transform: translateY(-5px);
+   }
 }
 
-.dev-1{
+/* Helpers for development */
+.dev-1 {
     border: solid 1px #dc3545;
 }
-
-.dev-2{
+.dev-2 {
     border: solid 1px rgb(26, 190, 26);
 }
-
-.dev-3{
+.dev-3 {
     border: solid 1px #3e2da0;
 }

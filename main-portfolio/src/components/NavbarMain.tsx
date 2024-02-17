@@ -1,12 +1,4 @@
-import {
-  Navbar,
-  Nav,
-  Container,
-  Form,
-  Row,
-  Col,
-  Button,
-} from "react-bootstrap";
+import { Navbar, Nav, Container, Form, Row, Col } from "react-bootstrap";
 import { BsHouse } from "react-icons/bs";
 import { CgPacman } from "react-icons/cg";
 import {
