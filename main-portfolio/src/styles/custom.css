@@ -97,14 +97,11 @@ body {
     height: 100%;
 }
 
-
-
-
 .bento-box-item {
     display: flex; /* No change, ensures content inside is flexibly aligned */
     align-items: center; /* Aligns items vertically center */
     justify-content: center; /* Centers content horizontally */
-    border: 1px solid;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px; /* Adjust for desired roundness */
     box-shadow: 0 4px 6px var(--medium-shadow), 0 1px 3px var(--subtle-shadow); /* Subtle shadow for depth */
     padding: 20px; /* Adjust based on your content needs */

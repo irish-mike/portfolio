@@ -1,8 +1,14 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import NavbarMain from "./components/NavbarMain";
 import TextContentSection from "./components/TextContentSection";
 import BentoBox from "./components/BentoBox";
 import BentoGridItem from "./components/BentoGirdItem";
+import logo from "@images/logo.png";
+import c_logo from "@images/Logos/c++.png";
+import git_logo from "@images/Logos/git.png";
+import php_logo from "@images/Logos/php.png";
+import python_logo from "@images/Logos/python.png";
+import react_logo from "@images/Logos/react_js.png";
 
 function App() {
   return (
@@ -25,17 +31,71 @@ function App() {
 
       <Row>
         <BentoBox>
-          <BentoGridItem content="Item 1" rowSpan={1} colSpan={2} />
-          <BentoGridItem content="Item 2" rowSpan={2} colSpan={4} />
-          <BentoGridItem content="Item 3" rowSpan={1} colSpan={2} />
-          <BentoGridItem
-            content="Item 4"
-            rowSpan={1}
-            colSpan={2}
-            offset={true}
-          />
-          <BentoGridItem content="Item 4" rowSpan={1} colSpan={4} />
-          <BentoGridItem content="Item 5" rowSpan={1} colSpan={8} />
+          <BentoGridItem rowSpan={1} colSpan={8}>
+            <img
+              src={php_logo}
+              width="120"
+              height="120"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </BentoGridItem>
+          <BentoGridItem rowSpan={1} colSpan={2}>
+            <img
+              src={c_logo}
+              width="120"
+              height="120"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </BentoGridItem>
+          <BentoGridItem rowSpan={2} colSpan={4}>
+            <Row>
+              <Card
+                style={{ width: "100%", maxWidth: "18rem", margin: "auto" }}
+              >
+                <Card.Img variant="top" src={logo} />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+            </Row>
+          </BentoGridItem>
+          <BentoGridItem rowSpan={1} colSpan={2}>
+            <img
+              src={git_logo}
+              width="120"
+              height="120"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </BentoGridItem>
+          <BentoGridItem rowSpan={1} colSpan={2} offset={true}>
+            {" "}
+          </BentoGridItem>
+          <BentoGridItem rowSpan={1} colSpan={4}>
+            <img
+              src={python_logo}
+              width="120"
+              height="120"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </BentoGridItem>
+          <BentoGridItem rowSpan={1} colSpan={4}>
+            <img
+              src={react_logo}
+              width="120"
+              height="120"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </BentoGridItem>
           {/* Add more items as needed */}
         </BentoBox>
       </Row>
