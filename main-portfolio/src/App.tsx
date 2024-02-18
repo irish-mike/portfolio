@@ -1,8 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap";
 import NavbarMain from "./components/NavbarMain";
-import ParticleBackground from "./components/features/ParticleBackground";
 import TextContentSection from "./components/TextContentSection";
-import Tags from "./components/Tags";
+import BentoBox from "./components/BentoBox";
+import BentoGridItem from "./components/BentoGirdItem";
 
 function App() {
   return (
@@ -21,7 +21,24 @@ function App() {
           />
         </Col>
       </Row>
-      <Tags options={["C++", "Python", "Web Development"]}></Tags>
+      {/* <Tags options={["C++", "Python", "Web Development"]}></Tags> */}
+
+      <Row>
+        <BentoBox>
+          <BentoGridItem content="Item 1" rowSpan={1} colSpan={2} />
+          <BentoGridItem content="Item 2" rowSpan={2} colSpan={4} />
+          <BentoGridItem content="Item 3" rowSpan={1} colSpan={2} />
+          <BentoGridItem
+            content="Item 4"
+            rowSpan={1}
+            colSpan={2}
+            offset={true}
+          />
+          <BentoGridItem content="Item 4" rowSpan={1} colSpan={4} />
+          <BentoGridItem content="Item 5" rowSpan={1} colSpan={8} />
+          {/* Add more items as needed */}
+        </BentoBox>
+      </Row>
     </Container>
   );
 }
