@@ -1,8 +1,8 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import NavbarMain from "./components/NavbarMain";
-import TextContentSection from "./components/TextContentSection";
-import BentoBox from "./components/BentoBox";
-import BentoGridItem from "./components/BentoGirdItem";
+import NavbarMain from "./features/NavbarMain";
+import TextContentSection from "./components/layout/TextContentSection";
+import BentoBox from "./components/layout/BentoBox";
+import BentoGridItem from "./components/layout/BentoGirdItem";
 import logo from "@images/logo.png";
 import c_logo from "@images/Logos/c++.png";
 import git_logo from "@images/Logos/git.png";

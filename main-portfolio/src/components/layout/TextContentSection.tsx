@@ -1,6 +1,5 @@
-import React from "react";
 import { Container } from "react-bootstrap";
-import useThemeSwitcher from "../hooks/useThemeSwitcher"; // Adjust the import path as necessary
+import useThemeSwitcher from "../../hooks/useThemeSwitcher"; // Adjust the import path as necessary
 
 interface Props {
   title: string;
@@ -8,10 +7,7 @@ interface Props {
 }
 
 const TextContentSection = ({ title, description }: Props) => {
-  const { theme } = useThemeSwitcher(); // Get the current theme
-
-  // Optionally, you can apply different classes based on the theme
-  // const sectionClass = theme === 'dark' ? 'section-dark' : 'section-light';
+  const { theme } = useThemeSwitcher();
 
   return (
     <section className={`text-center ${theme}`}>
