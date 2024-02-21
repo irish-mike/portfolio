@@ -1,1 +1,0 @@
-This project was created as a portfolio etc... but I also wanted it to serve as a template for future projects, so would have to build componenets in a reusable and modular ways.
