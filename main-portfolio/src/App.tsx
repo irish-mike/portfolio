@@ -1,11 +1,9 @@
 import { Col, Container, Row } from "react-bootstrap";
 import NavbarMain from "./features/NavbarMain";
 import TextContentSection from "./components/layout/TextContentSection";
-import ImageComponent from "./components/ui/ImageComponent";
+import { ProjectGrid } from "./components/layout/ProjectGrid";
 
 function App() {
-
-
   return (
     <Container>
       {/* <ParticleBackground /> */}
@@ -25,7 +23,7 @@ function App() {
       {/* <Tags options={["C++", "Python", "Web Development"]}></Tags> */}
 
       <Row>
-        <ImageComponent name="koala" />
+        <ProjectGrid></ProjectGrid>
       </Row>
     </Container>
   );

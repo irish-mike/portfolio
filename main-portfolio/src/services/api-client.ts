@@ -1,9 +1,11 @@
 import axios, { CanceledError } from "axios";
 
 export default axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com',
+    baseURL: 'https://api.rawg.io/api',
     // headers: {}
-    // params: {}
+    params: {
+        key: 'ecb5ff5899824e149bf90ce0498fc877'
+    }
 })
 
 export { CanceledError };
