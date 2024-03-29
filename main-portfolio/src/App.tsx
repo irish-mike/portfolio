@@ -3,11 +3,12 @@ import NavbarMain from "./features/NavbarMain";
 import TextContentSection from "./components/layout/TextContentSection";
 import { ProjectGrid } from "./components/layout/ProjectGrid";
 import GenreList from "./components/ui/GenreList";
+import ParticleBackground from "./features/ParticleBackground";
 
 function App() {
   return (
     <Container>
-      {/* <ParticleBackground /> */}
+      <ParticleBackground />
       <Row>
         <NavbarMain></NavbarMain>
       </Row>

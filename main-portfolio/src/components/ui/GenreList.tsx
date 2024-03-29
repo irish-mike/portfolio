@@ -1,7 +1,11 @@
+import { Spinner } from "react-bootstrap";
 import useGenres from "../../hooks/useGenres";
 
 const GenreList = () => {
-  const { data } = useGenres();
+  const { data, isLoading } = useGenres();
+
+  if (isLoading) return <Spinner animation="border" />;
+
   return (
     <ul>
       {data.map((genre) => (
