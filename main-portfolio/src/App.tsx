@@ -2,6 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import NavbarMain from "./features/NavbarMain";
 import TextContentSection from "./components/layout/TextContentSection";
 import { ProjectGrid } from "./components/layout/ProjectGrid";
+import GenreList from "./components/ui/GenreList";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
       {/* <Tags options={["C++", "Python", "Web Development"]}></Tags> */}
 
       <Row>
+        <Col>
+          <GenreList />
+        </Col>
         <ProjectGrid></ProjectGrid>
       </Row>
     </Container>

@@ -2,9 +2,10 @@ import { Col, Row } from "react-bootstrap";
 import useProjects from "../../hooks/useProjects";
 import ProjectCard from "./ProjectCard";
 import ProjectCardSkeleton from "./ProjectCardSkeleton";
+import ProjectCardContainer from "./ProjectCardContainer";
 
 export const ProjectGrid = () => {
-  const { projects, error, isLoading } = useProjects();
+  const { data, error, isLoading } = useProjects();
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   return (
@@ -14,14 +15,18 @@ export const ProjectGrid = () => {
       {isLoading &&
         skeletons.map((skeleton) => (
           <Col md={6} key={`skeleton-${skeleton}`}>
-            <ProjectCardSkeleton />
+            <ProjectCardContainer>
+              <ProjectCardSkeleton />
+            </ProjectCardContainer>
           </Col>
         ))}
 
-      {projects &&
-        projects.map((project) => (
+      {data &&
+        data.map((project) => (
           <Col md={6} key={project.id || project.name}>
-            <ProjectCard project={project}></ProjectCard>
+            <ProjectCardContainer>
+              <ProjectCard project={project}></ProjectCard>
+            </ProjectCardContainer>
           </Col>
         ))}
     </Row>
