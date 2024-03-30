@@ -1,11 +1,17 @@
 import { Col, Row } from "react-bootstrap";
-import useProjects from "../../hooks/useProjects";
+import useProjects, { Platform } from "../../hooks/useProjects";
 import ProjectCard from "./ProjectCard";
 import ProjectCardSkeleton from "./ProjectCardSkeleton";
 import ProjectCardContainer from "./ProjectCardContainer";
+import { Genre } from "src/hooks/useGenres";
+import { GameQuery } from "src/App";
 
-export const ProjectGrid = () => {
-  const { data, error, isLoading } = useProjects();
+interface Props {
+  gameQuery: GameQuery;
+}
+
+export const ProjectGrid = ({ gameQuery }: Props) => {
+  const { data, error, isLoading } = useProjects(gameQuery);
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   return (

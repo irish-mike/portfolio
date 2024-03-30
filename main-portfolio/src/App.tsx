@@ -4,8 +4,19 @@ import TextContentSection from "./components/layout/TextContentSection";
 import { ProjectGrid } from "./components/layout/ProjectGrid";
 import GenreList from "./components/ui/GenreList";
 import ParticleBackground from "./features/ParticleBackground";
+import { useState } from "react";
+import { Genre } from "./hooks/useGenres";
+import PlatformSelector from "./components/ui/PlatformSelector";
+import { Platform } from "./hooks/useProjects";
+
+export interface GameQuery {
+  genre: Genre | null;
+  platform: Platform | null;
+}
 
 function App() {
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+
   return (
     <Container>
       <ParticleBackground />
@@ -26,9 +37,17 @@ function App() {
 
       <Row>
         <Col>
-          <GenreList />
+          <PlatformSelector
+            selectedPlatform={gameQuery.platform}
+            onSelectPlatform={(platform) =>
+              setGameQuery({ ...gameQuery, platform })
+            }
+          />
+          <GenreList
+            onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+          />
         </Col>
-        <ProjectGrid></ProjectGrid>
+        <ProjectGrid gameQuery={gameQuery}></ProjectGrid>
       </Row>
     </Container>
   );

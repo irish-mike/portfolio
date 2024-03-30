@@ -1,7 +1,11 @@
-import { Spinner } from "react-bootstrap";
-import useGenres from "../../hooks/useGenres";
+import { Button, Spinner } from "react-bootstrap";
+import useGenres, { Genre } from "../../hooks/useGenres";
 
-const GenreList = () => {
+interface Props {
+  onSelectGenre: (genre: Genre) => void;
+}
+
+const GenreList = ({ onSelectGenre }: Props) => {
   const { data, isLoading } = useGenres();
 
   if (isLoading) return <Spinner animation="border" />;
@@ -9,7 +13,15 @@ const GenreList = () => {
   return (
     <ul>
       {data.map((genre) => (
-        <li key={genre.id}>{genre.name}</li>
+        <Button
+          onClick={() => {
+            onSelectGenre(genre);
+          }}
+          className="m-1"
+          key={genre.id}
+        >
+          {genre.name}
+        </Button>
       ))}
     </ul>
   );
