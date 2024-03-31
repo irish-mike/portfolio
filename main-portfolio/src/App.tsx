@@ -9,11 +9,13 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/ui/PlatformSelector";
 import { Platform } from "./hooks/useProjects";
 import SortSelector from "./components/form/SortSelector";
+import SearchInput from "./components/form/SearchInput";
 
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string | null;
+  searchText: string | null;
 }
 
 function App() {
@@ -39,6 +41,11 @@ function App() {
 
       <Row>
         <Col>
+          <SearchInput
+            onSearch={(searchText) =>
+              setGameQuery({ ...gameQuery, searchText })
+            }
+          />
           <Stack direction="horizontal" gap={3}>
             <div className="p-2">
               {" "}
