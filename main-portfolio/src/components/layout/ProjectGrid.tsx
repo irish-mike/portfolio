@@ -1,9 +1,8 @@
 import { Col, Row } from "react-bootstrap";
-import useProjects, { Platform } from "../../hooks/useProjects";
+import useProjects from "../../hooks/useProjects";
 import ProjectCard from "./ProjectCard";
 import ProjectCardSkeleton from "./ProjectCardSkeleton";
 import ProjectCardContainer from "./ProjectCardContainer";
-import { Genre } from "src/hooks/useGenres";
 import { GameQuery } from "src/App";
 
 interface Props {
@@ -14,10 +13,10 @@ export const ProjectGrid = ({ gameQuery }: Props) => {
   const { data, error, isLoading } = useProjects(gameQuery);
   const skeletons = [1, 2, 3, 4, 5, 6];
 
+  if (error) return <p className="text-danger">{error}</p>;
+
   return (
     <Row xs={1} md={2} className="g-4">
-      {error && <p className="text-danger">{error}</p>}
-
       {isLoading &&
         skeletons.map((skeleton) => (
           <Col md={6} key={`skeleton-${skeleton}`}>
