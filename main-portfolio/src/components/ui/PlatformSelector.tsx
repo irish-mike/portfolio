@@ -1,6 +1,5 @@
 import { Dropdown, DropdownButton } from "react-bootstrap";
-import usePlatforms from "../../hooks/usePlatforms";
-import { Platform } from "../../hooks/useProjects";
+import usePlatforms, { Platform } from "../../hooks/usePlatforms";
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;

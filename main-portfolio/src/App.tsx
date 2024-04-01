@@ -7,7 +7,7 @@ import ParticleBackground from "./features/ParticleBackground";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/ui/PlatformSelector";
-import { Platform } from "./hooks/useProjects";
+import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/form/SortSelector";
 import SearchInput from "./components/form/SearchInput";
 
