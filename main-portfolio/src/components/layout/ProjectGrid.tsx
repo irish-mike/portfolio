@@ -13,7 +13,7 @@ export const ProjectGrid = ({ gameQuery }: Props) => {
   const { data, error, isLoading } = useProjects(gameQuery);
   const skeletons = [1, 2, 3, 4, 5, 6];
 
-  if (error) return <p className="text-danger">{error}</p>;
+  if (error) return <p className="text-danger">{error.message}</p>;
 
   return (
     <Row xs={1} md={2} className="g-4">
@@ -27,7 +27,7 @@ export const ProjectGrid = ({ gameQuery }: Props) => {
         ))}
 
       {data &&
-        data.map((project) => (
+        data?.results.map((project) => (
           <Col md={6} key={project.id || project.name}>
             <ProjectCardContainer>
               <ProjectCard project={project}></ProjectCard>

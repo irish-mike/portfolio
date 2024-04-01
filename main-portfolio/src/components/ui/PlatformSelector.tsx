@@ -17,7 +17,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
       id="dropdown-basic-button"
       title={selectedPlatform?.name || "Platforms"}
     >
-      {data.map((platform) => (
+      {data?.results.map((platform) => (
         <Dropdown.Item
           onClick={() => onSelectPlatform(platform)}
           key={platform.id}

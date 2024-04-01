@@ -12,7 +12,7 @@ const GenreList = ({ onSelectGenre }: Props) => {
 
   return (
     <ul>
-      {data.map((genre) => (
+      {data?.results.map((genre) => (
         <Button
           onClick={() => {
             onSelectGenre(genre);
