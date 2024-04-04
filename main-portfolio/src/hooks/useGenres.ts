@@ -3,7 +3,7 @@ import APIClient  from "../services/api-client";
 import genres from '../data/genres'
 
 
-const apiClient = new APIClient('/genres');
+const apiClient = new APIClient<Genre>('/genres');
 
 export interface Genre{
     id: number;

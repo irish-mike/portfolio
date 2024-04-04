@@ -5,15 +5,13 @@ import { ProjectGrid } from "./components/layout/ProjectGrid";
 import GenreList from "./components/ui/GenreList";
 import ParticleBackground from "./features/ParticleBackground";
 import { useState } from "react";
-import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/ui/PlatformSelector";
-import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/form/SortSelector";
 import SearchInput from "./components/form/SearchInput";
 
 export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
+  genreId?: number;
+  platformId?: number;
   sortOrder: string | null;
   searchText: string | null;
 }
@@ -50,9 +48,9 @@ function App() {
             <div className="p-2">
               {" "}
               <PlatformSelector
-                selectedPlatform={gameQuery.platform}
+                selectedPlatformId={gameQuery.platformId}
                 onSelectPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platform })
+                  setGameQuery({ ...gameQuery, platformId: platform.id })
                 }
               />
             </div>
@@ -67,7 +65,9 @@ function App() {
             <div className="p-2">
               {" "}
               <GenreList
-                onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+                onSelectGenre={(genre) =>
+                  setGameQuery({ ...gameQuery, genreId: genre.id })
+                }
               />
             </div>
           </Stack>
