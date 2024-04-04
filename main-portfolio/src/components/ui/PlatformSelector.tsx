@@ -17,7 +17,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
   return (
     <DropdownButton
       id="dropdown-basic-button"
-      title={selectedPlatform?.name || "Platforms"}
+      title={selectedPlatform?.name || "Select Platform"}
     >
       {data?.results.map((platform) => (
         <Dropdown.Item

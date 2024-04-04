@@ -8,6 +8,7 @@ import { useState } from "react";
 import PlatformSelector from "./components/ui/PlatformSelector";
 import SortSelector from "./components/form/SortSelector";
 import SearchInput from "./components/form/SearchInput";
+import Tags from "./components/form/Tags";
 
 export interface GameQuery {
   genreId?: number;
@@ -35,7 +36,7 @@ function App() {
           />
         </Col>
       </Row>
-      {/* <Tags options={["C++", "Python", "Web Development"]}></Tags> */}
+      <Tags options={["C++", "Python", "Web Development"]}></Tags>
 
       <Row>
         <Col>
