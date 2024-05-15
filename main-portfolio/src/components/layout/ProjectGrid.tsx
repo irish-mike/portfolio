@@ -1,19 +1,16 @@
+import React from "react";
 import { Col, Row, Spinner } from "react-bootstrap";
+import InfiniteScroll from "react-infinite-scroll-component";
 import useProjects from "../../hooks/useProjects";
 import ProjectCard from "./ProjectCard";
-import ProjectCardSkeleton from "./ProjectCardSkeleton";
 import ProjectCardContainer from "./ProjectCardContainer";
-import { GameQuery } from "src/App";
-import React from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
+import ProjectCardSkeleton from "./ProjectCardSkeleton";
 
-interface Props {
-  gameQuery: GameQuery;
-}
 
-export const ProjectGrid = ({ gameQuery }: Props) => {
+
+export const ProjectGrid = () => {
   const { data, error, isLoading, fetchNextPage, hasNextPage } =
-    useProjects(gameQuery);
+    useProjects();
   const skeletons = [1, 2, 3, 4, 5, 6];
 
   if (error) return <p className="text-danger">{error.message}</p>;

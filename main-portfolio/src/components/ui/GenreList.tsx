@@ -1,22 +1,18 @@
 import { Button, Spinner } from "react-bootstrap";
 import useGenres, { Genre } from "../../hooks/useGenres";
+import useGameQueryStore from "../../store";
 
-interface Props {
-  onSelectGenre: (genre: Genre) => void;
-}
-
-const GenreList = ({ onSelectGenre }: Props) => {
+const GenreList = () => {
   const { data, isLoading } = useGenres();
+  const setGenreId = useGameQueryStore((state) => state.setGenreId);
 
   if (isLoading) return <Spinner animation="border" />;
 
   return (
     <ul>
-      {data?.results.map((genre) => (
+      {data?.results.map((genre: Genre) => (
         <Button
-          onClick={() => {
-            onSelectGenre(genre);
-          }}
+          onClick={() => setGenreId(genre.id)}
           className="m-1"
           key={genre.id}
         >

@@ -1,28 +1,21 @@
 import { Col, Container, Row, Stack } from "react-bootstrap";
-import NavbarMain from "./features/NavbarMain";
-import TextContentSection from "./components/layout/TextContentSection";
-import { ProjectGrid } from "./components/layout/ProjectGrid";
-import GenreList from "./components/ui/GenreList";
-import ParticleBackground from "./features/ParticleBackground";
-import { useState } from "react";
-import PlatformSelector from "./components/ui/PlatformSelector";
-import SortSelector from "./components/form/SortSelector";
 import SearchInput from "./components/form/SearchInput";
+import SortSelector from "./components/form/SortSelector";
 import Tags from "./components/form/Tags";
+import { ProjectGrid } from "./components/layout/ProjectGrid";
+import TextContentSection from "./components/layout/TextContentSection";
+import GenreList from "./components/ui/GenreList";
+import PlatformSelector from "./components/ui/PlatformSelector";
+import NavbarMain from "./features/NavbarMain";
+import ParticleBackground from "./features/ParticleBackground";
 
-export interface GameQuery {
-  genreId?: number;
-  platformId?: number;
-  sortOrder: string | null;
-  searchText: string | null;
-}
+
 
 function App() {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   return (
     <Container>
-      <ParticleBackground />
+      {/* <ParticleBackground /> */}
       <Row>
         <NavbarMain></NavbarMain>
       </Row>
@@ -40,40 +33,20 @@ function App() {
 
       <Row>
         <Col>
-          <SearchInput
-            onSearch={(searchText) =>
-              setGameQuery({ ...gameQuery, searchText })
-            }
-          />
+          <SearchInput />
           <Stack direction="horizontal" gap={3}>
             <div className="p-2">
-              {" "}
-              <PlatformSelector
-                selectedPlatformId={gameQuery.platformId}
-                onSelectPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platformId: platform.id })
-                }
-              />
+              <PlatformSelector />
             </div>
             <div className="p-2">
-              <SortSelector
-                onSelectSort={(sortOrder) =>
-                  setGameQuery({ ...gameQuery, sortOrder })
-                }
-                sortOrder={gameQuery.sortOrder}
-              ></SortSelector>
+              <SortSelector />
             </div>
             <div className="p-2">
-              {" "}
-              <GenreList
-                onSelectGenre={(genre) =>
-                  setGameQuery({ ...gameQuery, genreId: genre.id })
-                }
-              />
+              <GenreList />
             </div>
           </Stack>
         </Col>
-        <ProjectGrid gameQuery={gameQuery}></ProjectGrid>
+        <ProjectGrid />
       </Row>
     </Container>
   );

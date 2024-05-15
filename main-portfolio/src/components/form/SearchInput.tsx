@@ -1,19 +1,18 @@
 import { useRef } from "react";
 import { Form, InputGroup } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
+import useGameQueryStore from "../../store";
 
-interface Props {
-  onSearch: (searchText: string) => void;
-}
 
-const SearchInput = ({ onSearch }: Props) => {
+const SearchInput = () => {
   const ref = useRef<HTMLInputElement>(null);
+  const setSearchText = useGameQueryStore(selector => selector.setSearchText);
 
   return (
     <Form
       onSubmit={(event) => {
         event.preventDefault();
-        if (ref.current) onSearch(ref.current.value);
+        if (ref.current) setSearchText(ref.current.value);
       }}
     >
       <InputGroup className="mb-3">

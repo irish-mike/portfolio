@@ -1,13 +1,15 @@
 import { Dropdown, DropdownButton } from "react-bootstrap";
-import usePlatforms, { Platform } from "../../hooks/usePlatforms";
+import usePlatforms from "../../hooks/usePlatforms";
+import useGameQueryStore from "../../store";
 
-interface Props {
-  onSelectPlatform: (platform: Platform) => void;
-  selectedPlatformId?: number;
-}
 
-const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
+const PlatformSelector = () => {
   const { data, error } = usePlatforms();
+
+  const setPlatformId = useGameQueryStore(selector => selector.setPlatformId);
+
+  const selectedPlatformId = useGameQueryStore(selector => selector.gameQuery.platformId);
+
   const selectedPlatform = data?.results.find(
     (p) => p.id === selectedPlatformId
   );
@@ -21,7 +23,7 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
     >
       {data?.results.map((platform) => (
         <Dropdown.Item
-          onClick={() => onSelectPlatform(platform)}
+          onClick={() => setPlatformId(platform.id)}
           key={platform.id}
         >
           {platform.name}

@@ -1,11 +1,7 @@
 import { Dropdown, DropdownButton } from "react-bootstrap";
+import useGameQueryStore from "../../store";
 
-interface Props {
-  onSelectSort: (order: string) => void;
-  sortOrder: string | null;
-}
-
-const SortSelector = ({ onSelectSort, sortOrder }: Props) => {
+const SortSelector = () => {
   const sortOrders = [
     { value: "", label: "Relevance" },
     { value: "-added", label: "Date Added" },
@@ -15,7 +11,10 @@ const SortSelector = ({ onSelectSort, sortOrder }: Props) => {
     { value: "-rating", label: "Average Rating" },
   ];
 
-  const currentSort = sortOrders.find((order) => order.value == sortOrder);
+  const selectedSortOrder = useGameQueryStore(selector => selector.gameQuery.sortOrder);
+  const setSortOrder = useGameQueryStore(selector => selector.setSortOrder);
+
+  const currentSort = sortOrders.find((order) => order.value == selectedSortOrder);
   const title = "Order by " + (currentSort?.label || "Relevence");
 
   return (
@@ -23,7 +22,7 @@ const SortSelector = ({ onSelectSort, sortOrder }: Props) => {
       {sortOrders.map((sort) => (
         <Dropdown.Item
           key={sort.value}
-          onClick={() => onSelectSort(sort.value)}
+          onClick={() => setSortOrder(sort.value)}
         >
           {sort.label}
         </Dropdown.Item>
