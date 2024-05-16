@@ -1,46 +1,52 @@
 :root {
     --primary-color: #000;
-   /* Black */
+    /* Black */
     --secondary-color: #fff;
-   /* White */
+    /* White */
     --background-color: #fff;
-   /* White */
+    /* White */
     --text-color: #000;
-   /* Black */
+    /* Black */
 
-   --subtle-shadow: rgba(0, 0, 0, 0.07);
-   --medium-shadow: rgba(0, 0, 0, 0.1);
-   --strong-shadow: rgba(0, 0, 0, 0.2);
+    --subtle-shadow: rgba(0, 0, 0, 0.07);
+    --medium-shadow: rgba(0, 0, 0, 0.1);
+    --strong-shadow: rgba(0, 0, 0, 0.2);
 }
+
 [data-bs-theme='dark'] {
-   /* Dark theme colors */
+    /* Dark theme colors */
     --primary-color: #fff;
-   /* White */
+    /* White */
     --secondary-color: #000;
-   /* Black */
+    /* Black */
     --background-color: #333;
-   /* Dark grey */
+    /* Dark grey */
     --text-color: #fff;
-   /* White */
+    /* White */
 
-   --subtle-shadow: rgba(255, 255, 255, 0.08);
-   --medium-shadow: rgba(255, 255, 255, 0.2);
-   --strong-shadow: rgba(255, 255, 255, 0.3);
+    --subtle-shadow: rgba(255, 255, 255, 0.08);
+    --medium-shadow: rgba(255, 255, 255, 0.2);
+    --strong-shadow: rgba(255, 255, 255, 0.3);
 }
+
 body {
     padding: 24px;
 }
+
 .is-invalid {
     border: 1px solid #dc3545;
-   /* Red border for invalid fields */
+    /* Red border for invalid fields */
 }
+
 .arrow-down::after {
     color: var(--primary-color);
 }
+
 .hr-line {
     border-bottom: 1px solid var(--primary-color);
-   /* Black border for light theme */
+    /* Black border for light theme */
 }
+
 /* Horizontal rule and icon styles */
 .hr-theme-slash-2 {
     display: flex;
@@ -48,31 +54,43 @@ body {
     justify-content: center;
     margin: 15px 0;
 }
+
 .hr-line {
     flex-grow: 1;
 }
+
 .hr-icon {
     padding: 0 15px;
 }
+
 .arrow-down::after {
     content: '⌄';
-   /* Simple arrow symbol */
+    /* Simple arrow symbol */
     font-size: 2rem;
 }
+
 /* Scroll indicator animation */
 .scroll-indicator {
     animation: bounce 2s infinite;
 }
+
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
-   }
+    }
+
     40% {
         transform: translateY(-15px);
-   }
+    }
+
     60% {
         transform: translateY(-5px);
-   }
+    }
 }
 
 /* Helpers for development */
@@ -98,23 +116,30 @@ body {
 }
 
 .bento-box-item {
-    display: flex; /* No change, ensures content inside is flexibly aligned */
-    align-items: center; /* Aligns items vertically center */
-    justify-content: center; /* Centers content horizontally */
+    display: flex;
+    /* No change, ensures content inside is flexibly aligned */
+    align-items: center;
+    /* Aligns items vertically center */
+    justify-content: center;
+    /* Centers content horizontally */
     border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px; /* Adjust for desired roundness */
-    box-shadow: 0 4px 6px var(--medium-shadow), 0 1px 3px var(--subtle-shadow); /* Subtle shadow for depth */
-    padding: 20px; /* Adjust based on your content needs */
-    width: 100%; /* Ensures item fills the full width */
+    border-radius: 10px;
+    /* Adjust for desired roundness */
+    box-shadow: 0 4px 6px var(--medium-shadow), 0 1px 3px var(--subtle-shadow);
+    /* Subtle shadow for depth */
+    padding: 20px;
+    /* Adjust based on your content needs */
+    width: 100%;
+    /* Ensures item fills the full width */
 }
 
-.bento-box-item.offset-item{
+.bento-box-item.offset-item {
     opacity: 0;
 }
 
 .bento-box-item:hover {
     box-shadow: 0 10px 15px var(--strong-shadow), 0 4px 6px var(--medium-shadow);
-    transform: translateY(-2px); 
+    transform: translateY(-2px);
 }
 
 /* Responsive behavior for smaller screens */
@@ -123,9 +148,16 @@ body {
         display: flex;
         flex-direction: column;
     }
+
     .bento-box-item.offset-item {
-       display: none;
+        display: none;
     }
 }
 
-  
+.project-card-container {
+    transition: transform 0.3s ease;
+}
+
+.project-card-container:hover {
+    transform: scale(1.03);
+}

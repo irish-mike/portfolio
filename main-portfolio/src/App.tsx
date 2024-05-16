@@ -7,7 +7,7 @@ import TextContentSection from "./components/layout/TextContentSection";
 import GenreList from "./components/ui/GenreList";
 import PlatformSelector from "./components/ui/PlatformSelector";
 import NavbarMain from "./features/NavbarMain";
-import ParticleBackground from "./features/ParticleBackground";
+// import ParticleBackground from "./features/ParticleBackground";
 
 
 

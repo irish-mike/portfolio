@@ -9,13 +9,6 @@ import "./styles/custom.css";
 
 const queryClient = new QueryClient();
 
-
-Sentry.init({
-  dsn: "YOUR_SENTRY_DSN", // Replace with your actual DSN
-  integrations: [new BrowserTracing()],
-  tracesSampleRate: 1.0,
-});
-
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>

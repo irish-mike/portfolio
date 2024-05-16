@@ -1,7 +1,8 @@
-import { Project } from "../../hooks/useProjects";
+import { Project } from 'src/entities/Project';
 import { Card, Stack } from "react-bootstrap";
 import TagIconList from "./TagIconList";
 import CriticScore from "../ui/CriticScore";
+import { Link } from "react-router-dom";
 
 interface Props {
   project: Project;
@@ -12,7 +13,7 @@ const ProjectCard = ({ project }: Props) => {
     <Card>
       <Card.Img variant="top" src={project.background_image} />
       <Card.Body>
-        <Card.Title>{project.name}</Card.Title>
+        <Card.Title><Link to={'/project/' + project.slug}> {project.name} </Link></Card.Title>
 
         <Stack direction="horizontal" gap={2}>
           <TagIconList

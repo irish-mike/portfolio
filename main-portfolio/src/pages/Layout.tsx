@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom"
-
+import { Outlet } from "react-router-dom";
+import NavbarMain from "../features/NavbarMain";
+import { Container } from "react-bootstrap";
 
 const Layout = () => {
     return (
-        <>
-            <Link to="/"> Home </Link>
-            <Link to="/projects"> Projects </Link>
-        </>
+        <Container>
+            <NavbarMain></NavbarMain>
+            <Outlet />
+        </Container>
     )
 }
 

@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom"
-
+import TextContentSection from "../components/layout/TextContentSection"
 
 const HomePage = () => {
     return (
         <>
-            <h1>This is the Homepage</h1>
-            <Link to="/projects"> Projects </Link>
+            <TextContentSection
+                title={"Michael Grinnell"}
+                description={
+                    "Software Engineer with emphasis on games and audio programming, at the intersection of creativity and technical skills."
+                }
+            />
         </>
     )
 }

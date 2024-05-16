@@ -5,7 +5,7 @@ interface Props {
 }
 
 const ProjectCardContainer = ({ children }: Props) => {
-  return <div>{children}</div>;
+  return <div className="project-card-container">{children}</div>;
 };
 
 export default ProjectCardContainer;
