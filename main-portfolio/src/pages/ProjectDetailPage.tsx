@@ -2,6 +2,8 @@ import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import DOMPurify from 'dompurify';
 import useProject from "../hooks/useProject";
+import DefinitionItem from "../components/layout/DefinitionItem";
+import ProjectVideo from "../components/layout/ProjectVideo";
 
 const ProjectDetailPage = () => {
     const { slug } = useParams();
@@ -18,6 +20,12 @@ const ProjectDetailPage = () => {
         <>
             <h1>{project.name}</h1>
             <p dangerouslySetInnerHTML={{ __html: sanitizedDescription }} />
+            <DefinitionItem term="Platforms">
+                {project.parent_platforms?.map(({ platform }) => <p key={platform.id}>
+                    {platform.name}
+                </p>)}
+            </DefinitionItem>
+            <ProjectVideo projectId={project.id} />
         </>
     );
 }

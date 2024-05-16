@@ -1,6 +1,6 @@
 import { Button, Spinner } from "react-bootstrap";
 import useGenres from "../../hooks/useGenres";
-import { Genre } from "src/entities/Genre";
+import Genre from "src/entities/Genre";
 import useGameQueryStore from "../../store";
 
 const GenreList = () => {

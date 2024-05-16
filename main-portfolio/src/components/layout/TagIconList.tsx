@@ -10,7 +10,7 @@ import {
 import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
-import { Platform } from "src/entities/Platform";
+import Platform from "src/entities/Platform";
 import { IconType } from "react-icons";
 import { Badge, Stack } from "react-bootstrap";
 

@@ -1,4 +1,4 @@
-import { Project } from 'src/entities/Project';
+import Project from 'src/entities/Project';
 import { Card, Stack } from "react-bootstrap";
 import TagIconList from "./TagIconList";
 import CriticScore from "../ui/CriticScore";

@@ -10,19 +10,23 @@ import {
 import logo from "@images/logo.png"; // Using the alias defined in tsconfig.json
 import { SlBubbles } from "react-icons/sl";
 import ColorModeSwitch from "./ColorModeSwitch";
+import { Link } from "react-router-dom";
 
 const NavbarMain = () => {
   return (
     <Navbar expand="lg">
       <Container>
         <Navbar.Brand href="#home">
-          <img
-            src={logo}
-            width="60"
-            height="60"
-            className="d-inline-block align-top"
-            alt="React Bootstrap logo"
-          />
+          <Link to='/'>
+            <img
+              src={logo}
+              width="60"
+              height="60"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </Link>
+
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

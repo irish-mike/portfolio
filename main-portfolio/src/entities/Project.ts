@@ -1,7 +1,7 @@
-import { Platform } from "src/entities/Platform";
+import Platform from "../entities/Platform";
 
 
-export interface Project {
+export default interface Project {
     id: number;
     name: string;
     slug: string;
