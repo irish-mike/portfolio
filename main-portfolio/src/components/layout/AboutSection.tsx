@@ -2,6 +2,7 @@ import { Col, Row, Image, Button } from "react-bootstrap";
 import developer_image from "@images/Developer.jpg"; // Using the alias defined in tsconfig.json
 import SocialIconGroup from "../ui/SocialIconGroup";
 import { ReactNode } from "react";
+import ContactFormModal from "../form/ContactFromModel";
 
 interface Props {
     title: string;
@@ -25,7 +26,7 @@ const AboutSection = ({ title, children }: Props) => {
                         {children}
                     </div>
                     <div className="d-flex justify-content-center">
-                        <Button variant="success" className="w-100 p-2">Get in touch</Button>
+                        <ContactFormModal trigger={<Button variant="success" className="w-100 p-2">Get in touch</Button>} />
                     </div>
                 </Col>
             </Row>

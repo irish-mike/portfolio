@@ -11,7 +11,12 @@
     --subtle-shadow: rgba(0, 0, 0, 0.07);
     --medium-shadow: rgba(0, 0, 0, 0.1);
     --strong-shadow: rgba(0, 0, 0, 0.2);
+
+    --border-color: #000;
+    --icon-padding-right: 2.5rem;
+    --icon-right-offset: 0.5rem;
 }
+
 
 [data-bs-theme='dark'] {
     /* Dark theme colors */
@@ -160,4 +165,60 @@ body {
 
 .project-card-container:hover {
     transform: scale(1.03);
+}
+
+/* Custom Bottom Border */
+.custom-bottom-border {
+    position: absolute;
+    bottom: -2px;
+    width: calc(100% - 12px);
+    /* Reduce width by 12px to account for 6px on each side */
+    height: 2px;
+    background-color: var(--border-color);
+    left: 6px;
+}
+
+/* Input with Icon */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    padding-right: var(--icon-padding-right);
+    box-sizing: border-box;
+}
+
+.input-with-icon .icon {
+    position: absolute;
+    top: 50%;
+    right: var(--icon-right-offset);
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--border-color);
+}
+
+/* Box Sizing for Inputs and Textareas */
+input,
+textarea {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+/* Focus Styles */
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--border-color) !important;
+}
+
+input:focus~.custom-bottom-border,
+textarea:focus~.custom-bottom-border {
+    background-color: var(--border-color);
+    height: 2px;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent;
 }
