@@ -12,10 +12,10 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             { index: true, element: <HomePage /> },
-            { path: 'projects', element: <ProjectsPage /> },
+            { path: 'projects/:category?', element: <ProjectsPage /> },
             { path: 'project/:slug', element: <ProjectDetailPage /> }
         ]
     }
-])
+]);
 
 export default router;

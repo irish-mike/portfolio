@@ -1,23 +1,19 @@
+import React from 'react';
 import { Navbar, Nav, Container, Form, Row, Col } from "react-bootstrap";
-import { BsHouse } from "react-icons/bs";
-import { CgPacman } from "react-icons/cg";
-import {
-  IoBuildOutline,
-  IoGameControllerOutline,
-  IoMailOutline,
-} from "react-icons/io5";
-
-import logo from "@images/logo.png"; // Using the alias defined in tsconfig.json
-import { SlBubbles } from "react-icons/sl";
 import ColorModeSwitch from "./ColorModeSwitch";
 import { Link } from "react-router-dom";
 
-const NavbarMain = () => {
+interface NavbarMainProps {
+  logo: string;
+  children: React.ReactNode;
+}
+
+const NavbarMain: React.FC<NavbarMainProps> = ({ logo, children }) => {
   return (
     <Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="#home">
-          <Link to='/'>
+        <Navbar.Brand>
+          <Link to="/">
             <img
               src={logo}
               width="60"
@@ -26,37 +22,12 @@ const NavbarMain = () => {
               alt="React Bootstrap logo"
             />
           </Link>
-
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
-            <Nav.Link href="#home">
-              Home
-              <BsHouse className="m-1" />{" "}
-            </Nav.Link>
-            <Nav.Link href="#link">
-              Portfolio
-              <IoGameControllerOutline className="m-1" />
-            </Nav.Link>
-            <Nav.Link href="#link">
-              {" "}
-              Blog
-              <SlBubbles className="m-1" />
-            </Nav.Link>
-            <Nav.Link href="#link">
-              Services
-              <IoBuildOutline className="m-1" />
-            </Nav.Link>
-            <Nav.Link href="#link">
-              About
-              <CgPacman className="m-1" />
-            </Nav.Link>
-            <Nav.Link href="#link">
-              Contact
-              <IoMailOutline className="m-1" />
-            </Nav.Link>
+            {children}
           </Nav>
 
           <Form>

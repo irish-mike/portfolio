@@ -3,7 +3,7 @@ import SearchInput from "./components/form/SearchInput";
 import SortSelector from "./components/form/SortSelector";
 import Tags from "./components/form/Tags";
 import { ProjectGrid } from "./components/layout/ProjectGrid";
-import TextContentSection from "./components/layout/TextContentSection";
+import TitleSection from "./components/layout/TextContentSection";
 import GenreList from "./components/ui/GenreList";
 import PlatformSelector from "./components/ui/PlatformSelector";
 import NavbarMain from "./features/NavbarMain";
@@ -21,7 +21,7 @@ function App() {
       </Row>
       <Row>
         <Col>
-          <TextContentSection
+          <TitleSection
             title={"Michael Grinnell"}
             description={
               "Software Engineer with emphasis on games and audio programming, at the intersection of creativity and technical skills."
