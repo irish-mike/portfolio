@@ -253,24 +253,7 @@ textarea:focus::placeholder {
     /* Slight increase in size */
 }
 
-.node {
-    border: 2px solid #343a40;
-    border-radius: 8px;
-}
 
-.group-node {
-    border: 2px solid #d3d3d3;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: #f0f0f0;
-}
-
-.skill {
-    margin: 5px 0;
-    padding: 5px;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-}
 
 #central-node {
     margin-bottom: 70px;
@@ -294,21 +277,18 @@ textarea:focus::placeholder {
     /* Ensure nodes are in front of the canvas */
 }
 
-.node {
-    border: 2px solid #343a40;
-    border-radius: 8px;
-}
 
 .group-node {
-    border: 2px solid #d3d3d3;
+    /* border: 2px solid #d3d3d3;
     border-radius: 8px;
-    padding: 10px;
-    background-color: #f0f0f0;
+    padding: 10px; */
+    background-color: #ffffff;
 }
 
 .skill {
     margin: 5px 0;
     padding: 5px;
-    background-color: #e0e0e0;
+    background-color: #e0e0e03d;
     border-radius: 5px;
+    box-shadow: 2px 3px 3px 3px #cccccc;
 }

@@ -1,15 +1,18 @@
 import React from 'react';
 import { Stack } from 'react-bootstrap';
+import ReactWordcloud from 'react-wordcloud';
 
 interface SkillsNodeProps {
     id: string;
     title: string;
     skills: string[];
+    connection: 'x' | 'y';
 }
 
-const SkillsNode: React.FC<SkillsNodeProps> = ({ id, title, skills }) => {
+const SkillsNode: React.FC<SkillsNodeProps> = ({ id, title, skills, connection }) => {
     return (
-        <Stack className="group-node p-3" gap={0} id={id}>
+
+        <Stack className="group-node p-3" gap={0} id={id} data-connection={connection}>
             <div className="node p-2">
                 <h4>{title}</h4>
             </div>
