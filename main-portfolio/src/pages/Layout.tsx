@@ -8,6 +8,7 @@ import { BsHouse } from "react-icons/bs";
 import { CgPacman } from "react-icons/cg";
 import { IoGameControllerOutline, IoMailOutline } from "react-icons/io5";
 import { SlBubbles } from "react-icons/sl";
+import ContactFormModal from "../components/form/ContactFromModel";
 
 
 
@@ -27,9 +28,11 @@ const Layout = () => {
                 <Link to="/about" className="nav-link">
                     About <CgPacman className="m-1" />
                 </Link>
-                <Link to="/contact" className="nav-link">
+
+                <ContactFormModal trigger={<a href='#' className="nav-link">
                     Contact <IoMailOutline className="m-1" />
-                </Link>
+                </a>} />
+
             </NavbarMain>
             <Outlet />
             <Footer copyright="© Michael Grinnell 2024">

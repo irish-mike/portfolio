@@ -25,9 +25,6 @@ const AboutSection = ({ title, children }: Props) => {
                     <div className="mb-5">
                         {children}
                     </div>
-                    <div className="d-flex justify-content-center">
-                        <ContactFormModal trigger={<Button variant="success" className="w-100 p-2">Get in touch</Button>} />
-                    </div>
                 </Col>
             </Row>
         </section>

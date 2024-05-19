@@ -1,3 +1,4 @@
+import SkillsSection from "../components/ui/SkillsSection"
 import ContactFormDialog from "../components/form/ContactFromModel"
 import AboutSection from "../components/layout/AboutSection"
 import TextContentSection from "../components/layout/TextContentSection"
@@ -20,6 +21,8 @@ const HomePage = () => {
                     'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years,
                     sometimes by accident, sometimes on purpose (injected humour and the like).</p>
             </AboutSection>
+
+            <SkillsSection />
 
         </>
     )

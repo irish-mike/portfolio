@@ -1,5 +1,6 @@
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import useThemeSwitcher from "../../hooks/useThemeSwitcher"; // Adjust the import path as necessary
+import ContactFormModal from "../form/ContactFromModel";
 
 interface Props {
   title: string;
@@ -13,6 +14,9 @@ const TextContentSection = ({ title, description }: Props) => {
     <section className={`text-center ${theme}`}>
       <Container>
         <h1 className="display-3 mb-4">{title}</h1>
+        <p className="lead mx-auto mt-4" style={{ maxWidth: "600px" }}>
+          {description}
+        </p>
         <div className="hr-theme-slash-2">
           <div className="hr-line"></div>
           <div className="hr-icon">
@@ -22,9 +26,7 @@ const TextContentSection = ({ title, description }: Props) => {
           </div>
           <div className="hr-line"></div>
         </div>
-        <p className="lead mx-auto mt-4" style={{ maxWidth: "600px" }}>
-          {description}
-        </p>
+        <ContactFormModal trigger={<Button variant="outline-dark" className="w-25 p-2 m-4 call-to-action-button">Get in touch</Button>} />
       </Container>
     </section>
   );

@@ -222,3 +222,93 @@ input:focus::placeholder,
 textarea:focus::placeholder {
     color: transparent;
 }
+
+.call-to-action-button {
+    border-radius: 2px;
+    box-shadow: 0px 4px 2px 1px #00000057;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Arial', sans-serif;
+    /* Adjust to match your site's font */
+    background-color: transparent;
+    border: 1px solid #000;
+    /* Adjust the color to match your design */
+    color: #000;
+    /* Text color */
+    font-size: 16px;
+    /* Adjust font size as needed */
+    transform: scale(1);
+    /* Initial scale */
+}
+
+.call-to-action-button:hover {
+    background-color: #000;
+    /* Background color on hover */
+    color: #fff;
+    /* Text color on hover */
+    box-shadow: 0px 6px 4px 2px #00000070;
+    /* Slight lift effect */
+    border: 1px solid #000;
+    /* Border color on hover */
+    transform: scale(1.05);
+    /* Slight increase in size */
+}
+
+.node {
+    border: 2px solid #343a40;
+    border-radius: 8px;
+}
+
+.group-node {
+    border: 2px solid #d3d3d3;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.skill {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+#central-node {
+    margin-bottom: 70px;
+    background-color: #d3d3d3;
+}
+
+#myCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Ensure canvas is behind the nodes */
+}
+
+.node,
+.group-node {
+    position: relative;
+    z-index: 2;
+    /* Ensure nodes are in front of the canvas */
+}
+
+.node {
+    border: 2px solid #343a40;
+    border-radius: 8px;
+}
+
+.group-node {
+    border: 2px solid #d3d3d3;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.skill {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
