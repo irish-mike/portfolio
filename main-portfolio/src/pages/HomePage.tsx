@@ -1,7 +1,7 @@
 import AboutSection from "src/components/Organisms/Sections/AboutSection"
 import SkillsSection from "src/components/Organisms/Sections/SkillsSection"
 import TextContentSection from "src/components/Organisms/Sections/TextContentSection"
-
+import FeaturedProjectsSection from "src/components/Organisms/Sections/FeaturedProjectsSection"
 
 const HomePage = () => {
     return (
@@ -22,6 +22,8 @@ const HomePage = () => {
             </AboutSection>
 
             <SkillsSection />
+
+            <FeaturedProjectsSection />
 
         </>
     )
