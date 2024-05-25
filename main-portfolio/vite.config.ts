@@ -9,6 +9,15 @@ export default defineConfig({
     alias: {
       // Adjust the path to point to your actual assets directory
       '@images': path.resolve(__dirname, '../assets/images'),
+      'src': path.resolve(__dirname, './src'), // Add this line
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Add global SCSS imports here if needed
+        // additionalData: `@import "src/styles/variables.scss";`
+      },
     },
   },
 });

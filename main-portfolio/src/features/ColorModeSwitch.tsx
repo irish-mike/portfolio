@@ -1,5 +1,5 @@
 import { Form } from "react-bootstrap";
-import useThemeSwitcher from "../hooks/useThemeSwitcher";
+import useThemeSwitcher from "src/hooks/useThemeSwitcher";
 
 interface Props {
   label: string;

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import Video from "../entities/Video";
-import APIClient from "../services/api-client";
+import Video from "src/entities/Video";
+import APIClient from "src/services/api-client";
 
 
 

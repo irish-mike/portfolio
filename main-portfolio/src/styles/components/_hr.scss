@@ -1,0 +1,26 @@
+.hr-line {
+    border-bottom: 1px solid var(--primary-color);
+    /* Black border for light theme */
+}
+
+.hr-theme-slash-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.hr-line {
+    flex-grow: 1;
+}
+
+.hr-icon {
+    padding: 0 15px;
+}
+
+.arrow-down::after {
+    content: '⌄';
+    /* Simple arrow symbol */
+    font-size: 2rem;
+    color: var(--primary-color);
+}

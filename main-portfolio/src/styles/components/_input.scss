@@ -1,0 +1,43 @@
+// _input.scss
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    padding-right: var(--icon-padding-right);
+    box-sizing: border-box;
+}
+
+.input-with-icon .icon {
+    position: absolute;
+    top: 50%;
+    right: var(--icon-right-offset);
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--border-color);
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--border-color) !important;
+}
+
+input:focus~.custom-bottom-border,
+textarea:focus~.custom-bottom-border {
+    background-color: var(--border-color);
+    height: 2px;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: transparent;
+}

@@ -1,14 +1,14 @@
 import logo from "@images/logo.png";
 import { Container } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
-import Footer from "../components/footer";
-import NavbarMain from "../features/NavbarMain";
+import Footer from "src/components/Organisms/Layouts/footer";
+import NavbarMain from "src/components/Organisms/Layouts/NavbarMain";
 
 import { BsHouse } from "react-icons/bs";
 import { CgPacman } from "react-icons/cg";
 import { IoGameControllerOutline, IoMailOutline } from "react-icons/io5";
 import { SlBubbles } from "react-icons/sl";
-import ContactFormModal from "../components/form/ContactFromModel";
+import ContactFormModal from "src/components/Molecules/Forms/ContactFromModel";
 
 
 

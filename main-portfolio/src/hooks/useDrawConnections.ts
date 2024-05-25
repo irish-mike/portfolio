@@ -7,7 +7,7 @@ interface Point {
 
 const useDrawConnections = (containerRef: RefObject<HTMLDivElement>, canvasRef: RefObject<HTMLCanvasElement>) => {
     const drawSoftenedSegmentedLine = (ctx: CanvasRenderingContext2D, pointA: Point, pointB: Point, startDirection: string) => {
-        const midX = (pointA.x + pointB.x) / 2;
+
         const midY = (pointA.y + pointB.y) / 2;
         const radius = 50;
 

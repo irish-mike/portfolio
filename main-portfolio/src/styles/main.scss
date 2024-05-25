@@ -1,0 +1,26 @@
+// Import variables first
+@import 'variables';
+
+// Import base styles
+@import 'base/reset';
+// @import 'base/typography';
+@import 'base/base';
+
+// Import layout styles
+// @import 'layout/bento-box';
+@import 'layouts/skills-section';
+
+// Import component styles
+@import 'components/buttons';
+@import 'components/hr';
+@import 'components/input';
+@import 'components/scroll-indicator';
+
+// Import page-specific styles
+// @import 'pages/home';
+// @import 'pages/about';
+// @import 'pages/contact';
+
+// Import themes
+// @import 'themes/dark-theme';
+// @import 'themes/light-theme';

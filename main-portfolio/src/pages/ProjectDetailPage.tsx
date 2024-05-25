@@ -1,9 +1,9 @@
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import DOMPurify from 'dompurify';
-import useProject from "../hooks/useProject";
-import DefinitionItem from "../components/layout/DefinitionItem";
-import ProjectVideo from "../components/layout/ProjectVideo";
+import useProject from "src/hooks/useProject";
+import DefinitionItem from "src/components/Atoms/DefinitionItem";
+import ProjectVideo from "src/components/Organisms/Media/ProjectVideo";
 
 const ProjectDetailPage = () => {
     const { slug } = useParams();

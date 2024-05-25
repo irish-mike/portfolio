@@ -1,4 +1,4 @@
-import Platform from "../entities/Platform";
+import Platform from "src/entities/Platform";
 
 
 export default interface Project {

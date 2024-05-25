@@ -1,7 +1,6 @@
-import SkillsSection from "../components/ui/SkillsSection"
-import ContactFormDialog from "../components/form/ContactFromModel"
-import AboutSection from "../components/layout/AboutSection"
-import TextContentSection from "../components/layout/TextContentSection"
+import AboutSection from "src/components/Organisms/Sections/AboutSection"
+import SkillsSection from "src/components/Organisms/Sections/SkillsSection"
+import TextContentSection from "src/components/Organisms/Sections/TextContentSection"
 
 
 const HomePage = () => {
