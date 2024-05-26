@@ -3,13 +3,12 @@ import { Container } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
 import Footer from "src/components/Organisms/Layouts/footer";
 import NavbarMain from "src/components/Organisms/Layouts/NavbarMain";
-
 import { BsHouse } from "react-icons/bs";
 import { CgPacman } from "react-icons/cg";
 import { IoGameControllerOutline, IoMailOutline } from "react-icons/io5";
 import { SlBubbles } from "react-icons/sl";
 import ContactFormModal from "src/components/Molecules/Forms/ContactFromModel";
-
+import TransitionWrapper from "src/components/Organisms/Layouts/TransitionWrapper";
 
 
 const Layout = () => {
@@ -32,9 +31,8 @@ const Layout = () => {
                 <ContactFormModal trigger={<a href='#' className="nav-link">
                     Contact <IoMailOutline className="m-1" />
                 </a>} />
-
             </NavbarMain>
-            <Outlet />
+            <TransitionWrapper />
             <Footer copyright="© Michael Grinnell 2024">
                 <a href="#" className="text-dark">Contact</a>
                 <a href="#" className="text-dark">Privacy</a>
@@ -44,4 +42,4 @@ const Layout = () => {
     )
 }
 
-export default Layout
+export default Layout;

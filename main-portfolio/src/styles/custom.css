@@ -1,254 +1,55 @@
-:root {
-    --primary-color: #000;
-    /* Black */
-    --secondary-color: #fff;
-    /* White */
-    --background-color: #fff;
-    /* White */
-    --text-color: #000;
-    /* Black */
-
-    --subtle-shadow: rgba(0, 0, 0, 0.07);
-    --medium-shadow: rgba(0, 0, 0, 0.1);
-    --strong-shadow: rgba(0, 0, 0, 0.2);
-
-    --border-color: #000;
-    --icon-padding-right: 2.5rem;
-    --icon-right-offset: 0.5rem;
+.thumbnail-card-link {
+    text-decoration: none
 }
 
-
-[data-bs-theme='dark'] {
-    /* Dark theme colors */
-    --primary-color: #fff;
-    /* White */
-    --secondary-color: #000;
-    /* Black */
-    --background-color: #333;
-    /* Dark grey */
-    --text-color: #fff;
-    /* White */
-
-    --subtle-shadow: rgba(255, 255, 255, 0.08);
-    --medium-shadow: rgba(255, 255, 255, 0.2);
-    --strong-shadow: rgba(255, 255, 255, 0.3);
+.thumbnail-card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
-body {
-    padding: 24px;
+.thumbnail-card-footer {
+    background-color: transparent !important;
 }
 
-.is-invalid {
-    border: 1px solid #dc3545;
-    /* Red border for invalid fields */
+/* ThumbnailCardGrid.css */
+.thumbnail-card-grid {
+    overflow: hidden;
+    /* Hide overflowing cards */
 }
 
-.arrow-down::after {
-    color: var(--primary-color);
-}
-
-.hr-line {
-    border-bottom: 1px solid var(--primary-color);
-    /* Black border for light theme */
-}
-
-/* Horizontal rule and icon styles */
-.hr-theme-slash-2 {
+.flex-nowrap {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 15px 0;
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
 }
 
-.hr-line {
-    flex-grow: 1;
+.card-col {
+    flex: 0 0 auto;
+    /* Prevent shrinking and growing */
+    width: 200px;
+    /* Set a consistent width for the columns */
+    margin: 0 10px;
+    /* Add margin between cards */
+    border-right: 1px solid #bababa;
 }
 
-.hr-icon {
-    padding: 0 15px;
-}
-
-.arrow-down::after {
-    content: '⌄';
-    /* Simple arrow symbol */
-    font-size: 2rem;
-}
-
-/* Scroll indicator animation */
-.scroll-indicator {
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
-
-    40% {
-        transform: translateY(-15px);
-    }
-
-    60% {
-        transform: translateY(-5px);
-    }
-}
-
-/* Helpers for development */
-/* .dev-1 {
-    border: solid 1px #dc3545;
-}
-.dev-2 {
-    border: solid 1px rgb(26, 190, 26);
-}
-.dev-3 {
-    border: solid 1px #3e2da0;
-} */
-
-
-.bento-box {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 10px;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.bento-box-item {
-    display: flex;
-    /* No change, ensures content inside is flexibly aligned */
-    align-items: center;
-    /* Aligns items vertically center */
-    justify-content: center;
-    /* Centers content horizontally */
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    /* Adjust for desired roundness */
-    box-shadow: 0 4px 6px var(--medium-shadow), 0 1px 3px var(--subtle-shadow);
-    /* Subtle shadow for depth */
-    padding: 20px;
-    /* Adjust based on your content needs */
-    width: 100%;
-    /* Ensures item fills the full width */
-}
-
-.bento-box-item.offset-item {
+.fade-enter {
     opacity: 0;
 }
 
-.bento-box-item:hover {
-    box-shadow: 0 10px 15px var(--strong-shadow), 0 4px 6px var(--medium-shadow);
-    transform: translateY(-2px);
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-/* Responsive behavior for smaller screens */
-@media (max-width: 768px) {
-    .bento-box {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .bento-box-item.offset-item {
-        display: none;
-    }
+.fade-exit {
+    opacity: 1;
 }
 
-.project-card-container {
-    transition: transform 0.3s ease;
-}
-
-.project-card-container:hover {
-    transform: scale(1.03);
-}
-
-/* Custom Bottom Border */
-.custom-bottom-border {
-    position: absolute;
-    bottom: -2px;
-    width: calc(100% - 12px);
-    /* Reduce width by 12px to account for 6px on each side */
-    height: 2px;
-    background-color: var(--border-color);
-    left: 6px;
-}
-
-/* Input with Icon */
-.input-with-icon {
-    position: relative;
-}
-
-.input-with-icon input {
-    padding-right: var(--icon-padding-right);
-    box-sizing: border-box;
-}
-
-.input-with-icon .icon {
-    position: absolute;
-    top: 50%;
-    right: var(--icon-right-offset);
-    transform: translateY(-50%);
-    pointer-events: none;
-    color: var(--border-color);
-}
-
-/* Box Sizing for Inputs and Textareas */
-input,
-textarea {
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-}
-
-/* Focus Styles */
-input:focus,
-textarea:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--border-color) !important;
-}
-
-input:focus~.custom-bottom-border,
-textarea:focus~.custom-bottom-border {
-    background-color: var(--border-color);
-    height: 2px;
-}
-
-input:focus::placeholder,
-textarea:focus::placeholder {
-    color: transparent;
-}
-
-.call-to-action-button {
-    border-radius: 2px;
-    box-shadow: 0px 4px 2px 1px #00000057;
-    transition: all 0.3s ease-in-out;
-    font-family: 'Arial', sans-serif;
-    /* Adjust to match your site's font */
-    background-color: transparent;
-    border: 1px solid #000;
-    /* Adjust the color to match your design */
-    color: #000;
-    /* Text color */
-    font-size: 16px;
-    /* Adjust font size as needed */
-    transform: scale(1);
-    /* Initial scale */
-}
-
-.call-to-action-button:hover {
-    background-color: #000;
-    /* Background color on hover */
-    color: #fff;
-    /* Text color on hover */
-    box-shadow: 0px 6px 4px 2px #00000070;
-    /* Slight lift effect */
-    border: 1px solid #000;
-    /* Border color on hover */
-    transform: scale(1.05);
-    /* Slight increase in size */
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
