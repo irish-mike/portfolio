@@ -1,0 +1,15 @@
+version: "3"
+services:
+  directus:
+    image: directus/directus:10.13.1
+    ports:
+      - 8055:8055
+    volumes:
+      - ./database:/database
+      - ./uploads:/uploads
+      - ./extensions:/extensions
+    environment:
+      SECRET: "uB0hL4iC2yS2tH4fP1"
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "/database/data.db"
+      WEBSOCKETS_ENABLED: "true"
