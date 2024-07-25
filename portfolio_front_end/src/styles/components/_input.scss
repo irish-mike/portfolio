@@ -41,3 +41,14 @@ input:focus::placeholder,
 textarea:focus::placeholder {
     color: transparent;
 }
+
+/* Custom Bottom Border */
+.custom-bottom-border {
+    position: absolute;
+    bottom: -2px;
+    width: calc(100% - 12px);
+    /* Reduce width by 12px to account for 6px on each side */
+    height: 2px;
+    background-color: var(--border-color);
+    left: 6px;
+}

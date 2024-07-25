@@ -2,6 +2,7 @@ import AboutSection from "../components/Organisms/Sections/AboutSection"
 import FeaturedProjectsSection from "../components/Organisms/Sections/FeaturedProjectsSection"
 import SkillsSection from "../components/Organisms/Sections/SkillsSection"
 import TextContentSection from "../components/Organisms/Sections/TextContentSection"
+import TimelineSection from "../components/Organisms/Sections/TimelineSection"
 
 
 const HomePage = () => {
@@ -22,9 +23,11 @@ const HomePage = () => {
                     sometimes by accident, sometimes on purpose (injected humour and the like).</p>
             </AboutSection>
 
+            <FeaturedProjectsSection />
+
             <SkillsSection />
 
-            <FeaturedProjectsSection />
+            <TimelineSection />
 
         </>
     )

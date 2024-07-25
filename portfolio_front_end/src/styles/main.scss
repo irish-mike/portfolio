@@ -2,9 +2,7 @@
 @import 'variables';
 
 // Import base styles
-@import 'base/reset';
 // @import 'base/typography';
-@import 'base/base';
 
 // Import layout styles
 // @import 'layout/bento-box';
@@ -17,6 +15,7 @@
 @import 'components/scroll-indicator';
 @import 'components/thumbnail-card';
 
+@import 'components/timeline';
 
 // Import page-specific styles
 // @import 'pages/home';
