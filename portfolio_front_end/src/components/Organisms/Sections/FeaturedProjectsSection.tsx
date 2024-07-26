@@ -1,5 +1,5 @@
 import { ThumbnailCardProps } from "../../Molecules/Cards/ThumbnailCard";
-import CardCarousel from "../CardCarousel";
+import CardCarousel from "../Features/CardCarousel";
 
 const cards: ThumbnailCardProps[] = [
   {

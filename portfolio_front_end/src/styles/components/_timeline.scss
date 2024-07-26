@@ -8,6 +8,9 @@
   text-align: center;
   padding-top: 70px;
   margin-right: 0;
+  max-width: 512px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .horizontal-timeline .items .items-list:before {
@@ -23,9 +26,8 @@
   top: 36px;
   left: 0;
   right: 0;
-  width: 75px;
-  margin: 0 auto;
   font-size: 1.2rem;
+
 }
 
 @media (min-width: 1140px) {
@@ -39,4 +41,3 @@
     top: -40px;
   }
 }
-
