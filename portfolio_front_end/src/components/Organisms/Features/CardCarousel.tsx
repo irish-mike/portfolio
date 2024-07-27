@@ -1,9 +1,8 @@
 import { Carousel, Row, Col } from "react-bootstrap";
-import { ThumbnailCardProps } from "../../Molecules/Cards/ThumbnailCard";
-import ThumbnailCardGrid from "../Grids/ThumbnailCardGrid";
+import { ThumbnailCardGrid, ThumbnailCardProps } from "@components";
 
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs"; // Using Bootstrap Icons
-import useCarouselItems from "../../../hooks/useCarouselItems";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { useCarouselItems } from "@hooks";
 import useCarouselStore from "../../../state/carouselStore";
 
 interface Props {

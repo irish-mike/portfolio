@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Timeline from "../Features/Timeline";
+import { Timeline } from "@components";
 
 const TimelineSection: React.FC = () => {
   return (

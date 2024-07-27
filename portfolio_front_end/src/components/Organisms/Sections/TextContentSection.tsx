@@ -1,7 +1,6 @@
 import { Container, Button } from "react-bootstrap";
-import useThemeSwitcher from "../../../hooks/useThemeSwitcher";
-import ContactFormModal from "../../Molecules/Forms/ContactFromModel";
-
+import { useThemeSwitcher } from "@hooks";
+import { ContactFormModal } from "@components";
 
 interface Props {
   title: string;
@@ -27,7 +26,13 @@ const TextContentSection = ({ title, description }: Props) => {
           </div>
           <div className="hr-line"></div>
         </div>
-        <ContactFormModal trigger={<Button variant="outline-dark" className="w-25 p-2 m-4 call-to-action-button">Get in touch</Button>} />
+        <ContactFormModal
+          trigger={
+            <Button variant="outline-dark" className="w-25 p-2 m-4 call-to-action-button">
+              Get in touch
+            </Button>
+          }
+        />
       </Container>
     </section>
   );

@@ -4,12 +4,11 @@ import { CgPacman } from "react-icons/cg";
 import { IoGameControllerOutline, IoMailOutline } from "react-icons/io5";
 import { SlBubbles } from "react-icons/sl";
 import { Link } from "react-router-dom";
-import ContactFormModal from "../components/Molecules/Forms/ContactFromModel";
-import Footer from "../components/Organisms/Layouts/footer";
-import NavbarMain from "../components/Organisms/Layouts/NavbarMain";
-import TransitionWrapper from "../components/Organisms/Layouts/TransitionWrapper";
+
+import { ContactFormModal, Footer, NavbarMain, TransitionWrapper } from "@components";
+
 import logo from "../assets/images/logo.png";
-import ParticleBackground from "../features/ParticleBackground";
+// import ParticleBackground from "../features/ParticleBackground";
 
 const Layout = () => {
   return (
