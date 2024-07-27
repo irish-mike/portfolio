@@ -1,14 +1,11 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import { Timeline } from "@components";
+import { Section, Timeline } from "@components";
 
 const TimelineSection: React.FC = () => {
   return (
-    <Container className={`mb-5 text-center d-block`}>
-      <h2 className="display-5">History </h2>
-      <hr />
+    <Section title="History">
       <Timeline />
-    </Container>
+    </Section>
   );
 };
 

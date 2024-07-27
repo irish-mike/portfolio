@@ -1,5 +1,6 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { skills } from "@data";
+import Section from "../Layouts/Section";
 
 interface SkillProps {
   thumbnail: string;
@@ -21,15 +22,13 @@ const SkillBadge = ({ thumbnail, title }: SkillProps) => {
 
 const SkillsSection: React.FC = () => {
   return (
-    <Container className="mb-5">
-      <h2 className="display-4 text-center">Skills</h2>
-      <hr className="mb-4" />
+    <Section title="Skills">
       <Row className="justify-content-center px-2">
         {skills.map((skill, index) => (
           <SkillBadge key={index} thumbnail={skill.thumbnail} title={skill.title} />
         ))}
       </Row>
-    </Container>
+    </Section>
   );
 };
 
