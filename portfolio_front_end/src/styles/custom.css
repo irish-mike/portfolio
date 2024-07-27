@@ -12,22 +12,6 @@
 }
 
 
-.skill-badge {
-    width: 100px;
-    height: 100px; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .skill-badge:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)!important;
-  }
-  
-  .skill-badge-title {
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-  
   hr {
     border: none;
     height: 2px; /* Slightly thinner for a more modern look */
@@ -36,3 +20,56 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Softer, subtler shadow */
     width: 95%; /* Adjust width as needed */
   }
+
+
+
+  .skill-badge-container {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-badge-container:hover .skill-badge,
+.skill-badge-container:hover .skill-badge-title {
+    transform: scale(1.05);
+}
+
+.skill-badge {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.skill-badge:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle, professional shadow */
+    transform: scale(1.05); /* Gentle scaling on hover */
+}
+
+.skill-badge img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease; /* Smooth transition for image */
+}
+
+.skill-badge-container:hover .skill-badge img {
+    opacity: 0.9; /* Slight opacity change on hover */
+}
+
+.skill-badge-title {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0; /* Remove any default margins */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+}
+
+.skill-badge-container:hover .skill-badge-title {
+    /* color: #000000; Change color on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+section {
+    padding: 20px 0;
+}

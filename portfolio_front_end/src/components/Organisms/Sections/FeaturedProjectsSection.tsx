@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap";
 import { ThumbnailCardProps } from "../../Molecules/Cards/ThumbnailCard";
 import CardCarousel from "../Features/CardCarousel";
 
@@ -55,11 +56,11 @@ const cards: ThumbnailCardProps[] = [
 
 const FeaturedProjectsSection = () => {
   return (
-    <section className="mt-5 p-4 text-center">
-      <h2 className="display-5">Featured Projects</h2>
+    <Container className="mb-5">
+      <h2 className="display-5 text-center">Featured Projects</h2>
       <hr />
       <CardCarousel cards={cards} />
-    </section>
+    </Container>
   );
 };
 

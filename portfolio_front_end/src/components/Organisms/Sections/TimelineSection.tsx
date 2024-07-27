@@ -4,13 +4,11 @@ import { Timeline } from "@components";
 
 const TimelineSection: React.FC = () => {
   return (
-    <section className={`text-center py-4 my-4 d-block`}>
+    <Container className={`mb-5 text-center d-block`}>
       <h2 className="display-5">History </h2>
       <hr />
-      <Container fluid className="py-3 my-5">
-        <Timeline />
-      </Container>
-    </section>
+      <Timeline />
+    </Container>
   );
 };
 
