@@ -1,28 +1,36 @@
+import React from "react";
 import { Card, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Project from "../../../entities/Project";
+import { Project } from "@entities";
 import { TagIconList } from "@components";
 
 interface Props {
   project: Project;
 }
 
-const ProjectCard = ({ project }: Props) => {
+const ProjectCard: React.FC<Props> = ({ project }) => {
+  const { id, thumbnail, title, description, date, tags } = project;
+
   return (
-    <Card>
-      <Card.Img variant="top" src={project.background_image} />
-      <Card.Body>
-        <Card.Title>
-          <Link to={"/project/" + project.slug}> {project.name} </Link>
-        </Card.Title>
-
-        <Stack direction="horizontal" gap={2}>
-          <TagIconList platforms={project.parent_platforms.map((p) => p.platform)} />
-        </Stack>
-
-        <Card.Text>This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</Card.Text>
-      </Card.Body>
-    </Card>
+    <Link to={`/project/${id}`} className="text-decoration-none">
+      <Card className="mb-4 shadow-sm h-100">
+        <div className="cardImageContainer">
+          <div className="cardImage">
+            <Card.Img variant="top" src={thumbnail} alt={title} className="cardImg" loading="lazy" />
+          </div>
+        </div>
+        <Card.Body className="d-flex flex-column">
+          <Card.Title className="text-dark">{title}</Card.Title>
+          <Card.Text className="flex-grow-1">{description}</Card.Text>
+        </Card.Body>
+        <Card.Footer className="d-flex justify-content-between align-items-center text-muted border-0 bg-white">
+          <small>{date ? new Date(date).toLocaleDateString() : "No date available"}</small>
+          <Stack direction="horizontal" gap={2}>
+            <TagIconList tags={tags} />
+          </Stack>
+        </Card.Footer>
+      </Card>
+    </Link>
   );
 };
 

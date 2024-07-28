@@ -1,42 +1,23 @@
-import {
-  FaWindows,
-  FaPlaystation,
-  FaXbox,
-  FaApple,
-  FaLinux,
-  FaAndroid,
-} from "react-icons/fa";
-
-import { MdPhoneIphone } from "react-icons/md";
-import { SiNintendo } from "react-icons/si";
-import { BsGlobe } from "react-icons/bs";
-
+import { FaWindows, FaApple, FaLinux } from "react-icons/fa";
 import { IconType } from "react-icons";
 import { Badge, Stack } from "react-bootstrap";
-import Platform from "../../../entities/Platform";
 
 interface Props {
-  platforms: Platform[];
+  tags: string[];
 }
 
-const TagIconList = ({ platforms }: Props) => {
+const TagIconList = ({ tags }: Props) => {
   const iconMap: { [key: string]: IconType } = {
-    pc: FaWindows,
-    playstation: FaPlaystation,
-    xbox: FaXbox,
-    nintendo: SiNintendo,
+    windows: FaWindows,
     mac: FaApple,
-    linux: FaLinux,
-    android: FaAndroid,
-    ios: MdPhoneIphone,
-    web: BsGlobe,
+    linux: FaLinux
   };
 
   return (
     <>
       <Stack direction="horizontal" gap={2}>
-        {platforms.map((platform, index) => {
-          const IconComponent = iconMap[platform.slug];
+        {tags.map((tag, index) => {
+          const IconComponent = iconMap[tag];
           return (
             <Badge bg="dark" key={index}>
               {IconComponent ? <IconComponent /> : null}

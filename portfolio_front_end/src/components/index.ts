@@ -18,9 +18,9 @@ export {default as ContactFormModal} from "./Molecules/Forms/ContactFromModel";
 // Features
 export { default as Timeline } from "./Organisms/Features/Timeline";
 export { default as CardCarousel } from "./Organisms/Features/CardCarousel";
+export { default as TagSearch } from "./Organisms/Features/TagSearch";
 
 // Grids
-export { default as ProjectCardContainer } from "./Organisms/Grids/ProjectCardContainer";
 export { default as ProjectGrid } from "./Organisms/Grids/ProjectGrid";
 export { default as ThumbnailCardGrid } from "./Organisms/Grids/ThumbnailCardGrid";
 
