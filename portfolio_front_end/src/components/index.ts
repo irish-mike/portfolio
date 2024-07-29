@@ -1,6 +1,7 @@
 // --- Atoms ---
 export { default as SocialIconGroup } from "./Atoms/Icons/SocialIconGroup";
 export { default as TagIconList } from "./Atoms/Icons/TagIconList";
+export { default as TagBadgeList } from "./Atoms/Icons/TagBadgeList";
 export { default as DefinitionItem } from "./Atoms/DefinitionItem";
 
 // --- Molecules ---
@@ -12,6 +13,10 @@ export type { ThumbnailCardProps } from "./Molecules/Cards/ThumbnailCard";
 
 // Forms
 export {default as ContactFormModal} from "./Molecules/Forms/ContactFromModel";
+
+// Media
+export { default as FeaturedMedia } from "./Molecules/Media/FeaturedMedia";
+
 
 // --- Organisms ---
 

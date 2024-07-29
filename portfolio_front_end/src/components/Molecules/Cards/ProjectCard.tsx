@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Project } from "@entities";
-import { TagIconList } from "@components";
+import { TagBadgeList } from "@components";
 
 interface Props {
   project: Project;
@@ -23,10 +23,10 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
           <Card.Title className="text-dark">{title}</Card.Title>
           <Card.Text className="flex-grow-1">{description}</Card.Text>
         </Card.Body>
-        <Card.Footer className="d-flex justify-content-between align-items-center text-muted border-0 bg-white">
+        <Card.Footer className="d-flex justify-content-between align-items-center text-muted border-0 ">
           <small>{date ? new Date(date).toLocaleDateString() : "No date available"}</small>
           <Stack direction="horizontal" gap={2}>
-            <TagIconList tags={tags} />
+            <TagBadgeList tags={tags} />
           </Stack>
         </Card.Footer>
       </Card>

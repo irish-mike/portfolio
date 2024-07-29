@@ -1,7 +1,7 @@
 import { Row } from "react-bootstrap";
 import { ProjectGrid, TagSearch } from "@components";
 
-const ProjectsPage = () => {
+const PostsPage = () => {
   return (
     <>
       <Row className="m-2">
@@ -14,4 +14,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default PostsPage;

@@ -1,14 +1,14 @@
 import { Row, Col } from "react-bootstrap";
-import { projects } from "@data";
+import { posts } from "@data";
 import { ProjectCard } from "@components";
 
-const ProjectGrid = () => {
+const PostGrid = () => {
   return (
     <Row xs={1} md={2} className="g-4">
-      {projects.results.map((project) => (
-        <Col key={project.id}>
+      {posts.results.map((post) => (
+        <Col key={post.id}>
           <div className="project-card-container">
-            <ProjectCard project={project} />
+            <ProjectCard project={post} />
           </div>
         </Col>
       ))}
@@ -16,4 +16,4 @@ const ProjectGrid = () => {
   );
 };
 
-export default ProjectGrid;
+export default PostGrid;

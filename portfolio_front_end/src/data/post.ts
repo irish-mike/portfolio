@@ -7,6 +7,7 @@ export default {
     "title": "Simple Sampler VST Plugin",
     "subtitle": "Demo of my simple sampler VST plugin",
     "featured_media": {
+      "title": "Simple Sampler VST Plugin",
       "url": "https://www.youtube.com/embed/wDchsz8nmbo",
       "type": "video"
     },
