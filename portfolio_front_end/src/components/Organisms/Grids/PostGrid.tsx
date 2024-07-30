@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import { posts } from "@data";
-import { ProjectCard } from "@components";
+import { PostCard } from "@components";
 
 const PostGrid = () => {
   return (
@@ -8,7 +8,7 @@ const PostGrid = () => {
       {posts.results.map((post) => (
         <Col key={post.id}>
           <div className="project-card-container">
-            <ProjectCard project={post} />
+            <PostCard project={post} />
           </div>
         </Col>
       ))}

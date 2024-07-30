@@ -1,14 +1,29 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { post } from "@data";
-import { FeaturedMedia, TagBadgeList } from "@components";
+import { FeaturedMedia, SocialShareIcons, TagBadgeList } from "@components";
 import { MediaTypes } from "@entities";
-
-// TODO - Related Articles Component
-// TODO - Render html content with markdown
+import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 
 const PostPage = () => {
+  if (!post) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Container fluid className="mt-5">
+      <PostHeader />
+      <PostBody />
+      <PostFooter />
+    </Container>
+  );
+};
+
+export default PostPage;
+
+const PostHeader = () => {
+  return (
+    <>
       <Row>
         <Col>
           <div className="d-flex justify-content-between align-items-center">
@@ -22,14 +37,24 @@ const PostPage = () => {
           <hr className="my-1 w-100" />
         </Col>
       </Row>
-      <Row className="pt-3">
-        <Col>
-          <h2 className="h5 text-muted">{post.subtitle}</h2>
+      <Row className="py-3">
+        <Col className="d-flex justify-content-between align-items-center text-muted">
+          <h2 className="h5 fw-light">{post.subtitle}</h2>
+          <p className="fst-italic mb-0 fw-light">
+            Posted on <time>{post.date}</time> by {post.author}.
+          </p>
         </Col>
       </Row>
+    </>
+  );
+};
+
+const PostBody = () => {
+  return (
+    <>
       <Row>
         <Col>
-          <div dangerouslySetInnerHTML={{ __html: post.description_html }}></div>
+          <ReactMarkdown>{post.description_md}</ReactMarkdown>
         </Col>
       </Row>
       <Row className="justify-content-center m-4">
@@ -39,18 +64,24 @@ const PostPage = () => {
       </Row>
       <Row>
         <Col>
-          <div dangerouslySetInnerHTML={{ __html: post.content_html }}></div>
+          <ReactMarkdown>{post.content_md}</ReactMarkdown>
         </Col>
       </Row>
-      <Row className="mt-5 text-end">
-        <Col>
-          <p className="fst-italic text-muted">
-            Posted on <time>{post.date}</time> by {post.author}.
-          </p>
-        </Col>
-      </Row>
-    </Container>
+    </>
   );
 };
 
-export default PostPage;
+const PostFooter = () => {
+  return (
+    <Row className="mt-5">
+      <Col>
+        <div className="d-flex justify-content-between align-items-center border-top pt-3">
+          <div>
+            You can read more posts like this <Link to="/posts?tags=abc">here</Link>.
+          </div>
+          <SocialShareIcons title={post.title} url={window.location.href} text="Share this post &rarr; " />
+        </div>
+      </Col>
+    </Row>
+  );
+};

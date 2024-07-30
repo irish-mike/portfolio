@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ copyright, children }) => {
   return (
-    <footer className="mt-4">
+    <footer className="my-4">
       <Row className="align-items-center">
         <Col className="text-start py-3">
           <small>{copyright}</small>
@@ -18,8 +18,8 @@ const Footer: React.FC<FooterProps> = ({ copyright, children }) => {
             {children}
           </Stack>
         </Col>
+        <hr className="w-100" />
       </Row>
-      <hr />
     </footer>
   );
 };

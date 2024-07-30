@@ -19,10 +19,10 @@ const Layout = () => {
           <Link to="/" className="nav-link">
             Home <BsHouse className="m-1" />
           </Link>
-          <Link to="/projects/portfolio" className="nav-link">
+          <Link to="/posts/portfolio" className="nav-link">
             Portfolio <IoGameControllerOutline className="m-1" />
           </Link>
-          <Link to="/projects/blog" className="nav-link">
+          <Link to="/posts/blog" className="nav-link">
             Blog <SlBubbles className="m-1" />
           </Link>
           <Link to="/about" className="nav-link">
@@ -39,15 +39,14 @@ const Layout = () => {
         </NavbarMain>
 
         <TransitionWrapper />
-
         <Footer copyright="© Michael Grinnell 2024">
-          <a href="#" className="text-dark">
+          <a href="#" className="text-reset">
             Contact
           </a>
-          <a href="#" className="text-dark">
+          <a href="#" className="text-reset">
             Privacy
           </a>
-          <a href="#" className="text-dark">
+          <a href="#" className="text-reset">
             Site Map
           </a>
         </Footer>

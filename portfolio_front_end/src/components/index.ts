@@ -1,5 +1,6 @@
 // --- Atoms ---
 export { default as SocialIconGroup } from "./Atoms/Icons/SocialIconGroup";
+export { default as SocialShareIcons } from "./Atoms/Icons/SocialShareIcons";
 export { default as TagIconList } from "./Atoms/Icons/TagIconList";
 export { default as TagBadgeList } from "./Atoms/Icons/TagBadgeList";
 export { default as DefinitionItem } from "./Atoms/DefinitionItem";
@@ -7,7 +8,7 @@ export { default as DefinitionItem } from "./Atoms/DefinitionItem";
 // --- Molecules ---
 
 // Cards
-export { default as ProjectCard } from "./Molecules/Cards/ProjectCard";
+export { default as PostCard } from "./Molecules/Cards/PostCard";
 export { default as ThumbnailCard } from "./Molecules/Cards/ThumbnailCard";
 export type { ThumbnailCardProps } from "./Molecules/Cards/ThumbnailCard";
 
@@ -26,7 +27,7 @@ export { default as CardCarousel } from "./Organisms/Features/CardCarousel";
 export { default as TagSearch } from "./Organisms/Features/TagSearch";
 
 // Grids
-export { default as ProjectGrid } from "./Organisms/Grids/ProjectGrid";
+export { default as ProjectGrid } from "./Organisms/Grids/PostGrid";
 export { default as ThumbnailCardGrid } from "./Organisms/Grids/ThumbnailCardGrid";
 
 

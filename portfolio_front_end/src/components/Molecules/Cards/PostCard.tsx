@@ -8,11 +8,11 @@ interface Props {
   project: Project;
 }
 
-const ProjectCard: React.FC<Props> = ({ project }) => {
+const PostCard: React.FC<Props> = ({ project }) => {
   const { id, thumbnail, title, description, date, tags } = project;
 
   return (
-    <Link to={`/project/${id}`} className="text-decoration-none">
+    <Link to={`/post/${id}`} className="text-decoration-none">
       <Card className="mb-4 shadow-sm h-100">
         <div className="cardImageContainer">
           <div className="cardImage">
@@ -34,4 +34,4 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
   );
 };
 
-export default ProjectCard;
+export default PostCard;
