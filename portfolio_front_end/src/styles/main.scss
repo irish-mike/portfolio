@@ -1,21 +1,35 @@
+// @import '../../node_modules/bootstrap/scss/functions';
+
+// // Include base palette
+// @import 'base_palette';
+
+// // Include palettes
+// @import 'light_palette';
+// @import 'dark_palette';
+
+// @import '../node_modules/bootstrap/scss/bootstrap';
+
+
 // Import variables first
-@import 'variables';
+
+// @import '~bootstrap/scss/bootstrap';
+// @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Import base styles
 // @import 'base/typography';
 
 // Import layout styles
 // @import 'layout/bento-box';
-@import 'layouts/skills-section';
+// @import 'layouts/skills-section';
 
-// Import component styles
-@import 'components/buttons';
-@import 'components/hr';
-@import 'components/input';
-@import 'components/scroll-indicator';
-@import 'components/thumbnail-card';
+// // Import component styles
+// @import 'components/buttons';
+// @import 'components/hr';
+// @import 'components/input';
+// @import 'components/scroll-indicator';
+// @import 'components/thumbnail-card';
 
-@import 'components/timeline';
+// @import 'components/timeline';
 
 // Import page-specific styles
 // @import 'pages/home';

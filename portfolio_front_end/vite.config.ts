@@ -16,5 +16,5 @@ export default defineConfig({
       "@providers": path.resolve(__dirname, "./src/providers"),
       "@routing": path.resolve(__dirname, "./src/routing"),
     },
-  },
+  }
 })

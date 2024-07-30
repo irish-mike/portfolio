@@ -1,0 +1,35 @@
+.thumbnail-card-link {
+    text-decoration: none
+}
+
+.thumbnail-card-footer {
+    background-color: transparent !important;
+}
+
+.card-col {
+    border-right: 1px solid #bababa;
+}
+
+.cardImageContainer {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cardImage {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .cardImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.25rem;
+  }
+  

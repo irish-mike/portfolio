@@ -1,0 +1,86 @@
+// scss/custom.scss
+
+// 1. Include functions first
+@import '../node_modules/bootstrap/scss/functions';
+
+// Define base colors
+$black: #0c1414; // Black
+$white: #FFFFFF; // White
+
+// Light mode specific variables
+$body-bg-light: #fff;
+$body-color-light: #000;
+$primary-light: #57893A; // Primary Green for Light Mode
+$primary-light-hover: darken(#57893A, 10%); // Calculated in Sass
+
+// Dark mode specific variables
+$body-bg-dark: #0c1414; // Black
+$body-color-dark: #C0BCBA; // Light Grey
+$primary-dark: #1B998B; // Dark Green
+$primary-dark-hover: darken(#1B998B, 10%); // Calculated in Sass
+$secondary-dark: #24C367; // Light Green
+$success-dark: #24C367; // Light Green
+$info-dark: #24C367; // Light Green
+$warning-dark: #E1636A; // Light Red
+$danger-dark: #ad3d44; // Dark Red
+$light-bg-dark: #3A3D4F; // Light Background
+$dark-bg-dark: #272A36; // Dark Background
+$light-grey-dark: #C0BCBA; // Light Grey
+$dark-grey-dark: #343c40; // Dark Grey
+
+// Override the default primary color for the initial load
+$primary: $primary-dark;
+
+// 4. Include the main Bootstrap file to include all Bootstrap styles
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// Define color modes using the color-mode mixin
+@include color-mode(light) {
+  --bs-body-bg: #{$body-bg-light};
+  --bs-body-color: #{$body-color-light};
+  // Add other variable overrides for light mode here
+
+  .btn-primary {
+    background-color: #{$primary-light};
+    border-color: #{$primary-light};
+    color: #{$white};
+
+    &:hover, &:focus, &:active {
+      background-color: #{$primary-light-hover};
+      border-color: #{$primary-light-hover};
+      color: #{$white};
+    }
+  }
+}
+
+@include color-mode(dark) {
+  --bs-body-bg: #{$body-bg-dark};
+  --bs-body-color: #{$light-grey-dark};
+  --bs-primary: #{$primary-dark};
+  --bs-secondary: #{$secondary-dark};
+  --bs-success: #{$success-dark};
+  --bs-info: #{$info-dark};
+  --bs-warning: #{$warning-dark};
+  --bs-danger: #{$danger-dark};
+  --bs-light-bg: #{$light-bg-dark};
+  --bs-dark-bg: #{$dark-bg-dark};
+  --bs-light-grey: #{$light-grey-dark};
+  --bs-dark-grey: #{$dark-grey-dark};
+  --bs-black: #{$black};
+  --bs-white: #{$white};
+  // Add other variable overrides for dark mode here
+
+  .btn-primary {
+    background-color: #{$primary-dark};
+    border-color: #{$primary-dark};
+    color: #{$white};
+
+    &:hover, &:focus, &:active {
+      background-color: #{$primary-dark-hover};
+      border-color: #{$primary-dark-hover};
+      color: #{$white};
+    }
+  }
+}
+
+// Add additional custom code here

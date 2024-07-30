@@ -25,13 +25,7 @@ const TextContentSection = ({ title, description }: Props) => {
         </div>
         <div className="hr-line"></div>
       </div>
-      <ContactFormModal
-        trigger={
-          <Button variant="outline-dark" className="w-25 p-2 rounded call-to-action-button">
-            Get in touch
-          </Button>
-        }
-      />
+      <ContactFormModal trigger={<Button className="w-25 p-2 rounded call-to-action-button">Get in touch</Button>} />
     </Container>
   );
 };

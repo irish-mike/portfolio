@@ -1,0 +1,55 @@
+// Import Bootstrap's functions first
+@import '../../node_modules/bootstrap/scss/functions';
+
+@import './base/colour-palette';
+
+// Include Bootstrap's variables and mixins
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+// Include Bootstrap itself
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// Define light mode styles
+[data-bs-theme="light"] {
+  --bs-body-bg: #{$body-bg-light};
+  --bs-body-color: #{$body-color-light};
+  --bs-primary: #{$primary-light};
+  --bs-secondary: #{$secondary-light};
+  --bs-success: #{$success-light};
+  --bs-info: #{$info-light};
+  --bs-warning: #{$warning-light};
+  --bs-danger: #{$danger-light};
+  --bs-light-bg: #{$light-bg-light};
+  --bs-dark-bg: #{$dark-bg-light};
+  --bs-light-grey: #{$light-grey-light};
+  --bs-dark-grey: #{$dark-grey-light};
+  --bs-black: #{$black};
+  --bs-white: #{$white};
+}
+
+// Define dark mode styles
+[data-bs-theme="dark"] {
+  --bs-body-bg: #{$body-bg-dark};
+  --bs-body-color: #{$body-color-dark};
+  --bs-primary: #{$primary-dark};
+  --bs-secondary: #{$secondary-dark};
+  --bs-success: #{$success-dark};
+  --bs-info: #{$info-dark};
+  --bs-warning: #{$warning-dark};
+  --bs-danger: #{$danger-dark};
+  --bs-light-bg: #{$light-bg-dark};
+  --bs-dark-bg: #{$dark-bg-dark};
+  --bs-light-grey: #{$light-grey-dark};
+  --bs-dark-grey: #{$dark-grey-dark};
+  --bs-black: #{$black};
+  --bs-white: #{$white};
+}
+
+@import './components/buttons';
+@import './components/hr';
+@import './components/input';
+@import './components/scroll-indicator';
+@import './components/thumbnail-card';
+@import './components/timeline';
+@import './components/skill-badge';
