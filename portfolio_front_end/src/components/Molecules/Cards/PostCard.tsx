@@ -13,14 +13,14 @@ const PostCard: React.FC<Props> = ({ project }) => {
 
   return (
     <Link to={`/post/${id}`} className="text-decoration-none">
-      <Card className="mb-4 shadow-sm h-100">
+      <Card className="post-card mb-4 shadow-sm h-100">
         <div className="cardImageContainer">
           <div className="cardImage">
             <Card.Img variant="top" src={thumbnail} alt={title} className="cardImg" loading="lazy" />
           </div>
         </div>
         <Card.Body className="d-flex flex-column">
-          <Card.Title className="text-dark">{title}</Card.Title>
+          <Card.Title>{title}</Card.Title>
           <Card.Text className="flex-grow-1">{description}</Card.Text>
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between align-items-center text-muted border-0 ">

@@ -1,38 +1,36 @@
-// scss/components/_buttons.scss
-
 .call-to-action-button {
-    border-radius: 2px;
-    box-shadow: 0px 4px 2px 1px rgba(0, 0, 0, 0.35);
-    transition: all 0.3s ease-in-out;
-    font-family: 'Arial', sans-serif;
-    background-color: transparent;  // Ensure the background is transparent
-    border: 1px solid var(--bs-primary);  // Use primary color for the outline
-    color: var(--bs-primary);  // Use primary color for the text
-    font-size: 16px;
-    transform: scale(1);
-  
-    [data-bs-theme="light"] & {
-      border: 1px solid var(--bs-primary);
-      color: var(--bs-primary);
-  
-      &:hover {
-        color: var(--bs-white);
-        background-color: var(--bs-primary);  // Change background to primary color on hover
-        box-shadow: 0px 6px 4px 2px rgba(0, 0, 0, 0.44);
-        transform: scale(1.05);
-      }
-    }
-  
-    [data-bs-theme="dark"] & {
-      border: 1px solid var(--bs-primary);
-      color: var(--bs-primary);
-  
-      &:hover {
-        color: var(--bs-black);  // Ensure contrast on hover
-        background-color: var(--bs-primary);  // Change background to primary color on hover
-        box-shadow: 0px 6px 4px 2px var(--bs-primary);
-        transform: scale(1.05);
-      }
+  transition: all 0.3s ease;
+  padding: 10px 20px; // Adjust padding for better appearance
+  border-radius: 4px; // Slightly rounded corners for a modern look
+  box-shadow: 0px 5px 6px 2px var(--bs-shadow-color);
+  &:hover {
+    box-shadow: 0px 7px 6px 2px var(--bs-shadow-color);
+    transform: scale(1.05);
+  }
+
+  // Light mode styling
+  [data-bs-theme="light"] & {
+    background-color: var(--bs-primary); // Primary color background
+    color: var(--bs-button-text); // Button text color from variable
+    border: none; // No border for a sleek look
+    &:hover {
+      background-color: var(--bs-primary-hover); // Use the pre-defined hover color
     }
   }
-  
+
+  // Dark mode styling
+  [data-bs-theme="dark"] & {
+    background-color: transparent !important; // Transparent background
+    border: 1px solid var(--bs-primary); // Primary color border
+    border-radius: 0; // Square corners for a retro look
+    color: var(--bs-button-text); // Button text color from variable
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Courier New', Courier, monospace; // Monospace font for terminal look
+    text-transform: uppercase; // Uppercase text for a retro feel
+    &:hover {
+      background-color: var(--bs-primary); // Primary color background on hover
+      color: var(--bs-white); // Body background color on hover for contrast
+    }
+  }
+}

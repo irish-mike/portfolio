@@ -13,7 +13,7 @@ const TextContentSection = ({ title, description }: Props) => {
   return (
     <Container className={`my-5 text-center ${theme}`}>
       <h1 className="display-3 mb-4">{title}</h1>
-      <p className="lead mx-auto mt-4" style={{ maxWidth: "600px" }}>
+      <p className="lead mx-auto mt-4" style={{ maxWidth: "800px" }}>
         {description}
       </p>
       <div className="hr-theme-slash-2">
@@ -25,7 +25,7 @@ const TextContentSection = ({ title, description }: Props) => {
         </div>
         <div className="hr-line"></div>
       </div>
-      <ContactFormModal trigger={<Button className="w-25 p-2 rounded call-to-action-button">Get in touch</Button>} />
+      <ContactFormModal trigger={<Button className="w-25 p-2 call-to-action-button">Get in touch</Button>} />
     </Container>
   );
 };

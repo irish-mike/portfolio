@@ -26,7 +26,7 @@ const NavbarMain: React.FC<NavbarMainProps> = ({ logo, children }) => {
           <Form>
             <Row>
               <Col xs="auto">
-                <ColorModeSwitch label="Theme"></ColorModeSwitch>
+                <ColorModeSwitch label="Developer Mode"></ColorModeSwitch>
               </Col>
             </Row>
           </Form>

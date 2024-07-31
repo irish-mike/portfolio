@@ -1,7 +1,83 @@
-$font-family-base: "Helvetica Neue", Arial, sans-serif;
-$font-size-base: 1rem;
-$line-height-base: 1.5;
-$headings-font-family: inherit;
-$headings-font-weight: 500;
-$headings-line-height: 1.2;
-$headings-color: inherit;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --font-light: "Outfit", sans-serif;
+  --font-dark: "Ubuntu Mono", monospace;
+  --font-fallback-sans: Arial, Helvetica, sans-serif;
+  --font-fallback-mono: "Courier New", Courier, monospace;
+}
+
+[data-bs-theme="light"] {
+  --font-family: var(--font-light), var(--font-fallback-sans);
+}
+
+[data-bs-theme="dark"] {
+  --font-family: var(--font-dark), var(--font-fallback-mono);
+}
+
+[data-bs-theme="light"], [data-bs-theme="dark"] {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family);
+    font-weight: 700; // Default weight, can be adjusted per heading level if needed
+  }
+
+  p {
+    font-family: var(--font-family);
+    font-weight: 400; // Default weight for paragraphs
+  }
+
+  h1, .extrabold {
+    font-weight: 800;
+  }
+
+  h2, .bold {
+    font-weight: 700;
+  }
+
+  h3, .semibold {
+    font-weight: 600;
+  }
+
+  h4, h5, h6, .medium {
+    font-weight: 500;
+  }
+
+  p, .regular {
+    font-weight: 400;
+  }
+
+  p.bold, .bold {
+    font-weight: 700;
+  }
+
+  p.italic, .regular-italic {
+    font-style: italic;
+  }
+
+  p.bold-italic, .bold-italic {
+    font-weight: 700;
+    font-style: italic;
+  }
+}
+
+/* Specific class names for light theme */
+[data-bs-theme="light"] {
+  .extrabold { font-family: var(--font-light), var(--font-fallback-sans); }
+  .bold { font-family: var(--font-light), var(--font-fallback-sans); }
+  .semibold { font-family: var(--font-light), var(--font-fallback-sans); }
+  .medium { font-family: var(--font-light), var(--font-fallback-sans); }
+  .regular { font-family: var(--font-light), var(--font-fallback-sans); }
+  .regular-italic { font-family: var(--font-light), var(--font-fallback-sans); }
+  .bold-italic { font-family: var(--font-light), var(--font-fallback-sans); }
+}
+
+/* Specific class names for dark theme */
+[data-bs-theme="dark"] {
+  .extrabold { font-family: var(--font-dark), var(--font-fallback-mono); }
+  .bold { font-family: var(--font-dark), var(--font-fallback-mono); }
+  .semibold { font-family: var(--font-dark), var(--font-fallback-mono); }
+  .medium { font-family: var(--font-dark), var(--font-fallback-mono); }
+  .regular { font-family: var(--font-dark), var(--font-fallback-mono); }
+  .regular-italic { font-family: var(--font-dark), var(--font-fallback-mono); }
+  .bold-italic { font-family: var(--font-dark), var(--font-fallback-mono); }
+}

@@ -1,6 +1,71 @@
-$black: #0c1414; // Black
-$white: #FFFFFF; // White
-$grey: #6c757d; // Grey
-
-@import './light-palette';
-@import './dark-palette';
+// Define light mode styles
+[data-bs-theme="light"] {
+    --bs-white: #ffffff;
+    --bs-white-light: #ffffff;
+    --bs-white-dark: #e5e5e5;
+    
+    --bs-black: #000000;
+    --bs-black-light: #1a1a1a;
+    --bs-black-dark: #000000;
+    
+    --bs-dark-grey: #4a4a4a;
+    --bs-dark-grey-light: #696969;
+    --bs-dark-grey-dark: #2a2a2a;
+    
+    --bs-body-bg: #ffffff;
+    --bs-body-bg-light: #ffffff;
+    --bs-body-bg-dark: #e5e5e5;
+    
+    --bs-body-color: #000000;
+    --bs-body-color-light: #1a1a1a;
+    --bs-body-color-dark: #000000;
+    
+    --bs-primary: #007FB1;
+    --bs-primary-hover: #005f8c;
+    
+    --bs-secondary: #17a2b8;
+    
+    --bs-shadow-color: rgba(0, 0, 0, 0.3);
+    --bs-shadow-color-light: rgba(0, 0, 0, 0.2);
+    --bs-shadow-color-dark: rgba(0, 0, 0, 0.4);
+    
+    --bs-button-text: #ffffff;
+    --bs-button-text-light: #ffffff;
+    --bs-button-text-dark: #e5e5e5;
+  }
+  
+  // Define dark mode styles
+  [data-bs-theme="dark"] {
+    --bs-white: #ffffff;
+    --bs-white-light: #ffffff;
+    --bs-white-dark: #e5e5e5;
+    
+    --bs-black: #000000;
+    --bs-black-light: #1a1a1a;
+    --bs-black-dark: #000000;
+    
+    --bs-dark-grey: #4a4a4a;
+    --bs-dark-grey-light: #696969;
+    --bs-dark-grey-dark: #2a2a2a;
+    
+    --bs-body-bg: #373a47;
+    --bs-body-bg-light: #4f525f;
+    --bs-body-bg-dark: #1f222f;
+    
+    --bs-body-color: #c8c4c0;
+    --bs-body-color-light: #e0dcd8;
+    --bs-body-color-dark: #b0aca8;
+    
+    --bs-primary: #1a9e51;
+    --bs-primary-hover: #147c3f;
+    
+    --bs-secondary: #e04b00;
+    
+    --bs-shadow-color: rgba(200, 196, 192, 0.4);
+    --bs-shadow-color-light: rgba(200, 196, 192, 0.3);
+    --bs-shadow-color-dark: rgba(200, 196, 192, 0.5);
+    
+    --bs-button-text: #c8c4c0;
+    --bs-button-text-light: #e0dcd8;
+    --bs-button-text-dark: #b0aca8;
+  }

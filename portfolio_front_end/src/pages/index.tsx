@@ -4,3 +4,4 @@ export { default as Layout } from "./Layout";
 export { default as PostPage } from "./PostPage";
 export { default as PostsPage } from "./PostsPage";
 export { default as AboutPage } from "./AboutPage";
+export { default as TestPage } from "./TestPage";
