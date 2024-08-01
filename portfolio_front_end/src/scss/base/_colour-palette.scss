@@ -1,17 +1,15 @@
+
+:root {
+  --bs-white: #ffffff;
+  --bs-black: #000000;
+  
+  --bs-grey: #888888;
+  --bs-grey-light: #ebebeb;
+  --bs-grey-dark: #2a2a2a;
+}
+
 // Define light mode styles
 [data-bs-theme="light"] {
-    --bs-white: #ffffff;
-    --bs-white-light: #ffffff;
-    --bs-white-dark: #e5e5e5;
-    
-    --bs-black: #000000;
-    --bs-black-light: #1a1a1a;
-    --bs-black-dark: #000000;
-    
-    --bs-dark-grey: #4a4a4a;
-    --bs-dark-grey-light: #696969;
-    --bs-dark-grey-dark: #2a2a2a;
-    
     --bs-body-bg: #ffffff;
     --bs-body-bg-light: #ffffff;
     --bs-body-bg-dark: #e5e5e5;
@@ -33,21 +31,12 @@
     --bs-button-text-light: #ffffff;
     --bs-button-text-dark: #e5e5e5;
   }
+
+  
+
   
   // Define dark mode styles
-  [data-bs-theme="dark"] {
-    --bs-white: #ffffff;
-    --bs-white-light: #ffffff;
-    --bs-white-dark: #e5e5e5;
-    
-    --bs-black: #000000;
-    --bs-black-light: #1a1a1a;
-    --bs-black-dark: #000000;
-    
-    --bs-dark-grey: #4a4a4a;
-    --bs-dark-grey-light: #696969;
-    --bs-dark-grey-dark: #2a2a2a;
-    
+  [data-bs-theme="dark"] {    
     --bs-body-bg: #373a47;
     --bs-body-bg-light: #4f525f;
     --bs-body-bg-dark: #1f222f;
