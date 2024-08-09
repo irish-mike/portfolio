@@ -1,7 +1,7 @@
-import developer_image from "../../../assets/images/Developer.jpg"; // Using the alias defined in tsconfig.json
 import { ReactNode } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import SocialIconGroup from "../../Atoms/Icons/SocialIconGroup";
+import { SocialIconGroup } from "@components";
+import profile from "@assets/images/profile.png";
 
 interface Props {
   title: string;
@@ -12,12 +12,13 @@ const AboutSection = ({ title, children }: Props) => {
   return (
     <Container className="mb-5">
       <Row>
-        <Col lg={6} md={12} sm={12} className="d-flex justify-content-center align-items-center">
-          <Image src={developer_image} rounded fluid />
+        <Col lg={6} md={12} sm={12} className="d-flex justify-content-center align-items-center ">
+          <Image src={profile} roundedCircle fluid className="profile-image w-75" />
         </Col>
-        <Col lg={6} md={12} sm={12} className="d-flex flex-column justify-content-center">
-          <div className="d-flex justify-content-between align-items-center">
-            <h2 className="m-auto">{title}</h2>
+
+        <Col lg={6} md={12} sm={12} className="d-flex flex-column justify-content-center ">
+          <div className="d-flex justify-content-between align-items-center ">
+            <h2 className="m-auto ">{title}</h2>
             <SocialIconGroup />
           </div>
           <hr />
