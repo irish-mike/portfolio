@@ -10,7 +10,7 @@ const ThumbnailCardGrid = ({ cards }: ThumbnailCardGridProps) => {
     <div className="thumbnail-card-grid">
       <Row className="d-flex justify-content-center ">
         {cards.map((card, index) => (
-          <Col key={index} className="d-flex justify-content-center card-col m-0">
+          <Col key={index} className="d-flex justify-content-center card-col">
             <ThumbnailCard title={card.title} description={card.description} date={card.date} image={card.image} link={card.link} />
           </Col>
         ))}

@@ -11,7 +11,7 @@
 // Define light mode styles
 [data-bs-theme="light"] {
     --bs-body-bg: #ffffff;
-    --bs-body-bg-light: #ffffff;
+    --bs-body-bg-light: #fafafa;
     --bs-body-bg-dark: #e5e5e5;
     
     --bs-body-color: #000000;
@@ -20,6 +20,7 @@
     
     --bs-primary: #007FB1;
     --bs-primary-hover: #005f8c;
+    --bs-primary-transparent: #007fb12f;
     
     --bs-secondary: #17a2b8;
     

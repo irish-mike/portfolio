@@ -1,21 +1,6 @@
 .skill-badge-container {
     display: inline-block;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-        .skill-badge,
-        .skill-badge-title {
-            transform: scale(1.05);
-        }
-
-        .skill-badge img {
-            opacity: 0.9; /* Slight opacity change on hover */
-        }
-
-        .skill-badge-title {
-            transform: translateY(-3px); /* Slight lift effect */
-        }
-    }
 }
 
 .skill-badge {
@@ -27,12 +12,6 @@
     transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
     background: linear-gradient(to bottom right, var(--bs-white), var(--bs-grey-light));
     box-shadow: 0 0 0 2px var(--bs-shadow-color-light);
-
-    &:hover {
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* More subtle shadow on hover */
-        transform: scale(1.05); /* Gentle scaling on hover */
-        background: linear-gradient(to bottom right, var(--bs-white), var(--bs-grey-light), var(--bs-grey-light)); /* More subtle gradient change on hover */
-    }
 
     img {
         max-width: 100%;

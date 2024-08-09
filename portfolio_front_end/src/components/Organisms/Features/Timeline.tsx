@@ -8,24 +8,31 @@ interface TimelineItemProps {
   title: string;
   location: string;
   description: string;
+  link: string;
 }
 
-const TimelineItem = ({ icon: Icon, date, title, location, description }: TimelineItemProps) => {
+const TimelineItem = ({ icon: Icon, date, title, location, description, link }: TimelineItemProps) => {
   return (
-    <Col md={12} className="list-inline-item items-list flex-fill">
-      <div>
-        <p className="event-date">{date}</p>
-        <Icon size={45} />
-        <h4 className="pt-3">{title}</h4>
-        <h6>{location}</h6>
-        <p className="text-muted mt-3 m-auto">{description}</p>
-      </div>
+    <Col md={12} className="list-inline-item items-list flex-fill timeline-item">
+      <p className="event-date">{date}</p>
+      <a href={link} target="_blank" rel="noopener noreferrer" className="text-decoration-none text-reset timeline-link">
+        <div className="timeline-content d-flex flex-column h-100">
+          <div>
+            <div className="timeline-icon">
+              <Icon size={45} />
+            </div>
+            <h4 className="event-title px-4">{title}</h4>
+            <h6 className="event-location">{location}</h6>
+          </div>
+          <p className="text-muted event-description px-0 mt-auto">{description}</p>
+        </div>
+      </a>
     </Col>
   );
 };
 
 const Timeline = () => {
-  const rowSize = 4;
+  const rowSize = 3;
 
   const items = timelineItems;
   const rows = [];
@@ -38,8 +45,8 @@ const Timeline = () => {
     <Container className="horizontal-timeline pt-5 mt-4">
       {rows.map((row, rowIndex) => (
         <Row key={rowIndex} className="list-inline items d-flex mb-5 pb-5">
-          {row.map((item) => (
-            <TimelineItem icon={item.icon} date={item.date} title={item.title} location={item.location} description={item.description} />
+          {row.map((item, itemIndex) => (
+            <TimelineItem key={itemIndex} {...item} />
           ))}
         </Row>
       ))}
