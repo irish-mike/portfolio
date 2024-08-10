@@ -1,39 +1,42 @@
-import React from "react";
-import { Navbar, Nav, Container, Form, Row, Col } from "react-bootstrap";
-
+import { BsHouse } from "react-icons/bs";
+import { CgPacman } from "react-icons/cg";
+import { IoGameControllerOutline, IoMailOutline } from "react-icons/io5";
+import { SlBubbles } from "react-icons/sl";
 import { Link } from "react-router-dom";
-import ColorModeSwitch from "../../../features/ColorModeSwitch";
 
-interface NavbarMainProps {
-  logo: string;
-  children: React.ReactNode;
-}
+import { NavbarContainer, ContactFormModal } from "@components";
+import logo from "@assets/images/logo.png";
+import { Button } from "react-bootstrap";
 
-const NavbarMain: React.FC<NavbarMainProps> = ({ logo, children }) => {
+const NavbarMain = () => {
   return (
-    <Navbar expand="lg" className="mt-3">
-      <Container className="mb-4 ">
-        <Navbar.Brand>
-          <Link to="/">
-            <img src={logo} width="60" height="60" className="d-inline-block align-top" alt="React Bootstrap logo" />
-          </Link>
-        </Navbar.Brand>
+    <NavbarContainer logo={logo}>
+      <NavItem to="/" label="Home" icon={<BsHouse className="m-1" />} />
+      <NavItem to="/posts/portfolio" label="Portfolio" icon={<IoGameControllerOutline className="m-1" />} />
+      <NavItem to="/posts/blog" label="Blog" icon={<SlBubbles className="m-1" />} />
+      <NavItem to="/about" label="About" icon={<CgPacman className="m-1" />} />
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="m-auto">{children}</Nav>
-
-          <Form>
-            <Row>
-              <Col xs="auto">
-                <ColorModeSwitch label="Developer Mode"></ColorModeSwitch>
-              </Col>
-            </Row>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      <ContactFormModal
+        trigger={
+          <Button variant="link" className="nav-link p-0">
+            Contact <IoMailOutline className="m-1" />
+          </Button>
+        }
+      />
+    </NavbarContainer>
   );
 };
+
+interface NavItemProps {
+  to: string;
+  label: string;
+  icon: React.ReactNode;
+}
+
+const NavItem = ({ to, label, icon }: NavItemProps) => (
+  <Link to={to} className="nav-link">
+    {label} {icon}
+  </Link>
+);
 
 export default NavbarMain;

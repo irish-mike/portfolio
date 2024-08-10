@@ -32,6 +32,7 @@ export { default as ThumbnailCardGrid } from "./Organisms/Grids/ThumbnailCardGri
 
 
 // Layouts
+export { default as NavbarContainer } from "./Organisms/Layouts/NavbarContainer";
 export { default as NavbarMain } from "./Organisms/Layouts/NavbarMain";
 export { default as Footer } from "./Organisms/Layouts/Footer";
 export { default as TransitionWrapper } from "./Organisms/Layouts/TransitionWrapper";

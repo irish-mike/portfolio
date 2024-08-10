@@ -1,4 +1,4 @@
-import { ErrorPage, HomePage, Layout, PostPage, PostsPage, AboutPage, PrivacyPage, TestPage } from "@pages";
+import { ErrorPage, HomePage, Layout, PostPage, PostsPage, AboutPage, PrivacyPage } from "@pages";
 import { createBrowserRouter } from "react-router-dom";
 
 const createRouter = () =>
@@ -6,14 +6,13 @@ const createRouter = () =>
     {
       path: "/",
       element: <Layout />,
-      errorElement: <ErrorPage />,
+      errorElement: <ErrorPage />, // Wrap ErrorPage with Layout
       children: [
         { index: true, element: <HomePage /> },
         { path: "posts/:category?", element: <PostsPage /> },
         { path: "post/:slug", element: <PostPage /> },
         { path: "about", element: <AboutPage /> },
-        { path: "privacy", element: <PrivacyPage /> },
-        { path: "test", element: <TestPage /> }
+        { path: "privacy", element: <PrivacyPage /> }
       ]
     }
   ]);

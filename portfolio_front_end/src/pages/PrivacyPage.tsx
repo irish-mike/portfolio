@@ -1,6 +1,5 @@
 import { ContactFormModal } from "@components";
 import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
-import { IoMailOutline } from "react-icons/io5";
 
 const PrivacyPage = () => {
   return (
