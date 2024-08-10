@@ -1,0 +1,25 @@
+/* Remove all borders except the bottom border on accordion items */
+.accordion-item {
+    border: none;
+}
+
+.accordion-header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Remove padding in the x-axis for the accordion button */
+.accordion-button {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Prevent background color and text color from changing when accordion is expanded */
+.accordion-button:not(.collapsed) {
+    background-color: transparent;
+    color: inherit;
+}
+
+/* Remove box shadow on focus */
+.accordion {
+    --bs-accordion-btn-focus-box-shadow: none;
+}

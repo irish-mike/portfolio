@@ -1,9 +1,11 @@
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import { BsHouse } from "react-icons/bs";
 import { CgPacman } from "react-icons/cg";
 import { IoGameControllerOutline, IoMailOutline } from "react-icons/io5";
 import { SlBubbles } from "react-icons/sl";
 import { Link } from "react-router-dom";
+import { TbLock } from "react-icons/tb";
+import { BsPinMap } from "react-icons/bs";
 
 import { ContactFormModal, Footer, NavbarMain, TransitionWrapper } from "@components";
 
@@ -40,15 +42,21 @@ const Layout = () => {
 
         <TransitionWrapper />
         <Footer copyright="© Michael Grinnell 2024">
-          <a href="#" className="text-reset">
-            Contact
-          </a>
-          <a href="#" className="text-reset">
-            Privacy
-          </a>
-          <a href="#" className="text-reset">
-            Site Map
-          </a>
+          <ContactFormModal
+            trigger={
+              <Button variant="link" className="nav-link p-0">
+                Contact <IoMailOutline className="m-1" />
+              </Button>
+            }
+          />{" "}
+          |
+          <Link to="/privacy" className="nav-link">
+            Privacy <TbLock className="mb-1 mx-1" />
+          </Link>{" "}
+          |
+          <Link to="/privacy" className="nav-link">
+            Site Map <BsPinMap className="mb-1 mx-1" />
+          </Link>{" "}
         </Footer>
       </Container>
     </>
