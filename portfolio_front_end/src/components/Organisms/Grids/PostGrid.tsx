@@ -4,12 +4,10 @@ import { PostCard } from "@components";
 
 const PostGrid = () => {
   return (
-    <Row xs={1} md={2} className="g-4">
+    <Row s={1} md={2} className="g-4">
       {posts.results.map((post) => (
         <Col key={post.id}>
-          <div className="project-card-container">
-            <PostCard project={post} />
-          </div>
+          <PostCard project={post} />
         </Col>
       ))}
     </Row>

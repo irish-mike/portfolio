@@ -11,7 +11,7 @@ const TextContentSection = ({ title, description }: Props) => {
   const { theme } = useThemeSwitcher();
 
   return (
-    <Container className={`my-5 text-center ${theme}`}>
+    <Container className={`text-content-section my-5 text-center ${theme}`}>
       <h1 className="display-3 mb-4">{title}</h1>
       <p className="lead mx-auto mt-4" style={{ maxWidth: "800px" }}>
         {description}

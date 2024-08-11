@@ -2,9 +2,9 @@
   transition: all 0.3s ease;
   padding: 10px 20px; // Adjust padding for better appearance
   border-radius: 4px; // Slightly rounded corners for a modern look
-  box-shadow: 0px 5px 6px 2px var(--bs-shadow-color);
+  box-shadow: 0px 3px 4px 1px var(--bs-shadow-color);
   &:hover {
-    box-shadow: 0px 7px 6px 2px var(--bs-shadow-color);
+    box-shadow: 0px 6px 4px 2px var(--bs-shadow-color);
     transform: scale(1.05);
   }
 
@@ -22,7 +22,7 @@
   [data-bs-theme="dark"] & {
     background-color: transparent !important; // Transparent background
     border: 1px solid var(--bs-primary); // Primary color border
-    border-radius: 0; // Square corners for a retro look
+    border-radius: 2px; // Square corners for a retro look
     color: var(--bs-button-text); // Button text color from variable
     font-size: 16px;
     font-weight: 300;
@@ -33,4 +33,30 @@
       color: var(--bs-white); // Body background color on hover for contrast
     }
   }
+}
+
+
+.nav-link {
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: var(--bs-body-color-light);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--bs-primary);
+  transform: translateY(-2px);
+}
+
+.nav-link svg {
+  margin-left: 8px; /* Space between label and icon */
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover svg {
+  transform: translateX(4px);
 }

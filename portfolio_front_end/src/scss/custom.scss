@@ -12,6 +12,7 @@
 
 @import './base/colour-palette';
 
+@import './base/utilities';
 @import './base/theme-overrides';
 @import './base/typography';
 
@@ -19,9 +20,10 @@
 @import './components/hr';
 @import './components/input';
 @import './components/scroll-indicator';
-@import './components/thumbnail-card';
 @import './components/timeline';
 @import './components/skill-badge';
 @import './components/cards';
 @import './components/images';
 @import './components/accordians';
+
+

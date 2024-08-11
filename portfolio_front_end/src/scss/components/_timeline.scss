@@ -55,7 +55,7 @@
 }
 
 [data-bs-theme="dark"] .timeline-content:hover {
-  box-shadow: 0px 8px 20px var(--bs-shadow-color-dark);
+  box-shadow: 0px 8px 20px var(--bs-tertiary);
 }
 
 .timeline-icon {
@@ -69,12 +69,12 @@
 
 .event-date {
   font-size: 0.9rem;
-  color: var(--bs-body-color-dark);
+  color: var(--bs-text-color-dark);
 }
 
 .event-title {
   font-size: 1.5rem;
-  color: var(--bs-body-color);
+  color: var(--bs-text-color);
 }
 
 .event-location {

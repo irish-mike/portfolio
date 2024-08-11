@@ -81,3 +81,38 @@
   .regular-italic { font-family: var(--font-dark), var(--font-fallback-mono); }
   .bold-italic { font-family: var(--font-dark), var(--font-fallback-mono); }
 }
+
+.text-content-section h1 {
+  font-weight: 700;
+  color: var(--bs-body-color);
+  text-shadow: 0px 2px 2px var(--bs-shadow-color-light);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.text-content-section p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--bs-body-color);
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+  text-shadow: 0 1px 1px var(--bs-shadow-color-light);
+}
+
+.section-title-hr {
+  border: none;  // Remove default border
+  height: 1px;  // Default height for light mode
+  background: var(--bs-primary);  // Use primary color for light mode
+  margin: 12px auto;  // Centered with auto margins
+  width: 95%;  // Adjust width as needed
+  opacity: 0.25 !important;
+  // Specific theme adjustments for dark mode
+  [data-bs-theme="dark"] & {
+      height: 2px;  // Increase height to 2px for dark mode
+      background: none;  // Remove background
+      border: 2px dashed var(--bs-primary);  // Use primary color and dashed style for dark mode
+      opacity: 0.6 !important;
+  }
+}

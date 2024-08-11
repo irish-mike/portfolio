@@ -1,49 +1,137 @@
-// Common card styles
+
+// ****** Post Cards ******
+
 .post-card {
-    transition: all 0.3s ease;
-    border-radius: 8px; // Rounded corners for a modern look
-    overflow: hidden; // Ensures the image and content stay within the card
-    box-shadow: 0 4px 8px var(--bs-shadow-color-light); // Soft shadow for depth
-  
-    .cardImageContainer {
-      overflow: hidden;
-    }
-  
-    .cardImage {
-      img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-    }
-  
-    .card-body {
-      padding: 16px;
-    }
-  
-    .card-footer {
-      padding: 8px 16px;
-    }
+  border-radius: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, var(--bs-body-bg-dark), var(--bs-body-bg-light));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 6px var(--bs-shadow-color-light);
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 16px var(--bs-secondary);
+}
+
+.card-image-outer-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.card-image-inner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card-image-inner-container:hover .card-image {
+  transform: scale(1.01);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+[data-bs-theme="light"] .card-image {
+  border: 1px solid var(----bs-border-color-light);
+}
+
+[data-bs-theme="dark"] .card-image {
+  border: 1px solid var(--bs-border-color-dark);
+}
+
+.post-card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px var(--bs-shadow-color);
+  color: var(--bs-text-color-light);
+}
+
+
+.post-card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 0.9rem;
+  color: var(--bs-text-color);
+}
+
+
+.card-footer small {
+  font-size: 0.85rem;
+  color: var(--bs-text-color-dark);
+}
+
+
+.tag-badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+@media (max-width: 576px) {
+  .tag-badge-list {
+    flex-wrap: nowrap;
   }
-  
-  // Light mode styles
-  [data-bs-theme="light"] .post-card {
-    background-color: var(--bs-white); // White background for light mode
-    color: var(--bs-black); // Black text color for readability
-    box-shadow: 0 4px 8px var(--bs-shadow-color-light); // Light shadow for a sleek look
-    border: 1px solid var(--bs-shadow-color-light); // Subtle border for definition
-  }
-  
-  // Dark mode styles
-  [data-bs-theme="dark"] .post-card {
-    background-color: var(--bs-body-bg-dark); // Dark background for developer console look
-    color: var(--bs-body-color-dark); // Light text color for readability
-    box-shadow: inset 0 0 10px var(--bs-shadow-color-dark), inset 0 0 20px var(--bs-shadow-color), inset 0 0 30px var(--bs-shadow-color-light); // Enhanced inset shadow for a deeper inset effect
-    border: 1px solid var(--bs-dark-grey); // Slightly lighter border for definition
-    font-family: 'Ubuntu Mono', monospace; // Monospace font for developer console feel
-  
-    .card-footer {
-      border-top: 1px solid var(--bs-dark-grey); // Top border for footer
-    }
-  }
-  
+}
+
+// ****** Thumnail Cards ******
+
+.thumbnail-card-link {
+  text-decoration: none
+}
+
+.thumbnail-card-footer {
+  background-color: transparent !important;
+}
+
+.card-col {
+  border-right: 1px solid #bababa;
+}
+
+.cardImageContainer {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImage {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cardImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
