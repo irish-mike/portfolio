@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { SocialIconGroup } from "@components";
-import profile from "@assets/images/profile.png";
+import profile from "@assets/images/michael_profile.png";
 
 interface Props {
   title: string;
@@ -12,13 +12,28 @@ const AboutSection = ({ title, children }: Props) => {
   return (
     <Container className="mb-5">
       <Row>
-        <Col lg={6} md={12} sm={12} className="d-flex justify-content-center align-items-center ">
-          <Image src={profile} roundedCircle fluid className="profile-image w-75" />
+        <Col
+          lg={6}
+          md={12}
+          sm={12}
+          className="d-flex justify-content-center align-items-center pb-2"
+        >
+          <Image
+            src={profile}
+            roundedCircle
+            fluid
+            className="profile-image w-75"
+          />
         </Col>
 
-        <Col lg={6} md={12} sm={12} className="d-flex flex-column justify-content-center ">
+        <Col
+          lg={6}
+          md={12}
+          sm={12}
+          className="d-flex flex-column justify-content-center mt-4"
+        >
           <div className="d-flex justify-content-between align-items-center ">
-            <h2 className="m-auto ">{title}</h2>
+            <h2>{title}</h2>
             <SocialIconGroup />
           </div>
           <hr />
