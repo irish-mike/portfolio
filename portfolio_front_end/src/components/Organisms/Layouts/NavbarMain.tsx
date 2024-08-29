@@ -4,7 +4,7 @@ import { CgPacman } from "react-icons/cg";
 import { IoGameControllerOutline, IoMailOutline } from "react-icons/io5";
 import { SlBubbles } from "react-icons/sl";
 import { Link } from "react-router-dom";
-import logo from "@assets/images/logo.png";
+import logo from "@assets/images/logo_dark.png";
 import { Button, Form, Nav, Navbar } from "react-bootstrap";
 import ColorModeSwitch from "../../../features/ColorModeSwitch";
 import { ContactFormModal } from "@components";
@@ -13,7 +13,9 @@ const NavbarMain = () => {
   return (
     <Navbar expand="md" className="justify-content-center">
       <Navbar.Brand href="/" className="fixed-width m-0">
-        <img src={logo} width="60" height="60" className="d-inline-block align-top" alt="React Bootstrap logo" />
+        <div className="logo-container">
+          <img src={logo} width="60" height="60" className="d-inline-block align-top" alt="React Bootstrap logo" />
+        </div>
       </Navbar.Brand>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

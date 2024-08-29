@@ -9,7 +9,6 @@ const useThemeSwitcher = () => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  // Toggle theme function
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
