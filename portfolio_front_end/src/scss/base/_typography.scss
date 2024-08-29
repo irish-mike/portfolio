@@ -5,6 +5,18 @@
   --font-dark: "Ubuntu Mono", monospace;
   --font-fallback-sans: Arial, Helvetica, sans-serif;
   --font-fallback-mono: "Courier New", Courier, monospace;
+
+  // Base font sizes
+  --font-size-base: 18px;
+  --font-size-lg: 1.2rem; // 20px
+  --font-size-md: 1rem; // 16px
+  --font-size-sm: 0.875rem; // 14px
+  --font-size-xs: 0.75rem; // 12px
+
+  // Line height
+  --line-height-base: 1.5;
+  --line-height-lg: 1.75;
+  --line-height-sm: 1.25;
 }
 
 [data-bs-theme="light"] {
@@ -15,46 +27,85 @@
   --font-family: var(--font-dark), var(--font-fallback-mono);
 }
 
+html {
+  font-size: var(--font-size-base); 
+}
+
 [data-bs-theme="light"], [data-bs-theme="dark"] {
+  body {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    font-family: var(--font-family);
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family);
-    font-weight: 700; // Default weight, can be adjusted per heading level if needed
+    font-weight: 700;
+    line-height: var(--line-height-base);
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    line-height: 1.4;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
   }
 
   p {
     font-family: var(--font-family);
-    font-weight: 400; // Default weight for paragraphs
+    font-weight: 400;
+    font-size: 1rem; // 16px base font size for paragraphs
+    line-height: 1.6;
+    margin-bottom: 1rem;
   }
 
-  h1, .extrabold {
+  .extrabold {
     font-weight: 800;
   }
 
-  h2, .bold {
+  .bold {
     font-weight: 700;
   }
 
-  h3, .semibold {
+  .semibold {
     font-weight: 600;
   }
 
-  h4, h5, h6, .medium {
+  .medium {
     font-weight: 500;
   }
 
-  p, .regular {
+  .regular {
     font-weight: 400;
   }
 
-  p.bold, .bold {
-    font-weight: 700;
-  }
-
-  p.italic, .regular-italic {
+  .italic {
     font-style: italic;
   }
 
-  p.bold-italic, .bold-italic {
+  .bold-italic {
     font-weight: 700;
     font-style: italic;
   }
@@ -67,7 +118,7 @@
   .semibold { font-family: var(--font-light), var(--font-fallback-sans); }
   .medium { font-family: var(--font-light), var(--font-fallback-sans); }
   .regular { font-family: var(--font-light), var(--font-fallback-sans); }
-  .regular-italic { font-family: var(--font-light), var(--font-fallback-sans); }
+  .italic { font-family: var(--font-light), var(--font-fallback-sans); }
   .bold-italic { font-family: var(--font-light), var(--font-fallback-sans); }
 }
 
@@ -78,7 +129,7 @@
   .semibold { font-family: var(--font-dark), var(--font-fallback-mono); }
   .medium { font-family: var(--font-dark), var(--font-fallback-mono); }
   .regular { font-family: var(--font-dark), var(--font-fallback-mono); }
-  .regular-italic { font-family: var(--font-dark), var(--font-fallback-mono); }
+  .italic { font-family: var(--font-dark), var(--font-fallback-mono); }
   .bold-italic { font-family: var(--font-dark), var(--font-fallback-mono); }
 }
 
@@ -88,31 +139,32 @@
   text-shadow: 0px 2px 2px var(--bs-shadow-color-light);
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
+  font-size: 3rem;
   line-height: 1.2;
 }
 
 .text-content-section p {
-  font-size: 1.25rem;
+  font-size: var(--font-size-lg); // 20px for paragraphs in content sections
   font-weight: 400;
   color: var(--bs-body-color);
   max-width: 800px;
   margin: 0 auto 2rem auto;
-  line-height: 1.6;
+  line-height: 1.75;
   text-shadow: 0 1px 1px var(--bs-shadow-color-light);
 }
 
 .section-title-hr {
-  border: none;  // Remove default border
-  height: 1px;  // Default height for light mode
-  background: var(--bs-primary);  // Use primary color for light mode
-  margin: 12px auto;  // Centered with auto margins
-  width: 95%;  // Adjust width as needed
+  border: none;
+  height: 1px;
+  background: var(--bs-primary);
+  margin: 12px auto;
+  width: 95%;
   opacity: 0.25 !important;
-  // Specific theme adjustments for dark mode
+
   [data-bs-theme="dark"] & {
-      height: 2px;  // Increase height to 2px for dark mode
-      background: none;  // Remove background
-      border: 2px dashed var(--bs-primary);  // Use primary color and dashed style for dark mode
+      height: 2px;
+      background: none;
+      border: 2px dashed var(--bs-primary);
       opacity: 0.6 !important;
   }
 }

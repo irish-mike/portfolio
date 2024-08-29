@@ -1,16 +1,13 @@
-import { Row } from "react-bootstrap";
-import { ProjectGrid, TagSearch } from "@components";
+import { Container } from "react-bootstrap";
+import { ProjectGrid, Section } from "@components";
 
 const PostsPage = () => {
   return (
-    <>
-      <Row className="m-2">
-        <TagSearch options={["C++", "Python", "Web Development"]}></TagSearch>
-      </Row>
-      <Row className="m-2">
+    <Container className="pt-4">
+      <Section title="Articles">
         <ProjectGrid />
-      </Row>
-    </>
+      </Section>
+    </Container>
   );
 };
 

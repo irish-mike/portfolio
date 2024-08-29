@@ -12,7 +12,7 @@ const TextContentSection = ({ title, description }: Props) => {
 
   return (
     <Container className={`text-content-section my-5 text-center ${theme}`}>
-      <h1 className="display-3 mb-4">{title}</h1>
+      <h1 className="display-1 mb-4">{title}</h1>
       <p className="lead mx-auto mt-4" style={{ maxWidth: "800px" }}>
         {description}
       </p>
