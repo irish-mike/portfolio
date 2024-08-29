@@ -5,17 +5,25 @@
 }
 
 .input-with-icon input {
-    padding-right: var(--icon-padding-right);
+    padding-right: 2.5rem;
     box-sizing: border-box;
 }
 
 .input-with-icon .icon {
     position: absolute;
     top: 50%;
-    right: var(--icon-right-offset);
+    right: 0.5rem;
     transform: translateY(-50%);
     pointer-events: none;
-    color: var(--border-color);
+
+    // Apply conditional color based on theme
+    [data-bs-theme="dark"] & {
+        color: var(--bs-border-color-light);
+    }
+
+    [data-bs-theme="light"] & {
+        color: var(--bs-border-color-dark);
+    }
 }
 
 input,
@@ -28,12 +36,28 @@ textarea {
 input:focus,
 textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--border-color) !important;
+
+    // Apply conditional box-shadow based on theme
+    [data-bs-theme="dark"] & {
+        box-shadow: 0 0 0 2px var(--bs-border-color-light) !important;
+    }
+
+    [data-bs-theme="light"] & {
+        box-shadow: 0 0 0 2px var(--bs-border-color-dark) !important;
+    }
 }
 
 input:focus~.custom-bottom-border,
 textarea:focus~.custom-bottom-border {
-    background-color: var(--border-color);
+    // Apply conditional background-color based on theme
+    [data-bs-theme="dark"] & {
+        background-color: var(--bs-border-color-light);
+    }
+
+    [data-bs-theme="light"] & {
+        background-color: var(--bs-border-color-dark);
+    }
+
     height: 2px;
 }
 
@@ -49,6 +73,15 @@ textarea:focus::placeholder {
     width: calc(100% - 12px);
     /* Reduce width by 12px to account for 6px on each side */
     height: 2px;
-    background-color: var(--border-color);
+
+    // Apply conditional background-color based on theme
+    [data-bs-theme="dark"] & {
+        background-color: var(--bs-border-color-light);
+    }
+
+    [data-bs-theme="light"] & {
+        background-color: var(--bs-border-color-dark);
+    }
+
     left: 6px;
 }
