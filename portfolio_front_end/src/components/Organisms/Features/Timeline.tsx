@@ -42,7 +42,7 @@ const Timeline = () => {
   }
 
   return (
-    <Container className="horizontal-timeline pt-5 mt-4">
+    <Container className="horizontal-timeline pt-3 pt-lg-5 mt-3 mt-lg-5">
       {rows.map((row, rowIndex) => (
         <Row key={rowIndex} className="list-inline items d-flex mb-5 pb-5">
           {row.map((item, itemIndex) => (

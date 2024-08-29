@@ -8,40 +8,22 @@ interface Props {
   children: ReactNode;
 }
 
-const AboutSection = ({ title, children }: Props) => {
-  return (
-    <Container className="mb-5">
-      <Row>
-        <Col
-          lg={6}
-          md={12}
-          sm={12}
-          className="d-flex justify-content-center align-items-center pb-2"
-        >
-          <Image
-            src={profile}
-            roundedCircle
-            fluid
-            className="profile-image w-75"
-          />
-        </Col>
-
-        <Col
-          lg={6}
-          md={12}
-          sm={12}
-          className="d-flex flex-column justify-content-center mt-4"
-        >
-          <div className="d-flex justify-content-between align-items-center ">
-            <h2>{title}</h2>
-            <SocialIconGroup />
-          </div>
-          <hr />
-          <div>{children}</div>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
+const AboutSection = ({ title, children }: Props) => (
+  <Container className="mb-5">
+    <Row>
+      <Col lg={6} className="d-flex justify-content-center align-items-center pb-2">
+        <Image src={profile} roundedCircle fluid className="profile-image w-75" />
+      </Col>
+      <Col lg={6} className="d-flex flex-column justify-content-center mt-4">
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
+          <h2 className="mb-3 mb-md-0">{title}</h2>
+          <SocialIconGroup />
+        </div>
+        <hr />
+        {children}
+      </Col>
+    </Row>
+  </Container>
+);
 
 export default AboutSection;

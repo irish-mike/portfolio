@@ -1,4 +1,4 @@
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, Row, Col } from "react-bootstrap";
 import { useThemeSwitcher } from "@hooks";
 import { ContactFormModal } from "@components";
 
@@ -12,20 +12,30 @@ const TextContentSection = ({ title, description }: Props) => {
 
   return (
     <Container className={`text-content-section my-5 text-center ${theme}`}>
-      <h1 className="display-1 mb-4">{title}</h1>
-      <p className="lead mx-auto mt-4" style={{ maxWidth: "800px" }}>
-        {description}
-      </p>
-      <div className="hr-theme-slash-2">
-        <div className="hr-line"></div>
-        <div className="hr-icon">
-          <div className="scroll-indicator">
-            <span className="arrow-down"></span>
+      <Row className="justify-content-center">
+        <Col>
+          <h1 className="display-1">{title}</h1>
+          <p className="lead mx-auto">{description}</p>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <div className="hr-theme-slash-2">
+            <div className="hr-line"></div>
+            <div className="hr-icon">
+              <div className="scroll-indicator">
+                <span className="arrow-down"></span>
+              </div>
+            </div>
+            <div className="hr-line"></div>
           </div>
-        </div>
-        <div className="hr-line"></div>
-      </div>
-      <ContactFormModal trigger={<Button className="w-25 p-2 call-to-action-button">Get in touch</Button>} />
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col xs={12} md={6} lg={3}>
+          <ContactFormModal trigger={<Button className="w-100 p-2 call-to-action-button">Get in touch</Button>} />
+        </Col>
+      </Row>
     </Container>
   );
 };
