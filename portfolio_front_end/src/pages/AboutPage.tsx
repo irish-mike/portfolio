@@ -6,14 +6,14 @@ const AboutPage = () => {
   return (
     <Container className="section-inner my-5">
       <header className="text-center mb-5">
-        <div className="d-flex align-items-end justify-content-between m-0 p-0">
-          <div className="d-flex ">
-            <h1 className="mb-0 me-3">Who am I?</h1>
-          </div>
-          <div className="d-flex ">
-            <h4 className="text-muted h5 fw-light mb-0 pb-0">Realist, Pragmatic, Enjoys life and big nerd</h4>
-          </div>
-        </div>
+        <Row className="align-items-end justify-content-between m-0 p-0">
+          <Col xs={12} md="auto" className="text-md-start text-center mb-2 mb-md-0">
+            <h1 className="mb-0">Who am I?</h1>
+          </Col>
+          <Col xs={12} md="auto" className="text-md-end text-center">
+            <h4 className="text-muted h5 fw-light mb-0">Realist, Pragmatic, Enjoys life and big nerd</h4>
+          </Col>
+        </Row>
         <hr className="w-100 my-1" />
       </header>
 
@@ -32,7 +32,7 @@ const AboutPage = () => {
               </p>
               <p>When I'm not coding, you can find me indulging in my hobbies. I love producing music, playing the piano (I've reached RIAM Grade 2), developing VST plugins, and diving into the latest tech trends and frameworks.</p>
             </Col>
-            <Col md={12} className="d-flex justify-content-center align-items-center h-50 pb-5">
+            <Col md={12} className="d-flex justify-content-center align-items-center my-5">
               <div className="text-center">
                 <h3>Follow Me</h3>
                 <hr className="my-3" />
@@ -45,9 +45,9 @@ const AboutPage = () => {
         </Row>
       </section>
 
-      <section className="my-4 py-4">
+      <section className="py-2">
         <Row>
-          <Col md={12} className="">
+          <Col md={12}>
             <h4>Some more stuff about me!</h4>
             <p>
               Hey there! I'm Michael Grinnell, a full stack developer who's passionate about crafting clean, efficient code and building applications that perform seamlessly. Over the years, I've honed my skills through various projects, ranging from VST plugin development to music production, and
