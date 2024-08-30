@@ -20,7 +20,7 @@ const TextContentSection = ({ title, description }: Props) => {
       </Row>
       <Row>
         <Col>
-          <div className="hr-theme-slash-2">
+          <div className="hr-theme-slash-2 d-flex">
             <div className="hr-line"></div>
             <div className="hr-icon">
               <div className="scroll-indicator">

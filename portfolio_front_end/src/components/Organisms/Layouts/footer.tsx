@@ -7,27 +7,29 @@ import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="my-4">
+    <footer className="m-4">
       <Row className="align-items-center">
-        <Col className="text-start py-3">
+        <Col sm={12} md={6} className="text-center text-md-start py-2">
           <small>© Michael Grinnell 2024</small>
         </Col>
-        <Col className="text-end py-3">
-          <Stack direction="horizontal" gap={3} className="justify-content-end">
+        <Col sm={12} md={6} className="text-center text-md-end py-2">
+          <Stack direction="horizontal" gap={2} className="justify-content-md-end justify-content-center">
             <ContactFormModal
               trigger={
                 <Button variant="link" className="nav-link p-0">
-                  Contact <IoMailOutline className="m-1" />
+                  Contact <IoMailOutline className="ms-1" />
                 </Button>
               }
-            />{" "}
-            |
-            <Link to="/privacy" className="nav-link">
-              Privacy <TbLock className="mb-1 mx-1" />
-            </Link>{" "}
+            />
+            <span className="mx-1">|</span>
+            <Link to="/privacy" className="nav-link p-0">
+              Privacy <TbLock className="ms-1" />
+            </Link>
           </Stack>
         </Col>
-        <hr className="w-100" />
+        <Col xs={12}>
+          <hr className="w-100 my-3" />
+        </Col>
       </Row>
     </footer>
   );

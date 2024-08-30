@@ -1,77 +1,75 @@
-// _input.scss
-
 .input-with-icon {
     position: relative;
-}
 
-.input-with-icon input {
-    padding-right: 2.5rem;
-    box-sizing: border-box;
-}
+    input,
+    textarea {
+        background-color: var(--bs-body-bg-dark);
+        padding-right: 2.5rem;
+        box-sizing: border-box;
+        border-radius: 0;
+        width: calc(100% - 12px); /* Match the width of the custom bottom border */
+        margin-left: 6px; /* Align horizontally with custom bottom border */
+        margin-right: 6px; /* Align horizontally with custom bottom border */
+        color: var(--bs-text-color-light);
+    }
+    
+    .icon {
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        transform: translateY(-50%);
+        pointer-events: none;
 
-.input-with-icon .icon {
-    position: absolute;
-    top: 50%;
-    right: 0.5rem;
-    transform: translateY(-50%);
-    pointer-events: none;
+        // Apply conditional color based on theme
+        [data-bs-theme="dark"] & {
+            color: var(--bs-border-color-light);
+        }
 
-    // Apply conditional color based on theme
-    [data-bs-theme="dark"] & {
-        color: var(--bs-border-color-light);
+        [data-bs-theme="light"] & {
+            color: var(--bs-border-color-dark);
+        }
     }
 
-    [data-bs-theme="light"] & {
-        color: var(--bs-border-color-dark);
-    }
-}
+    input:focus,
+    textarea:focus {
+        outline: none;
+        background-color: var(--bs-body-bg-light);
 
-input,
-textarea {
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-}
+        // Apply conditional box-shadow based on theme
+        [data-bs-theme="dark"] & {
+            box-shadow: 0 0 0 2px var(--bs-border-color-light) !important;
+        }
 
-input:focus,
-textarea:focus {
-    outline: none;
-
-    // Apply conditional box-shadow based on theme
-    [data-bs-theme="dark"] & {
-        box-shadow: 0 0 0 2px var(--bs-border-color-light) !important;
+        [data-bs-theme="light"] & {
+            box-shadow: 0 0 0 2px var(--bs-border-color-dark) !important;
+        }
     }
 
-    [data-bs-theme="light"] & {
-        box-shadow: 0 0 0 2px var(--bs-border-color-dark) !important;
-    }
-}
+    input:focus~.custom-bottom-border,
+    textarea:focus~.custom-bottom-border {
+        // Apply conditional background-color based on theme
+        [data-bs-theme="dark"] & {
+            background-color: var(--bs-border-color-light);
+        }
 
-input:focus~.custom-bottom-border,
-textarea:focus~.custom-bottom-border {
-    // Apply conditional background-color based on theme
-    [data-bs-theme="dark"] & {
-        background-color: var(--bs-border-color-light);
-    }
+        [data-bs-theme="light"] & {
+            background-color: var(--bs-border-color-dark);
+        }
 
-    [data-bs-theme="light"] & {
-        background-color: var(--bs-border-color-dark);
+        height: 2px;
     }
 
-    height: 2px;
-}
-
-input:focus::placeholder,
-textarea:focus::placeholder {
-    color: transparent;
+    input:focus::placeholder,
+    textarea:focus::placeholder {
+        color: transparent;
+    }
 }
 
 /* Custom Bottom Border */
 .custom-bottom-border {
     position: absolute;
     bottom: -2px;
-    width: calc(100% - 12px);
-    /* Reduce width by 12px to account for 6px on each side */
+    width: 100%;
     height: 2px;
 
     // Apply conditional background-color based on theme
@@ -84,4 +82,11 @@ textarea:focus::placeholder {
     }
 
     left: 6px;
+}
+
+/* New Button Style */
+.button-aligned {
+    width: calc(100% - 12px); /* Ensure the button width matches the input width */
+    margin-left: 6px; /* Align horizontally with the custom bottom border */
+    margin-right: 6px; /* Align horizontally with the custom bottom border */
 }
