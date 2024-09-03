@@ -8,7 +8,7 @@ export default [
       date: "2015 - 2019",
       title: "BSc Computing in Games Development",
       location: "DKIT, Dundalk",
-      description: "Graduated with a First Class Honours and won the Presidents Prize for Academic Excellence.",
+      description: "Graduated with a first class honours and won the presidents prize for academic excellence.",
       link: "https://www.dkit.ie/courses/school-of-informatics-and-creative-arts/visual-and-human-centred-computing/bsc-(hons)-computing-in-games-development.html"
     },
     {
@@ -16,7 +16,7 @@ export default [
       date: "2019 - 2021",
       title: "MSc Computing in Music Technology",
       location: "DKIT, Dundalk",
-      description: "Graduated with a First Class Honours and won the Presidents Prize for Academic Excellence.",
+      description: "Graduated with a first class honours and won the presidents prize for academic excellence.",
       link: "https://www.dkit.ie/courses/school-of-informatics-and-creative-arts/creative-arts-media-and-music/ma/msc-in-music-technology.html"
     },
     {
@@ -24,7 +24,7 @@ export default [
       date: "2024 - Now",
       title: "MSc in Artificial Intelligence",
       location: "Munster Technological University",
-      description: "Currently enrolled in a part time degree and expecting to graduate with a First Class Honours.",
+      description: "Currently enrolled and expecting to graduate with a First Class Honours.",
       link: "https://www.mtu.ie/courses/crkarti9/"
     },
     {
@@ -40,7 +40,7 @@ export default [
       date: "2019 - 2020",
       title: "Web Developer",
       location: "Phever Media, Dublin",
-      description: "A forward-thinking software solutions company specializing in digital transformation.",
+      description: "A broadcasting media & live DJ platform that features over 100 unique artists live weekly.",
       link: "https://www.phever.ie/"
     },
 
@@ -49,7 +49,7 @@ export default [
       date: "2020 - Now",
       title: "Full Stack Developer",
       location: "Provident CRM, Dublin",
-      description: "A leading software solutions company specializing in customer relationship management.",
+      description: "A leading software solutions company specializing in CRM software.",
       link: "https://www.providentcrm.com/"
     },
 
