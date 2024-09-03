@@ -16,7 +16,7 @@ const ContactForm: React.FC<{ onSubmit: () => void }> = ({ onSubmit }) => {
     <Form>
       <Row className="g-4 mb-3">
         <Col sm={12} md={6}>
-          <Form.Group controlId="formName" className="position-relative input-with-icon mt-2">
+          <Form.Group controlId="formName" className="position-relative input-with-icon mb-3">
             <Form.Label className="d-none">Name</Form.Label>
             <Form.Control type="text" placeholder="Name" required className="border-0 w-100" />
             <BsPersonVcard className="icon" />
@@ -24,7 +24,7 @@ const ContactForm: React.FC<{ onSubmit: () => void }> = ({ onSubmit }) => {
           </Form.Group>
         </Col>
         <Col sm={12} md={6}>
-          <Form.Group controlId="formEmail" className="position-relative input-with-icon my-3">
+          <Form.Group controlId="formEmail" className="position-relative input-with-icon mb-3">
             <Form.Label className="d-none">E-mail</Form.Label>
             <Form.Control type="email" placeholder="E-mail" required className="border-0 w-100" />
             <BsEnvelopeAt className="icon" />
@@ -32,7 +32,7 @@ const ContactForm: React.FC<{ onSubmit: () => void }> = ({ onSubmit }) => {
           </Form.Group>
         </Col>
       </Row>
-      <Form.Group controlId="formMessage" className="position-relative input-with-icon my-3">
+      <Form.Group controlId="formMessage" className="position-relative input-with-icon mb-3">
         <Form.Label className="d-none">Message</Form.Label>
         <Form.Control as="textarea" rows={1} placeholder="Message" required className="border-0 w-100" ref={textareaRef} onInput={handleInput} />
         <BsChatLeftText className="icon" />

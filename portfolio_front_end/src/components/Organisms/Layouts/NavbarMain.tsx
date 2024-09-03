@@ -18,7 +18,7 @@ const NavbarMain = () => {
   return (
     <Navbar expand="lg" expanded={expanded} onToggle={handleToggle} className="px-3 d-flex justify-content-between align-items-center">
       <div className="fixed-width">
-        <ColorModeSwitch label="Developer Mode" />
+        <ColorModeSwitch label="Dev Mode" />
       </div>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleToggle} />

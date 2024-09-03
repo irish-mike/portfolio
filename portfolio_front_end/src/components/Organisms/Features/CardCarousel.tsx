@@ -1,6 +1,5 @@
-import { Carousel, Row, Col } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import { ThumbnailCardGrid, ThumbnailCardProps } from "@components";
-
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { useCarouselItems } from "@hooks";
 import useCarouselStore from "../../../state/carouselStore";
@@ -26,30 +25,21 @@ const CardCarousel = ({ cards }: Props) => {
 
   return (
     <div className="custom-carousel-container">
-      <Row className="py-2">
-        <Col>
-          <Carousel touch wrap indicators={false} controls={false} interval={10000} activeIndex={index} onSelect={setIndex}>
-            {carouselItems.map((itemCards, idx) => (
-              <Carousel.Item key={idx}>
-                <ThumbnailCardGrid cards={itemCards} />
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </Col>
-      </Row>
+      <Carousel touch wrap indicators={false} controls={false} interval={10000} activeIndex={index} onSelect={setIndex} className="carousel-inner-container">
+        {carouselItems.map((itemCards, idx) => (
+          <Carousel.Item key={idx}>
+            <ThumbnailCardGrid cards={itemCards} />
+          </Carousel.Item>
+        ))}
+      </Carousel>
 
-      <Row className="position-relative py-2">
-        <Col className="d-flex justify-content-start">
-          <div className="custom-carousel-control-prev" onClick={handlePrev}>
-            <BsChevronLeft />
-          </div>
-        </Col>
-        <Col className="d-flex justify-content-end">
-          <div className="custom-carousel-control-next" onClick={handleNext}>
-            <BsChevronRight />
-          </div>
-        </Col>
-      </Row>
+      {/* Custom controls */}
+      <div className="custom-carousel-control-prev" onClick={handlePrev}>
+        <BsChevronLeft />
+      </div>
+      <div className="custom-carousel-control-next" onClick={handleNext}>
+        <BsChevronRight />
+      </div>
     </div>
   );
 };

@@ -9,7 +9,7 @@ interface SkillProps {
 
 const SkillBadge = ({ thumbnail, title }: SkillProps) => {
   return (
-    <Col xs={6} sm={6} md={4} lg={2} className="d-flex justify-content-center mb-4">
+    <Col xs={6} sm={4} md={4} lg={2} className="d-flex justify-content-center mb-4">
       <div className="skill-badge-container text-center">
         <div className="skill-badge p-2 border rounded shadow-sm">
           <img src={thumbnail} alt={title} className="img-fluid" />

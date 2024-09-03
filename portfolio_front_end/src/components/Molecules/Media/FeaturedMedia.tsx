@@ -14,7 +14,7 @@ const FeaturedMedia = ({ title, type, url }: Props) => {
 
   if (type === "video") {
     return (
-      <div className="ratio ratio-16x9 w-75 mx-auto mb-5 shadow border rounded">
+      <div className="ratio ratio-16x9 w-75 mx-auto mb-3 shadow border rounded">
         <iframe className="embed-responsive-item" src={url} allowFullScreen title={title}></iframe>
       </div>
     );
