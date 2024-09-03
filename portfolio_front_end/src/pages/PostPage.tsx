@@ -29,7 +29,7 @@ const PostHeader = () => {
       <Row className="mb-3">
         <Col>
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
-            <h1 className="mb-2 mb-md-0 me-md-3">{post.title}</h1>
+            <h1 className="mb-2 mb-md-0 me-md-3 text-background">{post.title}</h1>
             <TagBadgeList tags={post.tags} />
           </div>
         </Col>
@@ -41,8 +41,8 @@ const PostHeader = () => {
       </Row>
       <Row className="py-3">
         <Col className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center text-muted">
-          <h2 className="h6 fw-light mb-2 mb-md-0">{post.subtitle}</h2>
-          <p className="fst-italic mb-0 fw-light text-end text-md-start">
+          <h2 className="h6 fw-light mb-2 mb-md-0 text-background">{post.subtitle}</h2>
+          <p className="fst-italic mb-0 fw-light text-end text-md-start text-background">
             Posted on <time>{post.date}</time> by {post.author}.
           </p>
         </Col>
@@ -55,19 +55,17 @@ const PostBody = () => {
   return (
     <>
       <Row>
-        <Col>
+        <Col className="text-background">
           <ReactMarkdown>{post.description_md}</ReactMarkdown>
         </Col>
       </Row>
-      <Row className="justify-content-center my-4">
-        <Col xs={12} md={8} lg={6} className="text-center">
-          {" "}
-          {/* Adjusted column sizing for better responsiveness */}
+      <Row className="justify-content-center my-4 ">
+        <Col className="text-center text-background">
           <FeaturedMedia title={post.featured_media.title} type={post.featured_media.type as MediaTypes} url={post.featured_media.url} />
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col className="text-background">
           <ReactMarkdown>{post.content_md}</ReactMarkdown>
         </Col>
       </Row>
@@ -77,7 +75,7 @@ const PostBody = () => {
 
 const PostFooter = () => {
   return (
-    <Row className="mt-5">
+    <Row className="mt-5 text-background">
       <Col>
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center border-top pt-3">
           <div className="mb-3 mb-md-0">

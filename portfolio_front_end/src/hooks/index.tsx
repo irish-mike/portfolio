@@ -1,5 +1,4 @@
 export { default as useVideos } from "./UseVideos";
-export { default as useThemeSwitcher } from "./useThemeSwitcher";
 export { default as useProjects } from "./useProjects";
 export { default as useProject } from "./useProject";
 export { default as usePlatforms } from "./usePlatforms";

@@ -1,5 +1,4 @@
 import { Container, Button, Row, Col } from "react-bootstrap";
-import { useThemeSwitcher } from "@hooks";
 import { ContactFormModal } from "@components";
 
 interface Props {
@@ -8,14 +7,12 @@ interface Props {
 }
 
 const TextContentSection = ({ title, description }: Props) => {
-  const { theme } = useThemeSwitcher();
-
   return (
-    <Container className={`text-content-section my-5 text-center ${theme}`}>
+    <Container className="text-content-section my-5 text-center">
       <Row className="justify-content-center">
         <Col>
-          <h1 className="display-1">{title}</h1>
-          <p className="lead mx-auto">{description}</p>
+          <h1 className="display-1 text-background">{title}</h1>
+          <p className="lead mx-auto text-background">{description}</p>
         </Col>
       </Row>
       <Row>

@@ -25,16 +25,16 @@ const AboutPage = () => {
 
           <Col lg={{ span: 6, offset: 1 }}>
             <Col md={12}>
-              <h4>Hello and welcome to my corner of the internet!</h4>
-              <p>
+              <h4 className="text-background">Hello and welcome to my corner of the internet!</h4>
+              <p className="text-background">
                 Hey there! I'm Michael Grinnell, a full stack developer who's passionate about crafting clean, efficient code and building applications that perform seamlessly. Over the years, I've honed my skills through various projects, ranging from VST plugin development to music production, and
                 even setting up an Ubuntu-based home media server.
               </p>
-              <p>When I'm not coding, you can find me indulging in my hobbies. I love producing music, playing the piano (I've reached RIAM Grade 2), developing VST plugins, and diving into the latest tech trends and frameworks.</p>
+              <p className="text-background">When I'm not coding, you can find me indulging in my hobbies. I love producing music, playing the piano (I've reached RIAM Grade 2), developing VST plugins, and diving into the latest tech trends and frameworks.</p>
             </Col>
             <Col md={12} className="d-flex justify-content-center align-items-center my-5">
               <div className="text-center">
-                <h3>Follow Me</h3>
+                <h3 className="text-background">Follow Me</h3>
                 <hr className="my-3" />
                 <div className="mt-3">
                   <SocialIconGroup />
@@ -48,12 +48,12 @@ const AboutPage = () => {
       <section className="py-2">
         <Row>
           <Col md={12}>
-            <h4>Some more stuff about me!</h4>
-            <p>
+            <h4 className="text-background">Some more stuff about me!</h4>
+            <p className="text-background">
               Hey there! I'm Michael Grinnell, a full stack developer who's passionate about crafting clean, efficient code and building applications that perform seamlessly. Over the years, I've honed my skills through various projects, ranging from VST plugin development to music production, and
               even setting up an Ubuntu-based home media server.
             </p>
-            <p>
+            <p className="text-background">
               I hold dual citizenship in the US and Ireland and currently reside in the beautiful city of Valencia, Spain. My Spanish is at a B1 level, and I'm actively working towards fluency. I'm always open to new opportunities, especially if they offer a chance to relocate and explore new
               cultures.
             </p>

@@ -168,3 +168,11 @@ html {
       opacity: 0.6 !important;
   }
 }
+
+
+.text-background {
+    [data-bs-theme="dark"] & {
+      background-color: var(--bs-body-bg-transparent);
+      box-shadow: 0px 0px 18px 12px var(--bs-body-bg);
+  }
+}

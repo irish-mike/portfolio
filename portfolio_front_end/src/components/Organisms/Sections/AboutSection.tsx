@@ -16,7 +16,7 @@ const AboutSection = ({ title, children }: Props) => (
       </Col>
       <Col lg={6} className="d-flex flex-column justify-content-center mt-4">
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
-          <h2 className="mb-3 mb-md-0">{title}</h2>
+          <h2 className="mb-3 mb-md-0 text-background">{title}</h2>
           <SocialIconGroup />
         </div>
         <hr />

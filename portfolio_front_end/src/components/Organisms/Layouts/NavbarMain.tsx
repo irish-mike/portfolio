@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { BsHouse } from "react-icons/bs";
 import { CgPacman } from "react-icons/cg";
 import { IoGameControllerOutline, IoMailOutline } from "react-icons/io5";
-import { SlBubbles } from "react-icons/sl";
 import { Link } from "react-router-dom";
 import logo from "@assets/images/logo_dark.png";
 import { Button, Nav, Navbar } from "react-bootstrap";
@@ -31,8 +30,10 @@ const NavbarMain = () => {
           <NavItem to="/about" label="About" icon={<CgPacman className="m-1" />} onClick={handleNavLinkClick} />
           <ContactFormModal
             trigger={
-              <Button variant="link" className="p-2 d-flex align-items-center justify-content-center nav-link p-3 border-bottom-mobile">
-                Contact <IoMailOutline className="m-1" />
+              <Button variant="link" className="p-2 d-flex align-items-center justify-content-center nav-link p-3 border-bottom-mobile ">
+                <div className="text-background">
+                  Contact <IoMailOutline className="m-1" />
+                </div>
               </Button>
             }
           />
@@ -41,7 +42,9 @@ const NavbarMain = () => {
 
       <div className="d-none d-lg-block fixed-width">
         <Navbar.Brand href="/" style={{ display: "flex", justifyContent: "flex-end", width: "100%" }}>
-          <img src={logo} width="60" height="60" alt="React Bootstrap logo" />
+          <div className="logo-container">
+            <img src={logo} width="60" height="60" alt="React Bootstrap logo" />{" "}
+          </div>
         </Navbar.Brand>
       </div>
     </Navbar>
@@ -58,7 +61,9 @@ interface NavItemProps {
 }
 
 const NavItem = ({ to, label, icon, onClick }: NavItemProps) => (
-  <Nav.Link as={Link} to={to} onClick={onClick} className="p-2 d-flex align-items-center justify-content-center nav-link p-3 border-bottom-mobile">
-    {label} {icon}
+  <Nav.Link as={Link} to={to} onClick={onClick} className="p-2 d-flex align-items-center justify-content-center nav-link p-3 border-bottom-mobile ">
+    <div className="text-background">
+      {label} {icon}
+    </div>
   </Nav.Link>
 );

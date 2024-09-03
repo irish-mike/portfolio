@@ -1,17 +1,22 @@
+// Layout.tsx
+import React from "react";
 import { Container } from "react-bootstrap";
+import { Footer, NavbarMain, TransitionWrapper } from "@components";
+import ParticleBackground from "../features/ParticleBackground";
+import useThemeStore from "../state/themeStore";
 
-import { Footer, TransitionWrapper, NavbarMain } from "@components";
+const Layout: React.FC = () => {
+  const theme = useThemeStore((state) => state.theme);
 
-// import ParticleBackground from "../features/ParticleBackground";
-
-const Layout = () => {
   return (
-    <Container fluid className="p-0">
-      {/* <ParticleBackground /> */}
-      <NavbarMain />
-      <TransitionWrapper />
-      <Footer />
-    </Container>
+    <>
+      <Container style={{ position: "relative", zIndex: 1 }}>
+        <NavbarMain />
+        <TransitionWrapper />
+        <Footer />
+      </Container>
+      {theme === "dark" && <ParticleBackground />}
+    </>
   );
 };
 

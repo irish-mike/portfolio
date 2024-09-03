@@ -11,7 +11,7 @@ export interface ThumbnailCardProps {
 const ThumbnailCard = ({ title, description, date, image, link }: ThumbnailCardProps) => {
   return (
     <a href={link} className="thumbnail-card-link">
-      <Card className="thumbnail-card border-0 p-3 d-flex h-100">
+      <Card className="thumbnail-card border-0 p-3 d-flex h-100 text-background">
         <Card.Img variant="top" src={image} className="rounded" />
         <Card.Body className="text-start px-0 flex-grow-1">
           <Card.Title>{title}</Card.Title>
