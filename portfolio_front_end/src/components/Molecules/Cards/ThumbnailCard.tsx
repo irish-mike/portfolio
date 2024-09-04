@@ -10,14 +10,19 @@ export interface ThumbnailCardProps {
 
 const ThumbnailCard = ({ title, description, date, image, link }: ThumbnailCardProps) => {
   return (
-    <a href={link} className="thumbnail-card-link">
-      <Card className="thumbnail-card border-0 p-3 d-flex h-100 text-background">
-        <Card.Img variant="top" src={image} className="rounded" />
-        <Card.Body className="text-start px-0 flex-grow-1">
+    <a href={link} className="thumbnail-card-link ">
+      <Card className="thumbnail-card d-flex h-100 text-background border-0">
+        <div className="thumbnail-card-image-outer-container">
+          <div className="thumbnail-card-image-inner-container">
+            <Card.Img variant="top" src={image} alt={title} className="thumbnail-card-image" loading="lazy" />
+          </div>
+        </div>
+
+        <Card.Body>
           <Card.Title>{title}</Card.Title>
           <Card.Text className=" thumbnail-card-text">{description}</Card.Text>
         </Card.Body>
-        <Card.Footer className="border-0 text-muted text-end px-0 thumbnail-card-footer">{date}</Card.Footer>
+        <Card.Footer className="border-0 text-muted text-end thumbnail-card-footer">{date}</Card.Footer>
       </Card>
     </a>
   );

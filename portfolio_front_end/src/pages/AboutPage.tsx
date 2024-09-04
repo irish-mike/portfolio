@@ -9,10 +9,10 @@ const AboutPage = () => {
       <header className="text-center mb-5">
         <Row className="align-items-end justify-content-between">
           <Col xs={12} md="auto" className="text-md-start text-center mb-2 mb-md-0">
-            <h1 className="mb-0">Who am I?</h1>
+            <h1 className="mb-0 text-background">Who am I?</h1>
           </Col>
           <Col xs={12} md="auto" className="text-md-end text-center">
-            <h4 className="text-muted h5 fw-light mb-0">Curious, Driven, Creative, Nerd</h4>
+            <h4 className="text-muted h5 fw-light mb-0 text-background">Curious, Driven, Creative, Nerd</h4>
           </Col>
         </Row>
         <hr className="w-100 my-1" />

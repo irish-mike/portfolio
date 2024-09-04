@@ -4,52 +4,31 @@ import Section from "../Layouts/Section";
 
 const cards: ThumbnailCardProps[] = [
   {
-    title: "Card 1",
-    description: "This is the description for card 1  and here is a buunch more text to make it really long",
-    date: "2024-01-01",
-    image: "https://placehold.co/600x600",
+    title: "Portfolio Website",
+    description: "This website you are on right now! Built with React, TypeScript, and Bootsrap.",
+    date: "04-09-2024",
+    image: "/src/assets/images/thumbnails/portfolio_screenshot.png",
     link: "#"
   },
   {
-    title: "Card 2",
-    description: "This is the description for card 2",
+    title: "Home Media Server",
+    description: "My home media server project that I set up on linux with docker and plex.",
     date: "2024-01-02",
-    image: "https://placehold.co/600x600",
+    image: "/src/assets/images/thumbnails/home_media_server_thumbnail.png",
     link: "#"
   },
   {
-    title: "Card 3",
-    description: "This is the description for card 3",
+    title: "VST Sampler Plugin",
+    description: "A VST3 Sampler plugin built in C++ using the Juce Audio Framework.",
     date: "2024-01-02",
-    image: "https://placehold.co/600x600",
+    image: "/src/assets/images/thumbnails/juce_thumbnail.png",
     link: "#"
   },
   {
-    title: "Card 4",
-    description: "This is the description for card 3",
+    title: "Phever TV-Radio",
+    description: "Website I built for Phever.ie, a Dublin based radio station.",
     date: "2024-01-02",
-    image: "https://placehold.co/600x600",
-    link: "#"
-  },
-  {
-    title: "Card 5",
-    description: "This is the description for card 3",
-    date: "2024-01-02",
-    image: "https://placehold.co/600x600",
-    link: "#"
-  },
-  {
-    title: "Card 6",
-    description: "This is the description for card 3",
-    date: "2024-01-02",
-    image: "https://placehold.co/600x600",
-    link: "#"
-  },
-  {
-    title: "Card 7",
-    description: "This is the description for card 3",
-    date: "2024-01-02",
-    image: "https://placehold.co/600x600",
+    image: "/src/assets/images/thumbnails/phever_thumbnail.png",
     link: "#"
   }
 ];

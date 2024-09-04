@@ -3,7 +3,7 @@ import { AboutSection, FeaturedProjectsSection, SkillsSection, TextContentSectio
 const HomePage = () => {
   return (
     <>
-      <TextContentSection title={"Michael Grinnell"} description={"Experienced software engineer with emphasis on games and audio programming, combining creativity and technical skills."} />
+      <TextContentSection title={"Michael Grinnell"} description={"Software Developer with a Passion for Games, Audio, and Pragmatic Programming."} />
       <AboutSection title={"About Me"}>
         <p className="text-background">Being a software developer isn't just about writing code; it's about creating solutions, solving problems, and bringing ideas to life!</p>
         <p className="text-background">Whether I’m developing a full-scale application or crafting the perfect taco recipe, the sense of accomplishment that comes from turning an idea into reality is what drives me.</p>
