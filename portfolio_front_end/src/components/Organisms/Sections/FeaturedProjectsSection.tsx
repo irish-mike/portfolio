@@ -1,5 +1,4 @@
-import CardCarousel from "../Features/CardCarousel";
-import Section from "../Layouts/Section";
+import { CardCarousel, Section } from "@components";
 import { posts } from "@data";
 
 const FeaturedProjectsSection = () => {

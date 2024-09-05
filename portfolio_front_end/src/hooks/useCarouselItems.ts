@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import useCarouselStore from "../state/carouselStore";
+import {useCarouselStore} from "@state";
 import { PostCardProps } from "@entities";
 
 

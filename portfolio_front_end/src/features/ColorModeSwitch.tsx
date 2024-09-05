@@ -1,6 +1,6 @@
 // ColorModeSwitch.tsx
+import { useThemeStore } from "@state";
 import { Form } from "react-bootstrap";
-import useThemeStore from "../state/themeStore";
 
 interface Props {
   label: string;

@@ -2,7 +2,7 @@ import { Carousel } from "react-bootstrap";
 import { ThumbnailCardGrid } from "@components";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { useCarouselItems } from "@hooks";
-import useCarouselStore from "../../../state/carouselStore";
+import { useCarouselStore } from "@state";
 import { PostCardProps } from "@entities";
 
 interface Props {

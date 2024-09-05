@@ -1,7 +1,6 @@
+import { Project } from "@entities";
+import { APIClient } from "@services";
 import { useQuery } from "@tanstack/react-query";
-import Project from "../entities/Project";
-import APIClient from "../services/api-client";
-
 
 const apiClient = new APIClient<Project>('/games');
 

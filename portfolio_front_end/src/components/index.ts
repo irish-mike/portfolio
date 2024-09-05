@@ -1,9 +1,9 @@
 // --- Atoms ---
+export { default as DefinitionItem } from "./Atoms/DefinitionItem";
 export { default as SocialIconGroup } from "./Atoms/Icons/SocialIconGroup";
 export { default as SocialShareIcons } from "./Atoms/Icons/SocialShareIcons";
-export { default as TagIconList } from "./Atoms/Icons/TagIconList";
 export { default as TagBadgeList } from "./Atoms/Icons/TagBadgeList";
-export { default as DefinitionItem } from "./Atoms/DefinitionItem";
+export { default as TagIconList } from "./Atoms/Icons/TagIconList";
 
 // --- Molecules ---
 
@@ -13,7 +13,7 @@ export { default as ThumbnailCard } from "./Molecules/Cards/ThumbnailCard";
 
 
 // Forms
-export {default as ContactFormModal} from "./Molecules/Forms/ContactFromModel";
+export { default as ContactFormModal } from "./Molecules/Forms/ContactFromModel";
 
 // Media
 export { default as FeaturedMedia } from "./Molecules/Media/FeaturedMedia";
@@ -22,9 +22,9 @@ export { default as FeaturedMedia } from "./Molecules/Media/FeaturedMedia";
 // --- Organisms ---
 
 // Features
-export { default as Timeline } from "./Organisms/Features/Timeline";
 export { default as CardCarousel } from "./Organisms/Features/CardCarousel";
 export { default as TagSearch } from "./Organisms/Features/TagSearch";
+export { default as Timeline } from "./Organisms/Features/Timeline";
 
 // Grids
 export { default as ProjectGrid } from "./Organisms/Grids/PostGrid";
@@ -32,13 +32,11 @@ export { default as ThumbnailCardGrid } from "./Organisms/Grids/ThumbnailCardGri
 
 
 // Layouts
-export { default as NavbarMain } from "./Organisms/Layouts/NavbarMain";
 export { default as Footer } from "./Organisms/Layouts/Footer";
-export { default as TransitionWrapper } from "./Organisms/Layouts/TransitionWrapper";
+export { default as NavbarMain } from "./Organisms/Layouts/NavbarMain";
 export { default as Section } from "./Organisms/Layouts/Section";
+export { default as TransitionWrapper } from "./Organisms/Layouts/TransitionWrapper";
 
-// Media
-export { default as ProjectVideo } from "./Organisms/Media/ProjectVideo";
 
 // Sections
 export { default as AboutSection } from "./Organisms/Sections/AboutSection";
@@ -46,3 +44,4 @@ export { default as FeaturedProjectsSection } from "./Organisms/Sections/Feature
 export { default as SkillsSection } from "./Organisms/Sections/SkillsSection";
 export { default as TextContentSection } from "./Organisms/Sections/TextContentSection";
 export { default as TimelineSection } from "./Organisms/Sections/TimelineSection";
+

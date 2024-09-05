@@ -5,7 +5,7 @@ import { IoGameControllerOutline, IoMailOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import logo from "@assets/images/logo_dark.png";
 import { Button, Nav, Navbar } from "react-bootstrap";
-import ColorModeSwitch from "../../../features/ColorModeSwitch";
+import { ColorModeSwitch } from "@features";
 import { ContactFormModal } from "@components";
 
 const NavbarMain = () => {

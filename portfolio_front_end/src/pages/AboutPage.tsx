@@ -1,5 +1,5 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
-import michael_walking from "../assets/images/michael_walking.jpg";
+import michael_walking from "@assets/images/michael_walking.jpg";
 import { SocialIconGroup } from "@components"; // Adjust the import based on your actual file structure
 
 const AboutPage = () => {

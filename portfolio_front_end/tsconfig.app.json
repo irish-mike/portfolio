@@ -29,10 +29,13 @@
       "@components": ["src/components"],
       "@data": ["src/data"],
       "@entities": ["src/entities"],
+      "@features": ["src/features"],
       "@hooks": ["src/hooks"],
       "@pages": ["src/pages"],
       "@providers": ["src/providers"],
       "@routing": ["src/routing"],
+      "@services": ["src/services"],
+      "@state": ["src/state"],
     }
   },
   "include": ["src"]

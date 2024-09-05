@@ -1,5 +1,5 @@
 import { Card, Placeholder } from "react-bootstrap";
-import placeholder from "../../../assets/images/placeholders/600x400.svg"; // Using the alias defined in tsconfig.json
+import placeholder from "@images/placeholders/600x400.svg";
 
 const PostCardSkeleton = () => {
   return (
