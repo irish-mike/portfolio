@@ -1,53 +1,37 @@
 export default {
-    "count": 6,
+    "count": 4,
     "results": [
         {
             "id": 1,
-            "title": "VST Plugin Project",
-            "description": "A project to create a virtual studio technology plugin for audio processing.",
-            "tags": ["linux", "windows", "mac"],
-            "thumbnail": "https://bedroomproducersblog.com/wp-content/uploads/2020/11/vital-preview.png",
-            "date": "2021-09-01"
+            "title": "Portfolio Website",
+            "description": "My Pesonal Portfolio Website, The one you are viewing right now. It is built with Typescript, React.js and Bootstrap.",
+            "tags": ["Typescript", "React", "Bootstrap"],
+            "thumbnail": "/src/assets/images/thumbnails/portfolio_thumbnail.png",
+            "date": "04-09-2024"
         },
         {
             "id": 2,
             "title": "Home Media Server",
-            "description": "A project to set up a home media server for streaming content across devices.",
-            "tags": ["linux", "windows", "mac"],
-            "thumbnail": "https://www.zimaspace.com/blog/wp-content/uploads/2023/04/media-server.png",
-            "date": "2022-01-15"
+            "description": "My home media server built using Linux, Docker, and Plex to stream content seamlessly across multiple devices",
+            "tags": ["Linux", "Docker", "Networking"],
+            "thumbnail": "/src/assets/images/thumbnails/home_server_thumbnail.png",
+            "date": "05-09-2024"
         },
         {
             "id": 3,
-            "title": "React Website",
-            "description": "A project to develop a responsive website using React.js.",
-            "tags": ["linux", "windows", "mac"],
-            "thumbnail": "https://kinsta.com/wp-content/uploads/2023/04/react-must-be-in-scope-when-using-jsx.jpg",
-            "date": "2023-03-10"
+            "title": "VST Sampler Plugin",
+            "description": "A VST3 Sampler plugin built in C++ using the Juce Audio Framework.",
+            "tags": ["C++", "DSP", "JUCE"],
+            "thumbnail": "/src/assets/images/thumbnails/juce_thumbnail.png",
+            "date": "01-02-2024"
         },
         {
             "id": 4,
-            "title": "Machine Learning Model",
-            "description": "A project to create a machine learning model for predicting housing prices.",
-            "tags": ["linux", "windows", "mac"],
-            "thumbnail": "https://atriainnovation.com/uploads/2023/11/portada-9.jpg",
-            "date": "2023-05-20"
-        },
-        {
-            "id": 5,
-            "title": "Mobile Game Development",
-            "description": "A project to develop a mobile game using Unity.",
-            "tags": ["linux", "windows", "mac"],
-            "thumbnail": "https://www.techgropse.com/blog/wp-content/uploads/2020/10/banner.png",
-            "date": "2022-07-30"
-        },
-        {
-            "id": 6,
-            "title": "IoT Smart Home",
-            "description": "A project to create an IoT-based smart home system.",
-            "tags": ["linux", "windows", "mac"],
-            "thumbnail": "https://www.techopedia.com/wp-content/uploads/2023/09/Key-Components-of-a-Smart-Home.png",
-            "date": "2023-09-25"
+            "title": "Phever TV-Radio Website",
+            "description": "I developed a website for Phever.ie, a Dublin-based radio station, using vanilla HTML, PHP, and JavaScript with Bootstrap for responsive design.",
+            "tags": ["PHP", "JS", "HTML"],
+            "thumbnail": "/src/assets/images/thumbnails/phever_thumbnail.png",
+            "date": "09-02-2023"
         }
     ]
 }

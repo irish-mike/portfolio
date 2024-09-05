@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { ThumbnailCardProps } from "../components/Molecules/Cards/ThumbnailCard";
 import useCarouselStore from "../state/carouselStore";
+import { PostCardProps } from "@entities";
 
 
-const useCarouselItems = (cards: ThumbnailCardProps[]) => {
+const useCarouselItems = (cards: PostCardProps[]) => {
     const displayCards = useCarouselStore((state) => state.displayCards);
     const handleResize = useCarouselStore((state) => state.handleResize);
 

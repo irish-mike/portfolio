@@ -1,20 +1,14 @@
+import { PostCardProps } from "@entities";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-export interface ThumbnailCardProps {
-  title: string;
-  description: string;
-  date: string;
-  image: string;
-  link: string;
-}
-
-const ThumbnailCard = ({ title, description, date, image, link }: ThumbnailCardProps) => {
+const ThumbnailCard = ({ id, title, description, thumbnail, date }: PostCardProps) => {
   return (
-    <a href={link} className="thumbnail-card-link ">
+    <Link to={`/post/${id}`} className="thumbnail-card-link" aria-label={`View details of ${title}`}>
       <Card className="thumbnail-card d-flex h-100 text-background border-0">
         <div className="thumbnail-card-image-outer-container">
           <div className="thumbnail-card-image-inner-container">
-            <Card.Img variant="top" src={image} alt={title} className="thumbnail-card-image" loading="lazy" />
+            <Card.Img variant="top" src={thumbnail} alt={title} className="thumbnail-card-image" loading="lazy" />
           </div>
         </div>
 
@@ -24,7 +18,7 @@ const ThumbnailCard = ({ title, description, date, image, link }: ThumbnailCardP
         </Card.Body>
         <Card.Footer className="border-0 text-muted text-end thumbnail-card-footer">{date}</Card.Footer>
       </Card>
-    </a>
+    </Link>
   );
 };
 

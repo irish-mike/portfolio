@@ -6,12 +6,13 @@ const PrivacyPage = () => {
     <Container className="p-4">
       <Row>
         <Col>
-          <div className="d-flex justify-content-between align-items-end">
-            <h1 className="mb-0 me-3">Privacy Policy</h1>
-            <p className="align-items-end mx-3 my-0">Last updated: August 10, 2024</p>
+          <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end">
+            <h1 className="mb-0 me-0 me-md-3">Privacy Policy</h1>
+            <p className="mx-0 mx-md-3 my-2 my-md-0">Last updated: August 10, 2024</p>
           </div>
         </Col>
       </Row>
+
       <Row>
         <Col>
           <hr className="my-1 w-100" />

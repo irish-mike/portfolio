@@ -1,11 +1,12 @@
 import { Carousel } from "react-bootstrap";
-import { ThumbnailCardGrid, ThumbnailCardProps } from "@components";
+import { ThumbnailCardGrid } from "@components";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { useCarouselItems } from "@hooks";
 import useCarouselStore from "../../../state/carouselStore";
+import { PostCardProps } from "@entities";
 
 interface Props {
-  cards: ThumbnailCardProps[];
+  cards: PostCardProps[];
 }
 
 const CardCarousel = ({ cards }: Props) => {

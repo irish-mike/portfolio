@@ -10,7 +10,7 @@ export { default as DefinitionItem } from "./Atoms/DefinitionItem";
 // Cards
 export { default as PostCard } from "./Molecules/Cards/PostCard";
 export { default as ThumbnailCard } from "./Molecules/Cards/ThumbnailCard";
-export type { ThumbnailCardProps } from "./Molecules/Cards/ThumbnailCard";
+
 
 // Forms
 export {default as ContactFormModal} from "./Molecules/Forms/ContactFromModel";

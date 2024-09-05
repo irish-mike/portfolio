@@ -1,8 +1,9 @@
 import { Row, Col } from "react-bootstrap";
-import { ThumbnailCard, ThumbnailCardProps } from "@components";
+import { ThumbnailCard } from "@components";
+import { PostCardProps } from "@entities";
 
 interface ThumbnailCardGridProps {
-  cards: ThumbnailCardProps[];
+  cards: PostCardProps[];
 }
 
 const ThumbnailCardGrid = ({ cards }: ThumbnailCardGridProps) => {
@@ -11,7 +12,7 @@ const ThumbnailCardGrid = ({ cards }: ThumbnailCardGridProps) => {
       <Row className="d-flex justify-content-center ">
         {cards.map((card, index) => (
           <Col key={index} className="d-flex justify-content-center card-col">
-            <ThumbnailCard title={card.title} description={card.description} date={card.date} image={card.image} link={card.link} />
+            <ThumbnailCard id={card.id} title={card.title} description={card.description} thumbnail={card.thumbnail} date={card.date} />
           </Col>
         ))}
       </Row>
