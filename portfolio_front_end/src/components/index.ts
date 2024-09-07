@@ -9,8 +9,6 @@ export { default as TagIconList } from "./Atoms/Icons/TagIconList";
 
 // Cards
 export { default as PostCard } from "./Molecules/Cards/PostCard";
-export { default as ThumbnailCard } from "./Molecules/Cards/ThumbnailCard";
-
 
 // Forms
 export { default as ContactFormModal } from "./Molecules/Forms/ContactFromModel";

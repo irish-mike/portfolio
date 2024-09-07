@@ -8,7 +8,7 @@ const PostGrid = () => {
     <Row s={1} md={2} className="g-4">
       {posts.results.map((post) => (
         <Col key={post.id}>
-          <PostCard post={post as ThumbnailPost} />
+          <PostCard post={post as ThumbnailPost} cardType="post" />
         </Col>
       ))}
     </Row>

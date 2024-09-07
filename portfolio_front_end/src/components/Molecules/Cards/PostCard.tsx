@@ -1,44 +1,55 @@
 import { TagBadgeList } from "@components";
-import { ThumbnailPost } from "@entities"; // Assuming Post is the interface representing a post object
+import { ThumbnailPost } from "@entities";
 import { Card, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-// Define props interface that expects a "post" prop
 interface Props {
   post: ThumbnailPost;
+  cardType: "post" | "featured";
 }
 
-const PostCard: React.FC<Props> = ({ post }) => {
+const PostCard = ({ post, cardType }: Props) => {
   const { id, status, title, description, thumbnail, date, tags } = post;
 
-  // Logic assigned to variables for readability
+  const prefix = cardType;
+
   const isPublished = status === "published";
   const postLink = `/post/${id}`;
-  const formattedDate = isPublished ? (date ? new Date(date).toLocaleDateString() : "No date available") : "Coming Soon";
-  const thumbnailClass = isPublished ? "" : "thumbnail-coming-soon";
-  const overlayText = isPublished ? null : <div className="thumbnail-text-overlay">Coming Soon</div>;
+  const footerContent = isPublished ? date : "Coming Soon";
+  const postStatusClass = isPublished ? "" : "card-coming-soon";
+  const overlayText = isPublished ? null : <div className="card-text-overlay">Coming Soon</div>;
 
-  return (
-    <Link to={postLink} className="text-decoration-none" aria-label={`View details of ${title}`}>
-      <Card className="post-card h-100">
-        <div className="card-image-outer-container">
-          <div className="card-image-inner-container p-1">
-            <Card.Img src={thumbnail} alt={title} className={`card-image ${thumbnailClass}`} loading="lazy" />
-            {overlayText}
-          </div>
+  const cardContent = (
+    <Card className={`custom-card ${prefix}-card`}>
+      <div className={`custom-card-image-outer-container ${prefix}-card-image-outer-container`}>
+        <div className={`custom-card-image-inner-container p-1`}>
+          <Card.Img variant="top" src={thumbnail} alt={title} className={`custom-card-image ${prefix}-card-image ${postStatusClass}`} loading="lazy" />
+          {overlayText}
         </div>
-        <Card.Body className="d-flex flex-column">
-          <Card.Title className="post-card-title px-1">{title}</Card.Title>
-          <Card.Text className="post-card-text flex-grow-1 px-1 pb-2">{description}</Card.Text>
-        </Card.Body>
-        <Card.Footer className="d-flex justify-content-between align-items-center text-muted border-0">
-          <small>{formattedDate}</small>
+      </div>
+      <Card.Body>
+        <Card.Title className={`${prefix}-card-title`}>{title}</Card.Title>
+        <Card.Text className="custom-card-text">{description}</Card.Text>
+      </Card.Body>
+      <Card.Footer className={`${prefix}-card-footer d-flex justify-content-between align-items-center`}>
+        {footerContent}
+        {cardType === "post" && (
           <Stack direction="horizontal" gap={2}>
             <TagBadgeList tags={tags} />
           </Stack>
-        </Card.Footer>
-      </Card>
+        )}
+      </Card.Footer>
+    </Card>
+  );
+
+  return isPublished ? (
+    <Link to={postLink} className="text-decoration-none" aria-label={`View details of ${title}`}>
+      {cardContent}
     </Link>
+  ) : (
+    <div className="text-decoration-none cursor-not-allowed" aria-label={`Post is not available`}>
+      {cardContent}
+    </div>
   );
 };
 

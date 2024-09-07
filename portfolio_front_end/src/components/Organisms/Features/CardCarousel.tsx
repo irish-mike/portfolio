@@ -29,7 +29,7 @@ const CardCarousel = ({ cards }: Props) => {
       <Carousel touch wrap indicators={false} controls={false} interval={10000} activeIndex={index} onSelect={setIndex} className="carousel-inner-container py-3">
         {carouselItems.map((itemCards, idx) => (
           <Carousel.Item key={idx}>
-            <ThumbnailCardGrid cards={itemCards} />
+            <ThumbnailCardGrid posts={itemCards} />
           </Carousel.Item>
         ))}
       </Carousel>
