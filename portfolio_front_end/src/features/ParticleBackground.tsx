@@ -1,8 +1,8 @@
+import { particles } from "@data";
 import { Container, ISourceOptions } from "@tsparticles/engine";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useCallback, useEffect, useState } from "react";
-import { particles } from "../data/particles";
 
 const ParticleBackground = () => {
   const [init, setInit] = useState(false);

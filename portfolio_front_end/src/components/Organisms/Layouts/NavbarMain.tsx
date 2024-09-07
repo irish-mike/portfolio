@@ -1,12 +1,12 @@
+import logo from "@assets/images/logo_dark.png";
+import { ContactFormModal } from "@components";
+import { ColorModeSwitch } from "@features";
 import React, { useState } from "react";
+import { Button, Nav, Navbar } from "react-bootstrap";
 import { BsHouse } from "react-icons/bs";
 import { CgPacman } from "react-icons/cg";
 import { IoGameControllerOutline, IoMailOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import logo from "@assets/images/logo_dark.png";
-import { Button, Nav, Navbar } from "react-bootstrap";
-import { ColorModeSwitch } from "@features";
-import { ContactFormModal } from "@components";
 
 const NavbarMain = () => {
   // State to control the collapse of the Navbar
@@ -26,7 +26,7 @@ const NavbarMain = () => {
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
         <Nav className="mx-auto text-center">
           <NavItem to="/" label="Home" icon={<BsHouse className="m-1" />} onClick={handleNavLinkClick} />
-          <NavItem to="/posts" label="Projects" icon={<IoGameControllerOutline className="m-1" />} onClick={handleNavLinkClick} />
+          <NavItem to="/posts" label="Posts" icon={<IoGameControllerOutline className="m-1" />} onClick={handleNavLinkClick} />
           <NavItem to="/about" label="About" icon={<CgPacman className="m-1" />} onClick={handleNavLinkClick} />
           <ContactFormModal
             trigger={

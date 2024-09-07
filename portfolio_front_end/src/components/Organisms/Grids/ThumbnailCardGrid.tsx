@@ -1,18 +1,18 @@
-import { Row, Col } from "react-bootstrap";
 import { ThumbnailCard } from "@components";
-import { PostCardProps } from "@entities";
+import { Post } from "@entities";
+import { Col, Row } from "react-bootstrap";
 
-interface ThumbnailCardGridProps {
-  cards: PostCardProps[];
+interface Props {
+  cards: Post[];
 }
 
-const ThumbnailCardGrid = ({ cards }: ThumbnailCardGridProps) => {
+const ThumbnailCardGrid = ({ cards }: Props) => {
   return (
     <div className="thumbnail-card-grid">
-      <Row className="d-flex justify-content-center ">
-        {cards.map((card, index) => (
-          <Col key={index} className="d-flex justify-content-center card-col">
-            <ThumbnailCard id={card.id} title={card.title} description={card.description} thumbnail={card.thumbnail} date={card.date} />
+      <Row className="d-flex justify-content-center">
+        {cards.map((card) => (
+          <Col key={card.id} className="d-flex justify-content-center card-col">
+            <ThumbnailCard card={card} />
           </Col>
         ))}
       </Row>

@@ -1,9 +1,9 @@
+import { Post } from "@entities";
+import { useCarouselStore } from "@state";
 import { useEffect } from "react";
-import {useCarouselStore} from "@state";
-import { PostCardProps } from "@entities";
 
 
-const useCarouselItems = (cards: PostCardProps[]) => {
+const useCarouselItems = (cards: Post[]) => {
     const displayCards = useCarouselStore((state) => state.displayCards);
     const handleResize = useCarouselStore((state) => state.handleResize);
 

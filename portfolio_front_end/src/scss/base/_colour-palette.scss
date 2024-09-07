@@ -5,6 +5,8 @@
   --bs-grey: #888888;
   --bs-grey-light: #dadada;
   --bs-grey-dark: #2a2a2a;
+  --bs-overlay-dark: rgba(0, 0, 0, 0.4);
+  --bs-overlay-light: rgba(255, 255, 255, 0.4);
   }
 
   [data-bs-theme="light"] {
@@ -13,8 +15,8 @@
   --bs-body-bg-dark: #e6e5e5;
 
   --bs-text-color: #1a1a1a;
-  --bs-text-color-light: #333333;
-  --bs-text-color-dark: #000000;
+  --bs-text-color-muted: #333333;
+  --bs-text-color-saturated: #161616;
 
   --bs-primary: #007fb1;
   --bs-primary-hover: #005f8c;
@@ -45,9 +47,9 @@
   --bs-body-bg-light: #25303b;
   --bs-body-bg-dark: #1c1f2b;
 
-  --bs-text-color: #dcd8d4;
-  --bs-text-color-light: #e8e4e0;
-  --bs-text-color-dark: #bfbab6;
+  --bs-text-color: #dcdcdc;
+  --bs-text-color-saturated: #ebebeb;
+  --bs-text-color-muted: #bebebe;
 
   --bs-primary: #1a9e51;
   --bs-primary-hover: #106b36;

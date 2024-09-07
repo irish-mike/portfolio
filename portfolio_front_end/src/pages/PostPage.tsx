@@ -1,9 +1,9 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { post } from "@data";
 import { FeaturedMedia, SocialShareIcons, TagBadgeList } from "@components";
+import { post } from "@data";
 import { MediaTypes } from "@entities";
-import { Link } from "react-router-dom";
+import { Col, Container, Row } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
+import { Link } from "react-router-dom";
 
 const PostPage = () => {
   if (!post) {
@@ -12,8 +12,6 @@ const PostPage = () => {
 
   return (
     <Container fluid className="mt-5 px-3 px-md-5">
-      {" "}
-      {/* Added padding for better spacing */}
       <PostHeader />
       <PostBody />
       <PostFooter />

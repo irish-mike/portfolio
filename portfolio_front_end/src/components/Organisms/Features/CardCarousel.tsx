@@ -1,12 +1,12 @@
-import { Carousel } from "react-bootstrap";
 import { ThumbnailCardGrid } from "@components";
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { Post } from "@entities";
 import { useCarouselItems } from "@hooks";
 import { useCarouselStore } from "@state";
-import { PostCardProps } from "@entities";
+import { Carousel } from "react-bootstrap";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 interface Props {
-  cards: PostCardProps[];
+  cards: Post[];
 }
 
 const CardCarousel = ({ cards }: Props) => {
@@ -26,7 +26,7 @@ const CardCarousel = ({ cards }: Props) => {
 
   return (
     <div className="custom-carousel-container">
-      <Carousel touch wrap indicators={false} controls={false} interval={10000} activeIndex={index} onSelect={setIndex} className="carousel-inner-container">
+      <Carousel touch wrap indicators={false} controls={false} interval={10000} activeIndex={index} onSelect={setIndex} className="carousel-inner-container py-3">
         {carouselItems.map((itemCards, idx) => (
           <Carousel.Item key={idx}>
             <ThumbnailCardGrid cards={itemCards} />

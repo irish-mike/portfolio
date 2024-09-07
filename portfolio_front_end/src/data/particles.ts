@@ -1,4 +1,5 @@
-export const particles = {
+
+const particles = {
   autoPlay: true,
   background: {
     color: {
@@ -80,3 +81,5 @@ export const particles = {
   pauseOnBlur: true,
   pauseOnOutsideViewport: true
 };
+
+export default particles;
