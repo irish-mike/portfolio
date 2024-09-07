@@ -1,11 +1,11 @@
 import { TagBadgeList } from "@components";
-import { Post } from "@entities"; // Assuming Post is the interface representing a post object
+import { ThumbnailPost } from "@entities"; // Assuming Post is the interface representing a post object
 import { Card, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 // Define props interface that expects a "post" prop
 interface Props {
-  post: Post;
+  post: ThumbnailPost;
 }
 
 const PostCard: React.FC<Props> = ({ post }) => {

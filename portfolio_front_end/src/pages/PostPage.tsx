@@ -1,6 +1,6 @@
 import { FeaturedMedia, SocialShareIcons, TagBadgeList } from "@components";
 import { post } from "@data";
-import { MediaTypes } from "@entities";
+import { FullPost, MediaTypes } from "@entities";
 import { Col, Container, Row } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
@@ -12,16 +12,17 @@ const PostPage = () => {
 
   return (
     <Container fluid className="mt-5 px-3 px-md-5">
-      <PostHeader />
-      <PostBody />
-      <PostFooter />
+      <PostHeader post={post as FullPost} />
+      <PostBody post={post as FullPost} />
+      <PostFooter post={post as FullPost} />
     </Container>
   );
 };
 
 export default PostPage;
 
-const PostHeader = () => {
+// PostHeader now accepts a FullPost as a prop
+const PostHeader = ({ post }: { post: FullPost }) => {
   return (
     <>
       <Row className="mb-3">
@@ -49,15 +50,15 @@ const PostHeader = () => {
   );
 };
 
-const PostBody = () => {
+const PostBody = ({ post }: { post: FullPost }) => {
   return (
     <>
       <Row>
         <Col className="text-background">
-          <ReactMarkdown>{post.description_md}</ReactMarkdown>
+          <ReactMarkdown>{post.content_md}</ReactMarkdown>
         </Col>
       </Row>
-      <Row className="justify-content-center my-4 ">
+      <Row className="justify-content-center my-4">
         <Col className="text-center text-background">
           <FeaturedMedia title={post.featured_media.title} type={post.featured_media.type as MediaTypes} url={post.featured_media.url} />
         </Col>
@@ -71,7 +72,7 @@ const PostBody = () => {
   );
 };
 
-const PostFooter = () => {
+const PostFooter = ({ post }: { post: FullPost }) => {
   return (
     <Row className="mt-5 text-background">
       <Col>
@@ -79,7 +80,7 @@ const PostFooter = () => {
           <div className="mb-3 mb-md-0">
             You can read more posts like this <Link to="/posts?tags=abc">here</Link>.
           </div>
-          <SocialShareIcons title={post.title} url={window.location.href} text="Share this post &rarr; " />
+          <SocialShareIcons title={post.title} url={window.location.href} text="Share this post &rarr;" />
         </div>
       </Col>
     </Row>

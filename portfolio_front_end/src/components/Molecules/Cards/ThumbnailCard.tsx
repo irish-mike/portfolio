@@ -1,9 +1,9 @@
-import { Post } from "@entities";
+import { ThumbnailPost } from "@entities";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 interface Props {
-  card: Post;
+  card: ThumbnailPost;
 }
 
 const ThumbnailCard = ({ card }: Props) => {

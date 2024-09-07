@@ -1,5 +1,6 @@
 export default {
-  "id": "1",
+  "id": 1,
+  "status": "published",
   "date": "September 5",
   "author": "Michael Grinnell",
   "tags": ["React", "TypeScript", "Bootstrap", "SCSS", "Vite", "Directus", "CMS"],
