@@ -1,56 +1,54 @@
-export default {
+import { FullPost } from "@entities";
+
+const post: FullPost = {
   "id": 1,
   "status": "published",
   "date": "September 5",
   "author": "Michael Grinnell",
-  "tags": ["React", "TypeScript", "Bootstrap", "SCSS", "Vite", "Directus", "CMS"],
+  "tags": ["React", "TypeScript", "Bootstrap"],
   "title": "Building My Portfolio Website",
-  "subtitle": "Challenges and Lessons from Developing My Portfolio Site",
-  "featured_media": {
-    "title": "Portfolio Website Development",
-    "url": "https://www.your-website.com/portfolio-development-image",
-    "type": "image"
-  },
-  "description_md": `
-## Introduction
-
-This post gives a high-level overview of the development of my portfolio website. At the time of writing, it’s still a work in progress, with the front end mostly built and the content yet to be finalized. I also plan to integrate a backend to make content management easier in the future. For now, my focus is to launch a minimal viable product (MVP) version. In this post, I’ll walk through some of the biggest challenges I faced, key lessons I learned, and hopefully share some insights that others might find helpful.
-  `,
+  "subtitle": "Insights from the development of my portfolio website",
   "content_md": `
-## Tools and Technologies Used
 
-The website is built with **React** and **TypeScript**, which I chose for their flexibility and strong type safety. I opted to use **Bootstrap** for styling, mainly because I’m familiar with it and appreciate how quickly it allows content to become responsive across different devices. I also used **Vite** as the build tool for its speed and simplicity, which streamlined the development process significantly.
+The goal of this article is to provide a high-level overview of the development of my portfolio website. I’ll walk through some of the challenges I faced, lessons I learned, and hopefully share some insights that others might find helpful.
 
-## Design and Planning
+At the time of writing, the site is not quite finished. The front end is built but I still need to connect to the backend cms and finalize the content. I decided to put it live because I find it provides value in its current form. One of the key takeaways from *[The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer/)*, a book that I highly recommend, is the concept of “good enough” software. It’s about finding a balance between perfection and timely delivery by releasing something functional and improving it over time.
 
-One of the first steps I took was creating a **design document** to guide the development process. This document wasn’t set in stone—it evolved as the project progressed—but it was crucial for keeping me focused and organized. I used it to create tasks and manage them on a Trello board, which helped me avoid spending too much time on less important features. This approach allowed me to prioritize and manage my time more effectively.
+A good example of this is a search feature I planned to implement for my blog posts. I’ve already designed the UI for it, but I realised I don’t have enough posts to justify its implementation right now. It’ll take some time before I have enough content for a search feature to make sense, so I decided to park it for now. Once I’ve published more articles and searching becomes necessary, I’ll revisit the feature and implement it at the right time.
 
-The design document also played a big role in **styling decisions**. I gathered screenshots from other websites to inspire layout and style ideas, and even wrote some layout concepts on my whiteboard, taking pictures to include in the document. Having this visual and written reference made it easier to plan the look and feel of my site as I moved forward.
+### Design and Planning
 
-## Styling and Customization
+In the past, I used to dive straight into coding without much planning. That can work fine for smaller projects, but as projects scale, so does the need for planning. For this project, I decided to put together a design document to guide the development. It wasn’t set in stone, but more like a flexible guide that evolved as the project went along.
 
-While **Bootstrap** made responsive design easier, I wanted to avoid the generic look that often comes with it. To give the site a more unique feel, I customized the default styles using **SCSS**. I introduced a custom color palette and implemented a **light/dark mode** feature. Dark mode became the "dev mode," and I went for a retro console aesthetic to bring some personality to the site. I also added **particle effects** in the background for a touch of fun and subtle **animations** to various elements. I believe small animations can make a site feel interactive and alive, but they must be balanced—too many can overwhelm the user, while too few can make the site feel static.
+Having it was super helpful in keeping me focused and organised. I broke down tasks and tracked them on a Trello board, which stopped me from getting sidetracked by less important features. It made prioritising what mattered much easier and helped me manage my time better. The document also helped a lot with styling decisions. I grabbed screenshots from different sites for inspiration and even sketched out ideas on my whiteboard (one of my favorite development tools), taking pictures to include in the document. This approach really helped keep the design and styling consistent throughout the development lifecycle.
 
-## Backend Decisions and Challenges
+![Screenshot from Design Document - About Me Section](/src/assets/posts/design_document_about_me.png)
 
-At the time of writing, the backend is not yet integrated, but I plan to write a follow-up post once it’s complete. Deciding on a CMS for content management was one of the more challenging aspects of the project. Initially, I considered using **WordPress** as a headless CMS because I was already familiar with it, and it’s highly customizable. However, I soon realized it was overkill for this project.
+### Tools and Technologies Used
 
-I then explored the idea of using a **flat-file CMS**, which has the advantage of simplicity and fast performance. Unfortunately, none of the freely available flat-file CMS options provided an API endpoint I could query from the front end. After some research and testing, I decided on **Directus**, a standard CMS that I set up easily with Docker. Directus provided a simple user interface, allowed me to create custom content, and had the API endpoint I needed to integrate with the front end.
+The website is built with **[React](https://reactjs.org/)** and **[TypeScript](https://www.typescriptlang.org/)**, which I chose for their flexibility and because I’m a big fan of strongly typed code. TypeScript adds an extra layer of safety to the coding process, which I really appreciate. For styling, I wanted to keep things simple, so I opted for **[Bootstrap](https://getbootstrap.com/)**. Since I’m already familiar with it, I knew it would make it easy to create responsive content across different devices with minimal effort.
 
-## Overcoming Design and Architecture Challenges
+One thing I want to mention is that while **Bootstrap** made my life easier when it came to responsiveness, I find that it can make things look a bit generic. I wanted the site to feel more unique, so I customised the styles using **SCSS**. I added my own colour palette and built in a **light/dark mode**, which eventually became "dev mode" with the intention of creating a retro console vibe. I even threw in some **particle effects** in the background and added subtle animations to bring the site to life. I’ve found that animations, when used sparingly, can really make a site feel more interactive, but it’s all about balance, too many and it’s overwhelming, too few and the site feels a bit flat.
 
-One challenge I faced was structuring the code and organizing the project. React doesn’t enforce any particular structure, and different developers have different preferences. Initially, I used a **component-based architecture** inspired by **Atomic Design**, which organizes components into Atoms, Molecules, and Organisms.
+### Backend Decisions and Challenges
+
+Deciding on a CMS for content management was a challenging aspect of this project. Initially, I considered using **[WordPress](https://wordpress.org/)** as a headless CMS because I was already familiar with it, and it’s highly customisable. However, I soon realised it was overkill for this project.
+
+I then explored the idea of using a **flat-file CMS**, which has the advantage of simplicity and faster performance, since there is no DB. Unfortunately, none of the freely available flat-file CMS options provided a decent API endpoint that I could query from the front end. After some research and testing, I decided on **[Directus](https://directus.io/)**, a standard CMS that I could set up with Docker. Directus provides a simple user interface and allows me to quickly create custom content, and it has the API endpoint I need to integrate with the front end.
+
+### Overcoming Design and Architecture Challenges
+
+Another challenge I faced was structuring the code and organising the project. **React** doesn’t enforce any particular structure, and different developers have different preferences. Initially, I was using a **component-based architecture** inspired by **[Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/)**, which organises components into Atoms, Molecules, and Organisms.
 
 - **Atoms** are the smallest building blocks, such as icons.
 - **Molecules** combine atoms into more complex components, like form elements.
 - **Organisms** are even more complex structures, combining molecules to create larger sections of the UI, like layouts.
 
-While this approach worked, I later found that organizing code around **features**—as I did in another React project—was much cleaner and more intuitive. In a **feature-based architecture**, each feature has its own components, hooks, APIs, and utilities, all contained within a well-defined structure. For example, a feature like **user authentication** would include everything related to login functionality, such as the login form, hooks, and API requests.
-
-I found this feature-based structure much clearer. It’s like organizing a kitchen: you keep all your cooking tools in one place rather than scattering them around the house. This way, everything is where it belongs, making it easier to find and maintain.
+While this approach worked, I found that the organisation was too abstract for my liking. Eventually, I found that organising code around **features** as I did in other React projects was much cleaner and more intuitive. In a **feature-based architecture**, each feature has its own components, hooks, APIs, and utilities, all contained within a well-defined structure. For example, a feature like **user authentication** would include everything related to login functionality, such as the login form, hooks, and API requests. It’s like organising a kitchen: you keep all your cooking tools in one place rather than scattering them around the house. This way, everything is where it belongs, making it easier to find and maintain.
 
 ---
 
-By breaking down the challenges and decisions I made throughout the development process, I hope to provide insights for others who are working on similar projects. Stay tuned for updates as I finalize the backend and further refine the site!
-  `
+While there were many other challenges I encountered during this project, these were the ones that stood out most to me. I hope this post provides some insights for others who are working on similar projects. If you enjoyed reading this please check back later for updates as I further develop the site!`
 };
+
+export default post;

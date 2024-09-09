@@ -13,8 +13,6 @@ export { default as PostCard } from "./Molecules/Cards/PostCard";
 // Forms
 export { default as ContactFormModal } from "./Molecules/Forms/ContactFromModel";
 
-// Media
-export { default as FeaturedMedia } from "./Molecules/Media/FeaturedMedia";
 
 
 // --- Organisms ---

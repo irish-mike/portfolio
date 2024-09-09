@@ -1,1 +1,0 @@
-export type MediaTypes = "image" | "video";

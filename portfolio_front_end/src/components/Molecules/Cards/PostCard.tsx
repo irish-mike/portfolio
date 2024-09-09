@@ -20,14 +20,14 @@ const PostCard = ({ post, cardType }: Props) => {
   const overlayText = isPublished ? null : <div className="card-text-overlay">Coming Soon</div>;
 
   const cardContent = (
-    <Card className={`custom-card ${prefix}-card`}>
+    <Card className={`custom-card ${prefix}-card h-100 d-flex flex-column`}>
       <div className={`custom-card-image-outer-container ${prefix}-card-image-outer-container`}>
         <div className={`custom-card-image-inner-container p-1`}>
           <Card.Img variant="top" src={thumbnail} alt={title} className={`custom-card-image ${prefix}-card-image ${postStatusClass}`} loading="lazy" />
           {overlayText}
         </div>
       </div>
-      <Card.Body>
+      <Card.Body className="flex-fill">
         <Card.Title className={`${prefix}-card-title`}>{title}</Card.Title>
         <Card.Text className="custom-card-text">{description}</Card.Text>
       </Card.Body>
@@ -43,11 +43,11 @@ const PostCard = ({ post, cardType }: Props) => {
   );
 
   return isPublished ? (
-    <Link to={postLink} className="text-decoration-none" aria-label={`View details of ${title}`}>
+    <Link to={postLink} className="text-decoration-none h-100 d-flex" aria-label={`View details of ${title}`}>
       {cardContent}
     </Link>
   ) : (
-    <div className="text-decoration-none cursor-not-allowed" aria-label={`Post is not available`}>
+    <div className="text-decoration-none cursor-not-allowed h-100 d-flex" aria-label={`Post is not available`}>
       {cardContent}
     </div>
   );

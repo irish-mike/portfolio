@@ -253,3 +253,15 @@
 .cursor-not-allowed {
   cursor: not-allowed;
 }
+
+
+.post-card {
+  border-radius: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, var(--bs-body-bg-dark), var(--bs-body-bg-light));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 6px var(--bs-shadow-color-light);
+}

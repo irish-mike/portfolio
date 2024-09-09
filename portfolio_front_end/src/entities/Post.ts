@@ -17,9 +17,4 @@ export interface FullPost extends BasePost {
   subtitle: string;
   content_md: string;
   author: string;
-  featured_media: {
-    title: string;
-    url: string;
-    type: string;
-  };
 }

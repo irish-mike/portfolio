@@ -9,7 +9,7 @@
   // Base font sizes
   --font-size-base: 18px;
   --font-size-lg: 1.2rem; // 20px
-  --font-size-md: 1rem; // 16px
+  --font-size-md: 1.1rem; // 16px
   --font-size-sm: 0.875rem; // 14px
   --font-size-xs: 0.75rem; // 12px
 
@@ -76,10 +76,12 @@ html {
   p {
     font-family: var(--font-family);
     font-weight: 400;
-    font-size: 1rem; // 16px base font size for paragraphs
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    font-size: 1.1rem; /* 16px base font size for paragraphs */
+    line-height: 1.7; /* increased line height for readability */
+    letter-spacing: 0.02em; /* small letter-spacing for better clarity */
+    margin-bottom: 1.5rem; /* more space between paragraphs */
   }
+  
 
   .extrabold {
     font-weight: 800;

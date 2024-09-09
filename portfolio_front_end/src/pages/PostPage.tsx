@@ -1,9 +1,10 @@
-import { FeaturedMedia, SocialShareIcons, TagBadgeList } from "@components";
+import { SocialShareIcons, TagBadgeList } from "@components";
 import { post } from "@data";
-import { FullPost, MediaTypes } from "@entities";
-import { Col, Container, Row } from "react-bootstrap";
+import { FullPost } from "@entities";
+import { Col, Container, Figure, Row } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
+import remarkGfm from "remark-gfm";
 
 const PostPage = () => {
   if (!post) {
@@ -12,22 +13,21 @@ const PostPage = () => {
 
   return (
     <Container fluid className="mt-5 px-3 px-md-5">
-      <PostHeader post={post as FullPost} />
-      <PostBody post={post as FullPost} />
-      <PostFooter post={post as FullPost} />
+      <PostHeader post={post} />
+      <PostBody post={post} />
+      <PostFooter post={post} />
     </Container>
   );
 };
 
 export default PostPage;
 
-// PostHeader now accepts a FullPost as a prop
 const PostHeader = ({ post }: { post: FullPost }) => {
   return (
     <>
       <Row className="mb-3">
         <Col>
-          <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
+          <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end">
             <h1 className="mb-2 mb-md-0 me-md-3 text-background">{post.title}</h1>
             <TagBadgeList tags={post.tags} />
           </div>
@@ -41,7 +41,7 @@ const PostHeader = ({ post }: { post: FullPost }) => {
       <Row className="py-3">
         <Col className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center text-muted">
           <h2 className="h6 fw-light mb-2 mb-md-0 text-background">{post.subtitle}</h2>
-          <p className="fst-italic mb-0 fw-light text-end text-md-start text-background">
+          <p className="fst-italic mb-0 fw-light text-start text-md-end text-background">
             Posted on <time>{post.date}</time> by {post.author}.
           </p>
         </Col>
@@ -52,25 +52,46 @@ const PostHeader = ({ post }: { post: FullPost }) => {
 
 const PostBody = ({ post }: { post: FullPost }) => {
   return (
-    <>
-      <Row>
-        <Col className="text-background">
-          <ReactMarkdown>{post.content_md}</ReactMarkdown>
-        </Col>
-      </Row>
-      <Row className="justify-content-center my-4">
-        <Col className="text-center text-background">
-          <FeaturedMedia title={post.featured_media.title} type={post.featured_media.type as MediaTypes} url={post.featured_media.url} />
-        </Col>
-      </Row>
-      <Row>
-        <Col className="text-background">
-          <ReactMarkdown>{post.content_md}</ReactMarkdown>
-        </Col>
-      </Row>
-    </>
+    <Row>
+      <Col className="mx-auto text-background">
+        <ReactMarkdown
+          components={{
+            img: ({ alt, ...props }) => (
+              <MediaWrapper>
+                <Figure className="text-center">
+                  <Figure.Image {...props} className="img-fluid" />
+                  {alt && <Figure.Caption>{alt}</Figure.Caption>}
+                </Figure>
+              </MediaWrapper>
+            ),
+            a: ({ href, children }) => (
+              <a href={href} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                {children}
+              </a>
+            ),
+            p: ({ children }) => <p className="my-3">{children}</p>,
+            iframe: ({ src, title }) => (
+              <MediaWrapper>
+                <div className="ratio ratio-16x9 w-75 mx-auto mb-3 shadow border rounded">
+                  <iframe className="embed-responsive-item" src={src} allowFullScreen title={title}></iframe>
+                </div>
+              </MediaWrapper>
+            )
+          }}
+          remarkPlugins={[remarkGfm]}
+        >
+          {post.content_md}
+        </ReactMarkdown>
+      </Col>
+    </Row>
   );
 };
+
+const MediaWrapper = ({ children }: { children: React.ReactNode }) => (
+  <Row className="justify-content-center my-4">
+    <Col className="d-flex justify-content-center">{children}</Col>
+  </Row>
+);
 
 const PostFooter = ({ post }: { post: FullPost }) => {
   return (

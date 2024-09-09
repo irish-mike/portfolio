@@ -1,4 +1,4 @@
-import { Badge, Stack } from "react-bootstrap";
+import { Badge } from "react-bootstrap";
 
 interface Props {
   tags: string[];
@@ -6,11 +6,13 @@ interface Props {
 
 const TagBadgeList = ({ tags }: Props) => {
   return (
-    <Stack direction="horizontal" gap={2} className="align-items-end">
+    <div className="d-flex flex-wrap gap-2 tag-badge-list justify-content-end">
       {tags.map((tag, index) => (
-        <Badge key={index}>{tag}</Badge>
+        <Badge key={index} className="tag-badge">
+          {tag}
+        </Badge>
       ))}
-    </Stack>
+    </div>
   );
 };
 
