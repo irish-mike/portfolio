@@ -1,6 +1,6 @@
+import { timelineItems } from "@data";
 import { Col, Container, Row } from "react-bootstrap";
 import { IconType } from "react-icons";
-import { timelineItems } from "@data";
 
 interface TimelineItemProps {
   icon: IconType;
@@ -14,9 +14,9 @@ interface TimelineItemProps {
 const TimelineItem = ({ icon: Icon, date, title, location, description, link }: TimelineItemProps) => {
   return (
     <Col md={12} className="list-inline-item items-list flex-fill timeline-item">
-      <p className="event-date">{date}</p>
+      <p className="event-date z-3">{date}</p>
       <a href={link} target="_blank" rel="noopener noreferrer" className="text-decoration-none text-reset timeline-link">
-        <div className="timeline-content d-flex flex-column h-100">
+        <div className="timeline-content d-flex flex-column h-100 px-0">
           <div>
             <div className="timeline-icon">
               <Icon size={45} />

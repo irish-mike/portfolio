@@ -12,7 +12,7 @@ const PostPage = () => {
   }
 
   return (
-    <Container fluid className="mt-5 px-3 px-md-5">
+    <Container fluid className="mt-5 px-0 px-md-5">
       <PostHeader post={post} />
       <PostBody post={post} />
       <PostFooter post={post} />

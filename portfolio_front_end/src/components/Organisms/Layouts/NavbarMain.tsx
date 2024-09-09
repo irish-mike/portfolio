@@ -16,7 +16,7 @@ const NavbarMain = () => {
   const handleNavLinkClick = () => setExpanded(false); // Close on Nav.Link click
 
   return (
-    <Navbar expand="lg" expanded={expanded} onToggle={handleToggle} className="px-3 d-flex justify-content-between align-items-center">
+    <Navbar expand="lg" expanded={expanded} onToggle={handleToggle} className=" d-flex justify-content-between align-items-center text-background ">
       <div className="fixed-width">
         <ColorModeSwitch label="Dev Mode" />
       </div>

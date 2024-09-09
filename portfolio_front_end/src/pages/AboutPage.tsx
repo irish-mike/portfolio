@@ -1,12 +1,11 @@
-import { Container, Row, Col, Image } from "react-bootstrap";
 import michael_walking from "@assets/images/michael_walking.jpg";
 import { SocialIconGroup } from "@components"; // Adjust the import based on your actual file structure
+import { Col, Container, Image, Row } from "react-bootstrap";
 
 const AboutPage = () => {
   return (
     <Container className="section-inner my-5">
-      {/* Header Section */}
-      <header className="text-center mb-5">
+      <header className="text-center mb-md-5">
         <Row className="align-items-end justify-content-between">
           <Col xs={12} md="auto" className="text-md-start text-center mb-2 mb-md-0">
             <h1 className="mb-0 text-background">Who am I?</h1>
@@ -19,9 +18,9 @@ const AboutPage = () => {
       </header>
 
       {/* Image and Text Section */}
-      <section className="mb-3 pt-4">
+      <section>
         <Row>
-          <Col lg={5} className="pt-2 text-center text-lg-start">
+          <Col lg={5} className="pt-4 text-center text-lg-start">
             <Image className="profile-image" src={michael_walking} rounded fluid alt="Michael Grinnell" />
           </Col>
 
