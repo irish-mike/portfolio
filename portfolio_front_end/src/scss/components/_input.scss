@@ -90,3 +90,16 @@
     margin-left: 6px; /* Align horizontally with the custom bottom border */
     margin-right: 6px; /* Align horizontally with the custom bottom border */
 }
+
+
+/* Custom styling for invalid inputs */
+.was-validated .form-control:invalid, .form-control.is-invalid {
+    background-image: none !important; 
+    box-shadow: none !important;
+  }
+
+.was-validated .form-control:valid, .form-control.is-valid {
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+  
