@@ -1,18 +1,11 @@
-import axios, { AxiosRequestConfig } from 'axios';
-
-export interface FetchResponse<T> {
-    count: number;
-    next: string | null;
-    results: T[];
-}
+import axios from "axios";
 
 const axiosInstance = axios.create({
-    baseURL: 'https://api.rawg.io/api',
-    // headers: {}
-    params: {
-        key: 'ecb5ff5899824e149bf90ce0498fc877'
+    baseURL: "https://localhost/Projects/portfolio_2024/portfolio_back_end",
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
     }
-})
+});
 
 class APIClient<T> {
     endpoint: string;
@@ -21,17 +14,17 @@ class APIClient<T> {
         this.endpoint = endpoint;
     }
 
-    getAll = (config: AxiosRequestConfig) => {
-        return axiosInstance
-            .get<FetchResponse<T>>(this.endpoint, config)
-            .then((res) => res.data);
-    };
-
-    get = (id: number | string) => {
-        return axiosInstance
-            .get<T>(this.endpoint + '/' + id)
-            .then((res) => res.data);
-    };
+    sendEmail = async (data: T) => {
+        try {
+            const response = await axiosInstance.post(this.endpoint, data, {
+                transformRequest: [(data) => new URLSearchParams(data).toString()]
+            });
+            return response; // Make sure to return the response if successful
+        } catch (error) {
+            console.error("There was an error sending the email", error);
+            throw error; // Rethrow the error so the calling code can handle it
+        }
+    }
 }
 
 export default APIClient;

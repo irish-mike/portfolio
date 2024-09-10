@@ -1,4 +1,5 @@
-import axios from "axios"; // Import Axios
+import { APIClient } from "@services";
+import { AxiosResponse } from "axios";
 import React, { useRef, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { BsChatLeftText, BsEnvelopeAt, BsPersonVcard } from "react-icons/bs";
@@ -28,18 +29,14 @@ const ContactForm: React.FC = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://yourdomain.com/contact.php", formData, {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        transformRequest: [(data) => new URLSearchParams(data).toString()]
-      });
+      const emailClient = new APIClient("/services/send_email.php");
+      const response = await emailClient.sendEmail(formData);
 
-      if (response.status === 200) {
+      if ((response as AxiosResponse).status === 200) {
         setFormStatus("Message sent successfully!");
       } else {
         setFormStatus("Error sending message. Please try again later.");
