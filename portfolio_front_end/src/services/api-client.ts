@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-    baseURL: "https://localhost/Projects/portfolio_2024/portfolio_back_end",
+    baseURL: "https://michaelgrinnell.com",
     headers: {
         "Content-Type": "application/x-www-form-urlencoded"
     }
