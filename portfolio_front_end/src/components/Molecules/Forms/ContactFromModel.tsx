@@ -27,7 +27,7 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ trigger }) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ContactForm onSubmit={handleClose} />
+          <ContactForm />
         </Modal.Body>
       </Modal>
     </>

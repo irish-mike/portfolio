@@ -21,8 +21,7 @@ A good example of this is a search feature I planned to implement for my blog po
 In the past, I used to dive straight into coding without much planning. That can work fine for smaller projects, but as projects scale, so does the need for planning. For this project, I decided to put together a design document to guide the development. It wasn’t set in stone, but more like a flexible guide that evolved as the project went along.
 
 Having it was super helpful in keeping me focused and organised. I broke down tasks and tracked them on a Trello board, which stopped me from getting sidetracked by less important features. It made prioritising what mattered much easier and helped me manage my time better. The document also helped a lot with styling decisions. I grabbed screenshots from different sites for inspiration and even sketched out ideas on my whiteboard (one of my favorite development tools), taking pictures to include in the document. This approach really helped keep the design and styling consistent throughout the development lifecycle.
-
-![Screenshot from Design Document - About Me Section](/src/assets/posts/design_document_about_me.png)
+![Screenshot from Design Document - About Me Section](/assets/posts/design_document_about_me.png)
 
 ### Tools and Technologies Used
 
