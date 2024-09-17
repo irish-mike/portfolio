@@ -1,21 +1,21 @@
 import { TagBadgeList } from "@components";
-import { ThumbnailPost } from "@entities";
+import { Post } from "@entities";
 import { Card, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 interface Props {
-  post: ThumbnailPost;
+  post: Post;
   cardType: "post" | "featured";
 }
 
 const PostCard = ({ post, cardType }: Props) => {
-  const { id, status, title, description, thumbnail, date, tags } = post;
+  const { id, status, title, description, thumbnail, date_updated, tags } = post;
 
   const prefix = cardType;
 
   const isPublished = status === "published";
   const postLink = `/post/${id}`;
-  const footerContent = isPublished ? date : "Coming Soon";
+  const footerContent = isPublished ? date_updated : "Coming Soon";
   const postStatusClass = isPublished ? "" : "card-coming-soon";
   const overlayText = isPublished ? null : <div className="card-text-overlay">Coming Soon</div>;
 
@@ -23,7 +23,7 @@ const PostCard = ({ post, cardType }: Props) => {
     <Card className={`custom-card ${prefix}-card h-100 d-flex flex-column`}>
       <div className={`custom-card-image-outer-container ${prefix}-card-image-outer-container`}>
         <div className={`custom-card-image-inner-container p-1`}>
-          <Card.Img variant="top" src={thumbnail} alt={title} className={`custom-card-image ${prefix}-card-image ${postStatusClass}`} loading="lazy" />
+          <Card.Img variant="top" src={`http://localhost:8055/assets/${thumbnail}`} alt={title} className={`custom-card-image ${prefix}-card-image ${postStatusClass}`} loading="lazy" />
           {overlayText}
         </div>
       </div>

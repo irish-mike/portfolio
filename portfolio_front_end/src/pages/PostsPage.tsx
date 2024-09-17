@@ -1,11 +1,11 @@
+import { PostGrid, Section } from "@components";
 import { Container } from "react-bootstrap";
-import { ProjectGrid, Section } from "@components";
 
 const PostsPage = () => {
   return (
     <Container className="pt-4">
-      <Section title="Articles">
-        <ProjectGrid />
+      <Section title="Posts">
+        <PostGrid />
       </Section>
     </Container>
   );

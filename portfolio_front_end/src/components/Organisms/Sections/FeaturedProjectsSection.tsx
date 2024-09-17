@@ -1,11 +1,12 @@
 import { CardCarousel, Section } from "@components";
-import { posts } from "@data";
-import { ThumbnailPost } from "@entities";
+import { usePosts } from "@hooks";
 
 const FeaturedProjectsSection = () => {
+  const posts = usePosts();
+
   return (
     <Section title="Featured Projects">
-      <CardCarousel cards={posts.results as ThumbnailPost[]} />
+      <CardCarousel cards={posts} />
     </Section>
   );
 };

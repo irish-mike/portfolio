@@ -1,9 +1,9 @@
 import { PostCard } from "@components";
-import { ThumbnailPost } from "@entities";
+import { Post } from "@entities";
 import { Col, Row } from "react-bootstrap";
 
 interface Props {
-  posts: ThumbnailPost[];
+  posts: Post[];
 }
 
 const ThumbnailCardGrid = ({ posts }: Props) => {

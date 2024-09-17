@@ -23,7 +23,7 @@ export { default as TagSearch } from "./Organisms/Features/TagSearch";
 export { default as Timeline } from "./Organisms/Features/Timeline";
 
 // Grids
-export { default as ProjectGrid } from "./Organisms/Grids/PostGrid";
+export { default as PostGrid } from "./Organisms/Grids/PostGrid";
 export { default as ThumbnailCardGrid } from "./Organisms/Grids/ThumbnailCardGrid";
 
 

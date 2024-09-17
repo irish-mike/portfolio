@@ -1,9 +1,9 @@
-import { ThumbnailPost } from "@entities";
+import { Post } from "@entities";
 import { useCarouselStore } from "@state";
 import { useEffect } from "react";
 
 
-const useCarouselItems = (cards: ThumbnailPost[]) => {
+const useCarouselItems = (cards: Post[]) => {
     const displayCards = useCarouselStore((state) => state.displayCards);
     const handleResize = useCarouselStore((state) => state.handleResize);
 
