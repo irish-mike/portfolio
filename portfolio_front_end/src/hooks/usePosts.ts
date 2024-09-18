@@ -2,7 +2,7 @@ import { createDirectus, readItem, readItems, rest } from "@directus/sdk";
 import { Post, Posts } from "@entities";
 import { useState } from "react";
 
-const client = createDirectus<Posts>("http://localhost:8055/").with(rest());
+const client = createDirectus<Posts>(import.meta.env.VITE_BACK_END_URL).with(rest());
 
 const usePosts = () => {
   const [posts, setPosts] = useState<Post[]>([]);

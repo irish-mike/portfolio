@@ -23,7 +23,7 @@ const PostCard = ({ post, cardType }: Props) => {
     <Card className={`custom-card ${prefix}-card h-100 d-flex flex-column`}>
       <div className={`custom-card-image-outer-container ${prefix}-card-image-outer-container`}>
         <div className={`custom-card-image-inner-container p-1`}>
-          <Card.Img variant="top" src={`http://localhost:8055/assets/${thumbnail}`} alt={title} className={`custom-card-image ${prefix}-card-image ${postStatusClass}`} loading="lazy" />
+          <Card.Img variant="top" src={`${import.meta.env.VITE_BACK_END_URL}/assets/${thumbnail}`} alt={title} className={`custom-card-image ${prefix}-card-image ${postStatusClass}`} loading="lazy" />
           {overlayText}
         </div>
       </div>

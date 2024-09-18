@@ -1,6 +1,6 @@
-import { Col, Row } from "react-bootstrap";
-import { skills } from "@data";
 import { Section } from "@components";
+import { skills } from "@data";
+import { Col, Row } from "react-bootstrap";
 
 interface SkillProps {
   thumbnail: string;
