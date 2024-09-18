@@ -1,2 +1,2 @@
-export type { FullPost, Post } from "./Post";
+export type { Post, Posts } from "./Post";
 

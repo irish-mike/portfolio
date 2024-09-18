@@ -1,12 +1,8 @@
 import { PostCard } from "@components";
-import { Post } from "@entities";
+import { Posts } from "@entities";
 import { Col, Row } from "react-bootstrap";
 
-interface Props {
-  posts: Post[];
-}
-
-const ThumbnailCardGrid = ({ posts }: Props) => {
+const ThumbnailCardGrid = ({ posts }: Posts) => {
   return (
     <div className="thumbnail-card-grid">
       <Row className="d-flex justify-content-center">

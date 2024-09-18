@@ -1,30 +1,33 @@
-import { createDirectus, readItems, rest } from "@directus/sdk";
-import { Post } from "@entities";
-import { useEffect, useState } from "react";
+import { createDirectus, readItem, readItems, rest } from "@directus/sdk";
+import { Post, Posts } from "@entities";
+import { useState } from "react";
 
-interface Schema {
-  articles: Post[];
-}
-
-const client = createDirectus<Schema>("http://localhost:8055/").with(rest());
+const client = createDirectus<Posts>("http://localhost:8055/").with(rest());
 
 const usePosts = () => {
   const [posts, setPosts] = useState<Post[]>([]);
+  const [post, setPost] = useState<Post>();
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const result = await client.request(readItems("articles"));
-        setPosts(result);
-      } catch (error) {
-        console.error("Error fetching posts: ", error);
-      }
-    };
+  const getPosts = async () => {
+    try {
+      const result = await client.request(readItems("posts"));
+      setPosts(result);
+    } catch (error) {
+      console.error("Error fetching posts: ", error);
+    }
+  };
 
-    fetchPosts();
-  }, []);
+  const getPost = async (slug: string) => {
+    try {
+      const result = await client.request(readItem('posts', slug));
+      setPost(result);
+  } catch (error) {
+      console.error("Error fetching post: ", error);
+  }
+  };
 
-  return posts;
+
+  return { post, posts, getPost, getPosts };
 };
 
 export default usePosts;

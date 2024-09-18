@@ -1,27 +1,8 @@
 type postStatus = "draft" | "published" | "scheduled" | "deleted";
 
-interface BasePost {
-  id: number;
-  status: postStatus;
-  title: string;
-  date: string;
-  tags: string[];
-}
-
-export interface ThumbnailPost extends BasePost {
-  description: string;
-  thumbnail: string;
-}
-
-export interface FullPost extends BasePost {
-  subtitle: string;
-  content_md: string;
-  author: string;
-}
-
 export interface Post {
   id: string;
-  status: string;
+  status: postStatus;
   title: string;
   subtitle: string;
   description: string;
@@ -29,4 +10,8 @@ export interface Post {
   tags: string[];
   thumbnail: string;
   date_updated: string;
+}
+
+export interface Posts{
+  posts: Post[];
 }

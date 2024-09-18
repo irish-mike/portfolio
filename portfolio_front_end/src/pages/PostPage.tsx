@@ -1,12 +1,19 @@
 import { SocialShareIcons, TagBadgeList } from "@components";
-import { post } from "@data";
-import { FullPost } from "@entities";
+import { Post } from "@entities";
+import { usePosts } from "@hooks";
+import { useEffect } from "react";
 import { Col, Container, Figure, Row } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import remarkGfm from "remark-gfm";
 
 const PostPage = () => {
+  const { post, getPost } = usePosts();
+
+  useEffect(() => {
+    getPost("portfolio-overview");
+  }, []);
+
   if (!post) {
     return <div>Loading...</div>;
   }
@@ -22,7 +29,7 @@ const PostPage = () => {
 
 export default PostPage;
 
-const PostHeader = ({ post }: { post: FullPost }) => {
+const PostHeader = ({ post }: { post: Post }) => {
   return (
     <>
       <Row className="mb-3">
@@ -42,7 +49,7 @@ const PostHeader = ({ post }: { post: FullPost }) => {
         <Col className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center text-muted">
           <h2 className="h6 fw-light mb-2 mb-md-0 text-background">{post.subtitle}</h2>
           <p className="fst-italic mb-0 fw-light text-start text-md-end text-background">
-            Posted on <time>{post.date}</time> by {post.author}.
+            Posted on <time>{post.date_updated}</time> by Michael Grinnell.
           </p>
         </Col>
       </Row>
@@ -50,7 +57,7 @@ const PostHeader = ({ post }: { post: FullPost }) => {
   );
 };
 
-const PostBody = ({ post }: { post: FullPost }) => {
+const PostBody = ({ post }: { post: Post }) => {
   return (
     <Row>
       <Col className="mx-auto text-background">
@@ -93,7 +100,7 @@ const MediaWrapper = ({ children }: { children: React.ReactNode }) => (
   </Row>
 );
 
-const PostFooter = ({ post }: { post: FullPost }) => {
+const PostFooter = ({ post }: { post: Post }) => {
   return (
     <Row className="mt-5 text-background">
       <Col>
