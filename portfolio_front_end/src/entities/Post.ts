@@ -9,7 +9,7 @@ export interface Post {
   content_md: string;
   tags: string[];
   thumbnail: string;
-  date_updated: string;
+  date: string;
 }
 
 export interface Posts{

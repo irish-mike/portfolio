@@ -9,13 +9,13 @@ interface Props {
 }
 
 const PostCard = ({ post, cardType }: Props) => {
-  const { id, status, title, description, thumbnail, date_updated, tags } = post;
+  const { id, status, title, description, thumbnail, date, tags } = post;
 
   const prefix = cardType;
 
   const isPublished = status === "published";
   const postLink = `/post/${id}`;
-  const footerContent = isPublished ? date_updated : "Coming Soon";
+  const footerContent = isPublished ? date : "Coming Soon";
   const postStatusClass = isPublished ? "" : "card-coming-soon";
   const overlayText = isPublished ? null : <div className="card-text-overlay">Coming Soon</div>;
 

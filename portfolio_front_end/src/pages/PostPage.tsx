@@ -2,20 +2,29 @@ import { SocialShareIcons, TagBadgeList } from "@components";
 import { Post } from "@entities";
 import { usePosts } from "@hooks";
 import { useEffect } from "react";
-import { Col, Container, Figure, Row } from "react-bootstrap";
+import { Col, Container, Figure, Row, Spinner } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import remarkGfm from "remark-gfm";
 
 const PostPage = () => {
+  const { slug } = useParams(); // Get the slug from the URL
   const { post, getPost } = usePosts();
 
   useEffect(() => {
-    getPost("portfolio-overview");
+    if (slug) {
+      getPost(slug);
+    }
   }, []);
 
   if (!post) {
-    return <div>Loading...</div>;
+    return (
+      <Container fluid className="d-flex justify-content-center align-items-center " style={{ minHeight: "75vh" }}>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </Container>
+    );
   }
 
   return (
@@ -49,7 +58,7 @@ const PostHeader = ({ post }: { post: Post }) => {
         <Col className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center text-muted">
           <h2 className="h6 fw-light mb-2 mb-md-0 text-background">{post.subtitle}</h2>
           <p className="fst-italic mb-0 fw-light text-start text-md-end text-background">
-            Posted on <time>{post.date_updated}</time> by Michael Grinnell.
+            Posted on <time>{post.date}</time> by Michael Grinnell.
           </p>
         </Col>
       </Row>

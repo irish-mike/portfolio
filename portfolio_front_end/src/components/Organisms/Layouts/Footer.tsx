@@ -1,6 +1,6 @@
 import { ContactFormModal } from "@components";
 import React from "react";
-import { Row, Col, Stack, Button } from "react-bootstrap";
+import { Button, Col, Row, Stack } from "react-bootstrap";
 import { IoMailOutline } from "react-icons/io5";
 import { TbLock } from "react-icons/tb";
 import { Link } from "react-router-dom";
