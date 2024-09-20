@@ -3,7 +3,7 @@ import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
 
 const PrivacyPage = () => {
   return (
-    <Container className="p-4">
+    <Container className="p-4 text-background">
       <Row>
         <Col>
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end">

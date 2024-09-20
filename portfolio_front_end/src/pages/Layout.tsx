@@ -10,12 +10,12 @@ const Layout: React.FC = () => {
 
   return (
     <>
+      {theme === "dark" && <ParticleBackground />}
       <Container style={{ position: "relative", zIndex: 1 }}>
         <NavbarMain />
         <TransitionWrapper />
         <Footer />
       </Container>
-      {theme === "dark" && <ParticleBackground />}
     </>
   );
 };

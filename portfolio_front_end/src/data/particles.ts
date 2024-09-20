@@ -7,7 +7,7 @@ const particles = {
     }
   },
   fullScreen: {
-    enable: true,
+    enable: false,
     zIndex: -10
   },
   detectRetina: true,
@@ -24,8 +24,7 @@ const particles = {
         mode: "attract"
       },
       resize: {
-        enable: true,
-        delay: 0.5
+        enable: false,
       }
     },
     modes: {
