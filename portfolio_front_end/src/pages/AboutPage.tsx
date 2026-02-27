@@ -25,23 +25,12 @@ const AboutPage = () => {
           </Col>
 
           <Col lg={7}>
-            <h4 className="text-background my-2">Dia duit! Hello! Bienvenido! Salut! Willkommen! Ciao!</h4>
-<p className="text-background">
-              I build software that works, scales, and stays out of the way. 
-              With a background spanning <strong>Full Stack Development and Site Reliability Engineering</strong>, 
-              I focus on delivering pragmatic technical solutions that solve real business needs. 
-              I’m a firm believer in the <strong>KISS principle</strong>: keeping systems simple, 
-              reliable, and highly performant.
+            <h4 className="text-background my-2">Dia duit! Hello! ¡Hola!</h4>
+            <p className="text-background">
+              I’m Michael, a software engineer focused on building scalable, practical systems that solve real-world problems. I’m a strong believer in using established design patterns, not just because they’re reliable, but because they create a shared language that improves consistency across teams. By choosing proven architectures over the latest trends, I can deliver solutions that are maintainable, efficient, and aligned with business goals.
             </p>
             <p className="text-background">
-              Whether I’m optimising an API endpoint or perfecting a taco recipe, I’m driven by the same principle: 
-              building something that works and solves the right problem. I’d rather rely on proven, 
-              well-tested approaches than reach for the latest shiny new tools.
-            </p>
-            <p className="text-background">
-              I am a dual US/EU citizen from Ireland, currently based in Valencia, Spain (B2 Spanish). 
-              I’m seeking opportunities where I can help teams reduce technical debt, 
-              stabilise infrastructure, and deliver reliable products.
+              My expertise spans from full-stack development to Site Reliability Engineering (SRE), with a particular focus on backend architecture. Recently, I’ve been focused on strengthening cloud infrastructure, improving CI/CD pipelines, and fine-tuning the performance of complex systems. This experience is backed by a solid academic foundation: I hold a BSc in Games Development and an MSc in Music Technology, and was awarded the President’s Prize for Academic Excellence for both degrees.
             </p>
 
             {/* Follow Me Section */}
@@ -58,21 +47,20 @@ const AboutPage = () => {
         </Row>
       </section>
 
-      {/* Music and Technology Section */}
+      {/* Music and Travel Section */}
       <section className="py-2">
         <Row>
           <Col md={12}>
-            <h4 className="text-background">Exploring the World Through Music and Technology</h4>
+            <h4 className="text-background">Creativity & Perspective</h4>
             <p className="text-background">
-              I believe in balancing work with my passions, and music is at the top of the list. I’m a Grade 2 classical pianist, I regularly produce music, and I also DJ. For two years, I held a DJ slot on{" "}
-              <a href="https://www.phever.ie/" target="_blank">
+              I believe technical work is stronger when it's paired with a creative mindset. I’m a classical pianist, a music producer, and a DJ with a former two-year residency on{" "}
+              <a href="https://www.phever.ie/" target="_blank" rel="noreferrer">
                 Phever Media
-              </a>
-              , a radio station in Ireland, where I was able to share my love for music with a wide audience. This combination of creativity and technical skill gives me a unique perspective, especially when working on audio programming or music-related projects.
+              </a>{" "}
+              in Ireland. This mix of creativity and technical ability helps me think outside the box, especially when I'm designing user experiences or tackling complex problems.
             </p>
             <p className="text-background">
-              When I’m not coding or making music, you’ll likely find me traveling and exploring new places while learning something new. I live in Valencia, Spain, where I’m actively learning Spanish and aiming to have conversational fluency by next year. Whether I’m diving into new technology,
-              taking on a personal project (like building a home server), or keeping up with the latest music trends, I’m driven by curiosity and a love for creating meaningful things.{" "}
+              When I’m not at a terminal, I’m usually exploring. I’m currently based in Valencia, Spain, where I’ve reached a B2 level in Spanish and am working toward fluency. I recently spent four months travelling solo through Peru, Ecuador, and Colombia, including planning and completing a five-day trek to Machu Picchu and budgeting for the Galápagos Islands. These experiences pushed me to think more critically, manage my time well, and communicate clearly in unfamiliar environments.
             </p>
           </Col>
         </Row>
