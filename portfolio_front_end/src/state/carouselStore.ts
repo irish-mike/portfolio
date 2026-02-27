@@ -16,7 +16,7 @@ const useCarouselStore = create<CarouselState>((set) => ({
     handleResize: () => {
         const width = window.innerWidth;
         set({
-            displayCards: width >= 1200 ? 4 : width >= 768 ? 2 : 1,
+            displayCards: width >= 1200 ? 3 : width >= 768 ? 2 : 1,
         });
     },
 }));

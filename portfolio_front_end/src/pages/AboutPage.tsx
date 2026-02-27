@@ -26,17 +26,22 @@ const AboutPage = () => {
 
           <Col lg={7}>
             <h4 className="text-background my-2">Dia duit! Hello! Bienvenido! Salut! Willkommen! Ciao!</h4>
-            <p className="text-background">
-              I’m Michael, a curious software developer with a passion for technology and problem-solving. With a BSc in Computing in Games Development and an MSc in Computing in Music Technology, both completed with top honors and recognition through the President’s Prize for Academic Excellence,
-              I’m now pursuing a master’s in Artificial Intelligence, aiming for completion by 2026.
+<p className="text-background">
+              I build software that works, scales, and stays out of the way. 
+              With a background spanning <strong>Full Stack Development and Site Reliability Engineering</strong>, 
+              I focus on delivering pragmatic technical solutions that solve real business needs. 
+              I’m a firm believer in the <strong>KISS principle</strong>: keeping systems simple, 
+              reliable, and highly performant.
             </p>
             <p className="text-background">
-              I’m currently working as a full-stack developer at{" "}
-              <a href="https://www.providentcrm.com/" target="_blank">
-                Provident CRM
-              </a>
-              , where I collaborate closely with clients to deliver custom software solutions. Proficient in C++, Python, PHP, and JavaScript, I’m a big fan of coding principles like KISS (Keep It Simple, Stupid) and DRY (Don’t Repeat Yourself). These principles, among others, ensure that the
-              solutions I create are both effective and scalable. I thrive in agile environments where I prioritize clear communication with both customers and team members, which I’ve found to be key to a successful project.{" "}
+              Whether I’m optimising an API endpoint or perfecting a taco recipe, I’m driven by the same principle: 
+              building something that works and solves the right problem. I’d rather rely on proven, 
+              well-tested approaches than reach for the latest shiny new tools.
+            </p>
+            <p className="text-background">
+              I am a dual US/EU citizen from Ireland, currently based in Valencia, Spain (B2 Spanish). 
+              I’m seeking opportunities where I can help teams reduce technical debt, 
+              stabilise infrastructure, and deliver reliable products.
             </p>
 
             {/* Follow Me Section */}
