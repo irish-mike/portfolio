@@ -68,6 +68,7 @@ jobs:
           path: |
             portfolio_front_end/dist
             portfolio_back_end/services
+            portfolio_back_end/docker-compose.yml
             .github/scripts/deploy.sh
           include-hidden-files: true
           if-no-files-found: error

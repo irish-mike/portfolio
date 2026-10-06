@@ -6,6 +6,7 @@ readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 readonly REPOSITORY_ROOT="$(cd -- "${SCRIPT_DIR}/../.." && pwd)"
 readonly FRONTEND_BUILD="${REPOSITORY_ROOT}/portfolio_front_end/dist"
 readonly PHP_SOURCE="${REPOSITORY_ROOT}/portfolio_back_end/services"
+readonly COMPOSE_SOURCE="${REPOSITORY_ROOT}/portfolio_back_end/docker-compose.yml"
 
 : "${DEPLOY_ROOT:=/var/www/michaelgrinnell.com/portfolio_2024}"
 : "${HEALTHCHECK_HOST:=michaelgrinnell.com}"
@@ -18,6 +19,7 @@ fi
 
 readonly FRONTEND_TARGET="${DEPLOY_ROOT}/portfolio_front_end/dist"
 readonly PHP_TARGET="${DEPLOY_ROOT}/portfolio_back_end/services"
+readonly COMPOSE_TARGET="${DEPLOY_ROOT}/portfolio_back_end/docker-compose.yml"
 readonly LOCK_FILE="${DEPLOY_ROOT}/.deploy.lock"
 
 if [[ ! -f "${FRONTEND_BUILD}/index.html" ]]; then
@@ -27,6 +29,11 @@ fi
 
 if [[ ! -f "${PHP_SOURCE}/vendor/autoload.php" ]]; then
   echo "The PHP dependency artifact is missing." >&2
+  exit 1
+fi
+
+if [[ ! -f "${COMPOSE_SOURCE}" ]]; then
+  echo "The Directus Compose file is missing." >&2
   exit 1
 fi
 
@@ -43,6 +50,27 @@ fi
 
 rsync -a --delete --delay-updates -- "${FRONTEND_BUILD}/" "${FRONTEND_TARGET}/"
 rsync -a --delete --delay-updates -- "${PHP_SOURCE}/" "${PHP_TARGET}/"
+install -m 0644 -- "${COMPOSE_SOURCE}" "${COMPOSE_TARGET}"
+
+docker compose --file "${COMPOSE_TARGET}" up --detach
+
+directus_status=""
+for _ in {1..12}; do
+  directus_status="$(
+    curl --silent --show-error \
+      --output /dev/null \
+      --write-out '%{http_code}' \
+      --connect-timeout 2 \
+      --max-time 5 \
+      "http://127.0.0.1:8055/server/health" || true
+  )"
+
+  if [[ "${directus_status}" == "200" ]]; then
+    break
+  fi
+
+  sleep 5
+done
 
 frontend_status="$(
   curl --insecure --silent --show-error \
@@ -74,5 +102,11 @@ if [[ "${service_status}" != "405" ]]; then
   exit 1
 fi
 
-echo "Deployment completed successfully (frontend ${frontend_status}, service ${service_status})."
+if [[ "${directus_status}" != "200" ]]; then
+  echo "Directus health check failed with HTTP ${directus_status:-no-response}." >&2
+  docker compose --file "${COMPOSE_TARGET}" ps >&2
+  exit 1
+fi
+
+echo "Deployment completed successfully (frontend ${frontend_status}, service ${service_status}, Directus ${directus_status})."
 
