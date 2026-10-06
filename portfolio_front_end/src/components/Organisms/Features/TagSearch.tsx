@@ -8,7 +8,7 @@ const TagSearch: React.FC<TagsProps> = ({ options }) => {
   const [tags, setTags] = useState<string[]>([]);
   const [showDropdown, setShowDropdown] = useState(false); // State to control dropdown visibility
   const filteredOptions = options.filter((option) => option.toLowerCase().includes(inputValue.toLowerCase()) && !tags.includes(option));
-  const handleInputChange = (event: any) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLButtonElement>) => {
     setInputValue(event.target.value);
     if (event.target.value.trim()) {
       setShowDropdown(true); // Show dropdown when input is not empty
@@ -16,7 +16,7 @@ const TagSearch: React.FC<TagsProps> = ({ options }) => {
       setShowDropdown(false); // Hide dropdown when input is cleared
     }
   };
-  const handleKeyDown = (event: any) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement | HTMLButtonElement>) => {
     if (event.key === "Enter" && inputValue && !tags.includes(inputValue)) {
       event.preventDefault();
       setTags([...tags, inputValue]);

@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const TransitionWrapper = () => {
   const location = useLocation();
@@ -10,11 +9,9 @@ const TransitionWrapper = () => {
   }, [location]);
 
   return (
-    <TransitionGroup>
-      <CSSTransition key={location.key} classNames="fade" timeout={300}>
-        <Outlet />
-      </CSSTransition>
-    </TransitionGroup>
+    <div key={location.key} className="route-transition">
+      <Outlet />
+    </div>
   );
 };
 

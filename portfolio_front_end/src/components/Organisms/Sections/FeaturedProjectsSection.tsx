@@ -7,7 +7,7 @@ const FeaturedProjectsSection = () => {
 
   useEffect(() => {
     getPosts();
-  }, []);
+  }, [getPosts]);
 
   return (
     <Section title="Featured Projects">

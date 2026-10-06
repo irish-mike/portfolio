@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import ContactForm from "./ContactForm";
 
 interface ContactFormModalProps {
-  trigger: ReactElement;
+  trigger: ReactElement<{ onClick?: React.MouseEventHandler }>;
 }
 
 const ContactFormModal: React.FC<ContactFormModalProps> = ({ trigger }) => {
@@ -13,7 +13,10 @@ const ContactFormModal: React.FC<ContactFormModalProps> = ({ trigger }) => {
   const handleClose = () => setShow(false);
 
   const triggerWithProps = React.cloneElement(trigger, {
-    onClick: handleShow
+    onClick: (event) => {
+      trigger.props.onClick?.(event);
+      handleShow();
+    }
   });
 
   return (

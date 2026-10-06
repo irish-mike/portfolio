@@ -1,30 +1,31 @@
 import { createDirectus, readItem, readItems, rest } from "@directus/sdk";
 import { Post, Posts } from "@entities";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
-const client = createDirectus<Posts>(import.meta.env.VITE_BACK_END_URL).with(rest());
+const backendUrl = import.meta.env.VITE_BACK_END_URL || window.location.origin;
+const client = createDirectus<Posts>(backendUrl).with(rest());
 
 const usePosts = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [post, setPost] = useState<Post>();
 
-  const getPosts = async () => {
+  const getPosts = useCallback(async () => {
     try {
       const result = await client.request(readItems("posts"));
-      setPosts(result);
+      setPosts(Array.isArray(result) ? result : []);
     } catch (error) {
       console.error("Error fetching posts: ", error);
     }
-  };
+  }, []);
 
-  const getPost = async (slug: string) => {
+  const getPost = useCallback(async (slug: string) => {
     try {
       const result = await client.request(readItem('posts', slug));
-      setPost(result);
+      setPost(result && typeof result === "object" && !Array.isArray(result) ? result : undefined);
   } catch (error) {
       console.error("Error fetching post: ", error);
   }
-  };
+  }, []);
 
 
   return { post, posts, getPost, getPosts };

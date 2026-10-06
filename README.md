@@ -8,7 +8,7 @@ This repository contains the code for [michaelgrinnell.com](https://michaelgrinn
 
 ## Prerequisites
 
-* **Node.js 20 LTS** (nvm recommended)
+* **Node.js 24 LTS** (nvm recommended)
 * **PHP 8.3** & **Composer** (for contact form backend)
 * **Docker** (only if running the CMS locally)
 
@@ -47,7 +47,7 @@ The frontend reads the `.env` from the parent directory automatically via Vite c
 1. **Install and Run**
 ```bash
 cd portfolio_front_end
-nvm use 20
+nvm use 24
 npm install
 npm run dev
 
@@ -55,8 +55,7 @@ npm run dev
 
 
 2. **Access the Site**
-The development server runs at: `https://localhost:5173`
-> **Note:** Local HTTPS is enabled. You may need to accept the browser's self-signed certificate warning to allow the frontend to communicate with your API.
+The development server runs at: `http://localhost:5173`
 
 
 

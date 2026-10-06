@@ -22,24 +22,26 @@
     }
   }
 
-  .fade-enter {
-    opacity: 0;
-    transform: translateY(20px); /* Optional: slight movement from the bottom */
+  .route-transition {
+    animation: route-fade-in 300ms ease-in-out;
   }
-  
-  .fade-enter-active {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+
+  @keyframes route-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  
-  .fade-exit {
-    opacity: 1;
-  }
-  
-  .fade-exit-active {
-    opacity: 0;
-    transition: opacity 300ms ease-in-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    .route-transition {
+      animation: none;
+    }
   }
 
   body, html {

@@ -8,7 +8,7 @@ const PostGrid = () => {
 
   useEffect(() => {
     getPosts();
-  }, []);
+  }, [getPosts]);
 
   return (
     <Row s={1} md={2} className="g-4">

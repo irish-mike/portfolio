@@ -2,16 +2,18 @@ import { particles as defaultParticles } from "@data";
 import { useEffect, useMemo, useState } from "react";
 
 const useParticleConfig = () => {
-  const [count, setCount] = useState(0);
-
-  const updateParticleCount = () => {
+  const getParticleCount = () => {
     const width = window.innerWidth;
-    const newCount = width >= 1024 ? 1000 : width >= 768 ? 500 : 100;
-    setCount(newCount);
+    return width >= 1024 ? 1000 : width >= 768 ? 500 : 100;
   };
 
+  const [count, setCount] = useState(getParticleCount);
+
   useEffect(() => {
-    updateParticleCount();
+    const updateParticleCount = () => {
+      setCount(getParticleCount());
+    };
+
     window.addEventListener("resize", updateParticleCount);
     return () => {
       window.removeEventListener("resize", updateParticleCount);

@@ -9,7 +9,7 @@ const useContactForm = () => {
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [validated, setValidated] = useState(false);
     const [pending, setPending] = useState(false);
-  
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setFormData({
         ...formData,
@@ -37,21 +37,24 @@ const useContactForm = () => {
       }
   
       setPending(true);
-      setFormStatus("Message sent successfully!");
-      setIsError(false); // Reset error state on optimistic success
-      setPending(false);
+      setFormStatus(null);
+      setIsError(false);
   
       try {
         const emailClient = new APIClient("/services/send_email.php");
         const response = await emailClient.sendEmail(formData);
   
-        if ((response as AxiosResponse).status !== 200) {
+        if ((response as AxiosResponse).status === 200) {
+          setFormStatus("Message sent successfully!");
+        } else {
           setFormStatus("Error sending message. Please try again later.");
-          setIsError(true); // Set error status to true
+          setIsError(true);
         }
-      } catch (error) {
+      } catch {
         setFormStatus("Error sending message. Please check your connection and try again.");
-        setIsError(true); // Set error status to true
+        setIsError(true);
+      } finally {
+        setPending(false);
       }
     };
   
@@ -67,6 +70,6 @@ const useContactForm = () => {
       handleSubmit,
     };
   };
-  
+
   export default useContactForm;
-  
+

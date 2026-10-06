@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     <footer className="m-4">
       <Row className="align-items-center">
         <Col sm={12} md={6} className="text-center text-md-start py-2 text-background">
-          <small>© Michael Grinnell 2024</small>
+          <small>© Michael Grinnell {new Date().getFullYear()}</small>
         </Col>
         <Col sm={12} md={6} className="text-center text-md-end py-2">
           <Stack direction="horizontal" gap={2} className="justify-content-md-end justify-content-center">

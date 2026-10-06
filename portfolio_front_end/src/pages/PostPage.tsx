@@ -15,7 +15,7 @@ const PostPage = () => {
     if (slug) {
       getPost(slug);
     }
-  }, []);
+  }, [getPost, slug]);
 
   if (!post) {
     return (

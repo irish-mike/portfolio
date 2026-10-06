@@ -1,29 +1,16 @@
-// Import Bootstrap's functions first
-@import '../../node_modules/bootstrap/scss/functions';
+@use './base/colour-palette';
+@use './base/utilities';
+@use './base/theme-overrides';
+@use './base/typography';
 
-// @import './base/colour-palette';
-
-// Include Bootstrap's variables and mixins
-@import '../../node_modules/bootstrap/scss/variables';
-@import '../../node_modules/bootstrap/scss/mixins';
-
-// Include Bootstrap itself
-@import '../../node_modules/bootstrap/scss/bootstrap';
-
-@import './base/colour-palette';
-
-@import './base/utilities';
-@import './base/theme-overrides';
-@import './base/typography';
-
-@import './components/buttons';
-@import './components/hr';
-@import './components/input';
-@import './components/scroll-indicator';
-@import './components/timeline';
-@import './components/skill-badge';
-@import './components/cards';
-@import './components/images';
-@import './components/accordians';
-@import './components/icons';
+@use './components/buttons';
+@use './components/hr';
+@use './components/input';
+@use './components/scroll-indicator';
+@use './components/timeline';
+@use './components/skill-badge';
+@use './components/cards';
+@use './components/images';
+@use './components/accordians';
+@use './components/icons';
 

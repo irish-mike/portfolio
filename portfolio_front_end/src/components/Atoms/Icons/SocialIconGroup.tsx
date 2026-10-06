@@ -16,7 +16,7 @@ const SocialIconGroup = () => {
         <SocialIcon url="https://www.linkedin.com/in/-michael-grinnell" target="_blank" className="social-icon" />
       </div>
       <div className="p-1">
-        <SocialIcon network="github" href="https://bitbucket.org/michael_grinnell" target="_blank" className="social-icon" />
+        <SocialIcon url="https://github.com/irish-mike" target="_blank" rel="noopener noreferrer" className="social-icon" />
       </div>
       <div className="p-1">
         <SocialIcon url="https://soundcloud.com/mikegireland" target="_blank" className="social-icon" />

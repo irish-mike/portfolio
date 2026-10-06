@@ -1,16 +1,20 @@
-import { useParticleConfig, useParticleEngine } from "@hooks";
-import { ISourceOptions } from "@tsparticles/engine";
-import Particles from "@tsparticles/react";
+import { useParticleConfig } from "@hooks";
+import type { Engine, ISourceOptions } from "@tsparticles/engine";
+import Particles, { ParticlesProvider } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+
+const initializeParticles = async (engine: Engine) => {
+  await loadSlim(engine);
+};
 
 const ParticleBackground = () => {
-  const initialized = useParticleEngine();
   const config = useParticleConfig();
 
-  if (!initialized) {
-    return null;
-  }
-
-  return <Particles id="tsparticles" options={config as ISourceOptions} />;
+  return (
+    <ParticlesProvider init={initializeParticles}>
+      <Particles id="tsparticles" options={config as ISourceOptions} />
+    </ParticlesProvider>
+  );
 };
 
 export default ParticleBackground;
