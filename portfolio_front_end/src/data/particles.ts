@@ -11,7 +11,7 @@ const particles = {
     zIndex: -10
   },
   detectRetina: true,
-  fpsLimit: 120,
+  fpsLimit: 60,
   interactivity: {
     detectsOn: "window",
     events: {
@@ -36,10 +36,9 @@ const particles = {
         maxSpeed: 0.1
       },
       repulse: {
-        distance: 500,
-        duration: 2,
-        speed: 0.5,
-        maxSpeed: 1
+        distance: 200,
+        duration: 0.4,
+        speed: 1.545
       }
     }
   },
@@ -65,6 +64,9 @@ const particles = {
       warp: true
     },
     number: {
+      density: {
+        enable: false
+      },
       value: 100
     },
     opacity: {

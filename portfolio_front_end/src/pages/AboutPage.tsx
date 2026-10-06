@@ -1,4 +1,4 @@
-import michael_walking from "@assets/images/michael_walking.jpg";
+import michael_walking from "@assets/images/michael_walking.avif";
 import { SocialIconGroup } from "@components"; // Adjust the import based on your actual file structure
 import { Col, Container, Image, Row } from "react-bootstrap";
 

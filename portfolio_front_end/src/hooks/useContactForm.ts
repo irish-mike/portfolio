@@ -1,5 +1,4 @@
 import { APIClient } from "@services";
-import { AxiosResponse } from "axios";
 import { useRef, useState } from "react";
 
 const useContactForm = () => {
@@ -44,7 +43,7 @@ const useContactForm = () => {
         const emailClient = new APIClient("/services/send_email.php");
         const response = await emailClient.sendEmail(formData);
   
-        if ((response as AxiosResponse).status === 200) {
+        if (response.ok) {
           setFormStatus("Message sent successfully!");
         } else {
           setFormStatus("Error sending message. Please try again later.");

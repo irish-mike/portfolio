@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 const useParticleConfig = () => {
   const getParticleCount = () => {
     const width = window.innerWidth;
-    return width >= 1024 ? 1000 : width >= 768 ? 500 : 100;
+    return width >= 1024 ? 376 : width >= 768 ? 209 : 84;
   };
 
   const [count, setCount] = useState(getParticleCount);

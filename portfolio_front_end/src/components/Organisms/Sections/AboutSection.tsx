@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { SocialIconGroup } from "@components";
-import profile from "@assets/images/michael_profile.png";
+import profile from "@assets/images/michael_profile.avif";
 
 interface Props {
   title: string;

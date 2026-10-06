@@ -1,13 +1,4 @@
-import axios from "axios";
-
-const axiosInstance = axios.create({
-    baseURL: import.meta.env.VITE_BASE_URL,
-    headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-    }
-});
-
-class APIClient<T> {
+class APIClient<T extends Record<string, string>> {
     endpoint: string;
 
     constructor(endpoint: string) {
@@ -16,13 +7,18 @@ class APIClient<T> {
 
     sendEmail = async (data: T) => {
         try {
-            const response = await axiosInstance.post(this.endpoint, data, {
-                transformRequest: [(data) => new URLSearchParams(data).toString()]
+            const baseUrl = import.meta.env.VITE_BASE_URL?.replace(/\/$/, "") ?? "";
+            const response = await fetch(`${baseUrl}${this.endpoint}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: new URLSearchParams(data).toString()
             });
-            return response; // Make sure to return the response if successful
+            return response;
         } catch (error) {
             console.error("There was an error sending the email", error);
-            throw error; // Rethrow the error so the calling code can handle it
+            throw error;
         }
     }
 }
