@@ -1,0 +1,96 @@
+name: Deploy production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-production
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build release
+    if: github.repository == 'irish-mike/portfolio'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out the release commit
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: portfolio_front_end/.nvmrc
+          cache: npm
+          cache-dependency-path: portfolio_front_end/package-lock.json
+
+      - name: Check deployment configuration
+        shell: bash
+        env:
+          VITE_BACK_END_URL: ${{ vars.VITE_BACK_END_URL }}
+        run: |
+          if [[ -z "${VITE_BACK_END_URL}" ]]; then
+            echo "Repository variable VITE_BACK_END_URL is required." >&2
+            exit 1
+          fi
+
+      - name: Install frontend dependencies
+        working-directory: portfolio_front_end
+        run: npm ci
+
+      - name: Lint frontend
+        working-directory: portfolio_front_end
+        run: npm run lint
+
+      - name: Build frontend
+        working-directory: portfolio_front_end
+        env:
+          VITE_BACK_END_URL: ${{ vars.VITE_BACK_END_URL }}
+        run: npm run build
+
+      - name: Install production PHP dependencies
+        working-directory: portfolio_back_end/services
+        run: composer install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader
+
+      - name: Upload release artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: portfolio-${{ github.sha }}
+          path: |
+            portfolio_front_end/dist
+            portfolio_back_end/services
+            .github/scripts/deploy.sh
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    name: Deploy release
+    needs: build
+    runs-on: [self-hosted, linux, x64]
+    environment: production
+    timeout-minutes: 5
+
+    steps:
+      - name: Download validated release
+        uses: actions/download-artifact@v7
+        with:
+          name: portfolio-${{ github.sha }}
+          path: ${{ runner.temp }}/portfolio-release
+
+      - name: Deploy release
+        shell: bash
+        env:
+          DEPLOY_ROOT: /var/www/michaelgrinnell.com/portfolio_2024
+          HEALTHCHECK_HOST: michaelgrinnell.com
+        run: bash "${RUNNER_TEMP}/portfolio-release/.github/scripts/deploy.sh"
+
