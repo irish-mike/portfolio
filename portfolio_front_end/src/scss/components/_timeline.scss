@@ -34,6 +34,16 @@
   font-size: 1.2rem;
 }
 
+@media (max-width: 1139px) {
+  .horizontal-timeline .items .items-list {
+    padding-top: 104px;
+  }
+
+  .horizontal-timeline .items .items-list .event-date {
+    top: 40px;
+  }
+}
+
 @media (min-width: 1140px) {
   .horizontal-timeline .items .items-list {
     display: inline-block;
@@ -109,6 +119,10 @@
 .event-location {
   font-size: 1.1rem;
   color: var(--bs-secondary);
+}
+
+[data-bs-theme="dark"] .event-location {
+  color: #ef7d4f;
 }
 
 .timeline-content .event-description {

@@ -43,7 +43,7 @@ const NavbarMain = () => {
       <div className="d-none d-lg-block fixed-width">
         <Navbar.Brand href="/" style={{ display: "flex", justifyContent: "flex-end", width: "100%" }}>
           <div className="logo-container">
-            <img src={logo} width="60" height="60" alt="React Bootstrap logo" />{" "}
+            <img src={logo} width="60" height="60" alt="Michael Grinnell logo" />{" "}
           </div>
         </Navbar.Brand>
       </div>
