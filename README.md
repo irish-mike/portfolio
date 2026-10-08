@@ -67,12 +67,34 @@ The development server runs at: `http://localhost:5173`
 
 To run the blog and database locally instead of using the production API:
 
+The root `.env` must also contain a stable `SECRET`, `DB_CLIENT=sqlite3`, and
+`DB_FILENAME=/database/data.db`. Keep the same `SECRET` and database path when
+upgrading an existing instance. Set `VITE_BACK_END_URL=http://localhost:8055`
+to make the local frontend use the local CMS.
+
 ```bash
 cd ../portfolio_back_end
 docker-compose up -d
 # Admin interface: http://localhost:8055
 
 ```
+
+The Compose file pins Directus to version 12.5.0. Its `database` and `uploads`
+folders are mounted outside the container so posts and media persist across
+image updates. Before any production deployment, the deployment script stops
+Directus and archives the existing database, uploads, configuration, and
+previous Compose file in `.directus-backups` inside the deployed project. The
+archive is private to the deployment account and is retained for manual
+rollback. Check the blog and CMS login after an upgrade before deleting any
+older archive.
+
+The production workflow also rehearses the new image against a copy of the
+repository database. A failed migration or public posts API check blocks the
+production deployment.
+
+To roll back a failed upgrade, stop Directus, extract the chosen archive into
+the deployed project directory, then start Directus with the restored Compose
+file. Restoring the archive replaces content created after that backup.
 
 ### Contact Form Service
 

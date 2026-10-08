@@ -2,6 +2,7 @@
 vendor/
 node_modules/
 dist/
+portfolio_back_end/backups/
 
 # environment file
 **/*.env

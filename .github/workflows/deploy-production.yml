@@ -18,7 +18,7 @@ jobs:
     name: Build release
     if: github.repository == 'irish-mike/portfolio'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
 
     steps:
       - name: Check out the release commit
@@ -56,6 +56,10 @@ jobs:
         env:
           VITE_BACK_END_URL: ${{ vars.VITE_BACK_END_URL }}
         run: npm run build
+
+      - name: Rehearse Directus database migration
+        shell: bash
+        run: bash .github/scripts/check-directus-upgrade.sh
 
       - name: Install production PHP dependencies
         working-directory: portfolio_back_end/services
