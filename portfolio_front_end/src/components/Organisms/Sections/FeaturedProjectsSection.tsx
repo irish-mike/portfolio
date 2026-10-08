@@ -1,9 +1,9 @@
-import { CardCarousel, Section } from "@components";
+import { CardCarousel, PostLoadError, Section } from "@components";
 import { usePosts } from "@hooks";
-import { useEffect } from "react";
+import { useEffect, type ReactElement } from "react";
 
-const FeaturedProjectsSection = () => {
-  const { posts, getPosts } = usePosts();
+const FeaturedProjectsSection = (): ReactElement => {
+  const { postsRequest, getPosts } = usePosts();
 
   useEffect(() => {
     getPosts();
@@ -11,7 +11,15 @@ const FeaturedProjectsSection = () => {
 
   return (
     <Section title="Featured Projects">
-      <CardCarousel cards={posts} />
+      {postsRequest.status === "error" ? (
+        <PostLoadError message="Featured projects could not be loaded right now." />
+      ) : postsRequest.status === "success" && postsRequest.posts.length > 0 ? (
+        <CardCarousel cards={postsRequest.posts} />
+      ) : postsRequest.status === "success" ? (
+        <p>No featured projects yet.</p>
+      ) : (
+        <p role="status">Loading featured projects...</p>
+      )}
     </Section>
   );
 };

@@ -95,6 +95,44 @@
   box-shadow: 0 4px 16px var(--bs-secondary);
 }
 
+[data-bs-theme] .post-load-error {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.65rem;
+  width: 100%;
+  margin: 1.5rem auto 2.5rem;
+  text-align: center;
+}
+
+[data-bs-theme] .post-load-error-label {
+  display: none;
+}
+
+[data-bs-theme] .post-load-error-date {
+  display: none;
+  color: var(--bs-text-color-muted);
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+[data-bs-theme="dark"] .post-load-error {
+  color: #ffb8b8;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  line-height: 1.5;
+}
+
+[data-bs-theme="dark"] .post-load-error-label {
+  display: inline;
+  color: #ff6d6d;
+  font-weight: 700;
+}
+
+[data-bs-theme="dark"] .post-load-error-date {
+  display: inline;
+}
+
 // ****** Featured Card ******
 .featured-card {
   border: none;
@@ -186,6 +224,9 @@
     transform: translateY(-50%); /* Initial position adjustment */
     z-index: 2; /* Ensure they are above the carousel items */
     cursor: pointer;
+    padding: 0;
+    border: 0;
+    background: transparent;
     font-size: 2rem; /* Adjust size as needed */
     color: var(--bs-secondary); /* Default text color */
     transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
@@ -197,6 +238,12 @@
 
     &:active {
       transform: translateY(-50%) scale(0.9); /* Scale down to create pressed effect */
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--bs-primary);
+      outline-offset: 4px;
+      border-radius: 0.25rem;
     }
 
     &.custom-carousel-control-prev {

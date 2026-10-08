@@ -1,15 +1,15 @@
 import { SocialShareIcons, TagBadgeList } from "@components";
 import { Post } from "@entities";
 import { usePosts } from "@hooks";
-import { useEffect } from "react";
+import { useEffect, type ReactElement } from "react";
 import { Col, Container, Figure, Row, Spinner } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
 import remarkGfm from "remark-gfm";
 
-const PostPage = () => {
-  const { slug } = useParams(); // Get the slug from the URL
-  const { post, getPost } = usePosts();
+const PostPage = (): ReactElement => {
+  const { slug } = useParams();
+  const { postRequest, getPost } = usePosts();
 
   useEffect(() => {
     if (slug) {
@@ -17,7 +17,10 @@ const PostPage = () => {
     }
   }, [getPost, slug]);
 
-  if (!post) {
+  const currentRequest = postRequest && postRequest.id === slug ? postRequest : undefined;
+  const status = currentRequest?.status ?? "loading";
+
+  if (status === "loading") {
     return (
       <Container fluid className="d-flex justify-content-center align-items-center " style={{ minHeight: "75vh" }}>
         <Spinner animation="border" role="status">
@@ -26,6 +29,17 @@ const PostPage = () => {
       </Container>
     );
   }
+
+  if (status === "error" || currentRequest?.status !== "success") {
+    return (
+      <Container fluid className="d-flex flex-column justify-content-center align-items-center text-background" style={{ minHeight: "75vh" }}>
+        <p>This post could not be loaded.</p>
+        <Link to="/posts">Browse posts</Link>
+      </Container>
+    );
+  }
+
+  const post = currentRequest.post;
 
   return (
     <Container fluid className="mt-5 px-0 px-md-5">
@@ -115,7 +129,7 @@ const PostFooter = ({ post }: { post: Post }) => {
       <Col>
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center border-top pt-3">
           <div className="mb-3 mb-md-0">
-            You can read more posts like this <Link to="/posts?tags=abc">here</Link>.
+            <Link to="/posts">Browse all posts</Link>.
           </div>
           <SocialShareIcons title={post.title} url={window.location.href} text="Share this post &rarr;" />
         </div>

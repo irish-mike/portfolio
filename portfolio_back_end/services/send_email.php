@@ -32,7 +32,6 @@ if (!$name || !$email || !$message) {
 }
 
 try {
-    // Send the main email to you
     sendEmail(
         $_ENV['GMAIL_USERNAME'],
         'michaelgr@live.ie',
@@ -42,8 +41,12 @@ try {
         <p><strong>Email:</strong> {$email}</p>
         <p><strong>Message:</strong><br>{$message}</p>"
     );
+} catch (Exception $e) {
+    error_log("Mailer Error: {$e->getMessage()}");
+    sendResponse(500, 'error', 'Message could not be sent. Please try again later.');
+}
 
-    // Send acknowledgment email to the user
+try {
     sendEmail(
         $_ENV['GMAIL_USERNAME'],
         $email,
@@ -52,17 +55,11 @@ try {
          <p>Thank you for reaching out! I have received your message and will aim to get back to you within 24 hours.</p>
          <p>Best regards,<br>Michael Grinnell</p>"
     );
-
-    // Return success response
-    sendResponse(200, 'success', 'Message has been sent successfully, and acknowledgment email was sent to the user!');
-
 } catch (Exception $e) {
-    error_log("Mailer Error: {$e->getMessage()}");
-    // Return error response
-    sendResponse(500, 'error', 'Message could not be sent. Please try again later.');
+    error_log("Acknowledgment Mailer Error: {$e->getMessage()}");
 }
 
-exit; // Ensure the script stops executing
+sendResponse(200, 'success', 'Message has been sent successfully.');
 
 /**
  * Generic function to send an email using PHPMailer

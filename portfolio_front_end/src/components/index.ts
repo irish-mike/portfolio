@@ -1,5 +1,6 @@
 // --- Atoms ---
 export { default as DefinitionItem } from "./Atoms/DefinitionItem";
+export { default as PostLoadError } from "./Atoms/PostLoadError";
 export { default as SocialIconGroup } from "./Atoms/Icons/SocialIconGroup";
 export { default as SocialShareIcons } from "./Atoms/Icons/SocialShareIcons";
 export { default as TagBadgeList } from "./Atoms/Icons/TagBadgeList";
@@ -19,7 +20,6 @@ export { default as ContactFormModal } from "./Molecules/Forms/ContactFromModel"
 
 // Features
 export { default as CardCarousel } from "./Organisms/Features/CardCarousel";
-export { default as TagSearch } from "./Organisms/Features/TagSearch";
 export { default as Timeline } from "./Organisms/Features/Timeline";
 
 // Grids
