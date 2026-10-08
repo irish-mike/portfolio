@@ -22,3 +22,12 @@ export { default as linux_logo } from "./images/logos/linux.png";
 export { default as windows_logo } from "./images/logos/windows.png";
 export { default as macos_logo } from "./images/logos/mac.png";
 
+// Current portfolio skill logos
+export { default as dotnet_logo } from "./images/logos/dotnet.svg";
+export { default as postgresql_logo } from "./images/logos/postgresql.svg";
+export { default as aws_logo } from "./images/logos/aws.svg";
+export { default as githubactions_logo } from "./images/logos/githubactions.svg";
+export { default as datadog_logo } from "./images/logos/datadog.svg";
+export { default as posthog_logo } from "./images/logos/posthog.svg";
+export { default as mcp_logo } from "./images/logos/mcp.svg";
+

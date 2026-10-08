@@ -12,7 +12,7 @@ const HomePage = () => {
       <TextContentSection
         title={"Michael Grinnell"}
         description={
-          "Software Engineer specialising in building scalable systems, pragmatic architecture, and reliable infrastructure."
+          "Senior software engineer focused on backend systems, platform reliability, and developer experience."
         }
       />
       <AboutSection title={"About Me"}>
@@ -20,7 +20,7 @@ const HomePage = () => {
           I build software that works, scales, and stays out of the way. With a
           background spanning{" "}
           <strong>
-            Full Stack Development and Site Reliability Engineering
+            backend engineering, full-stack development, and platform reliability
           </strong>
           , I focus on delivering pragmatic technical solutions that solve real
           business needs. I’m a firm believer in the{" "}
@@ -41,10 +41,9 @@ const HomePage = () => {
           approaches than reach for the latest shiny new tools.
         </p>
         <p className="text-background">
-          I am a dual US/EU citizen from Ireland, currently based in Valencia,
-          Spain (B2 Spanish). I’m seeking opportunities where I can help teams
-          reduce technical debt, stabilise infrastructure, and deliver reliable
-          products.
+          I’m from Ireland and based in Valencia, Spain (B2 Spanish). I enjoy
+          helping teams reduce technical debt, stabilise infrastructure, and
+          deliver reliable products.
         </p>
       </AboutSection>
 
