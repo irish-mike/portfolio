@@ -1,6 +1,9 @@
 {
+    "name": "irish-mike/portfolio-contact-service",
+    "description": "Contact form service for michaelgrinnell.com",
+    "license": "proprietary",
     "require": {
-        "phpmailer/phpmailer": "^6.9",
+        "phpmailer/phpmailer": "^7.1",
         "vlucas/phpdotenv": "^5.6"
     }
 }
